@@ -14,4 +14,5 @@ import java.lang.annotation.*;
 @Documented
 @Inherited
 public @interface UpdateOnlyNotEmpty {
+
 }

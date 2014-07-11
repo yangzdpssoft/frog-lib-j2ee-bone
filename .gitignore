@@ -1,2 +1,6 @@
 /.idea
 /out
+/lib-j2ee-simple/lib-j2ee-simple.iml
+/lib-j2ee-simple/target
+/lib-j2ee-clusters/lib-j2ee-clusters.iml
+/lib-j2ee-bone/*.iml

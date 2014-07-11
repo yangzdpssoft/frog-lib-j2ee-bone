@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>frog</groupId>
+    <artifactId>lib-j2ee-web-bone</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>lib-j2ee-web-bone Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+    <properties>
+        <!-- javaee -->
+        <javaee_version>3.0.2.Final</javaee_version>
+        <xalan_version>2.7.1</xalan_version>
+        <!-- 项目编码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--JDK 版本 -->
+        <project.jdk_version>1.7</project.jdk_version>
+        <lib-j2ee-simple_version>1.0-SNAPSHOT</lib-j2ee-simple_version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>frog</groupId>
+            <artifactId>lib-j2ee-simple</artifactId>
+            <version>${lib-j2ee-simple_version}</version>
+        </dependency>
+    </dependencies>
+    <distributionManagement>
+        <!-- 正式版发布仓库 -->
+        <repository>
+            <id>releases</id>
+            <name>releases</name>
+            <url>http://mavenRepositories:8081/nexus/content/repositories/releases</url>
+        </repository>
+        <!-- 快照版发布仓库 -->
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>snapshots</name>
+            <url>http://mavenRepositories:8081/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <additionalProjectnatures>
+                        <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+                    </additionalProjectnatures>
+                    <additionalBuildcommands>
+                        <buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+                    </additionalBuildcommands>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>${project.jdk_version}</source>
+                    <target>${project.jdk_version}</target>
+                    <compilerArgument>-Xlint:all</compilerArgument>
+                    <showWarnings>true</showWarnings>
+                    <showDeprecation>true</showDeprecation>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.12</version>
+            </plugin>
+        </plugins>
+        <finalName>lib-j2ee-web-bone</finalName>
+    </build>
+</project>

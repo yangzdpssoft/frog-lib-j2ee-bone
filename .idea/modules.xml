@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/lib-j2ee-bone/lib-j2ee-bone.iml" filepath="$PROJECT_DIR$/lib-j2ee-bone/lib-j2ee-bone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-j2ee-clusters/lib-j2ee-clusters.iml" filepath="$PROJECT_DIR$/lib-j2ee-clusters/lib-j2ee-clusters.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib-j2ee-simple/lib-j2ee-simple.iml" filepath="$PROJECT_DIR$/lib-j2ee-simple/lib-j2ee-simple.iml" />
+    </modules>
+  </component>
+</project>
+

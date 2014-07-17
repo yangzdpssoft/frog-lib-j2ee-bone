@@ -138,6 +138,24 @@
         <servlet-name>default</servlet-name>
         <url-pattern>*.JSON</url-pattern>
     </servlet-mapping>
+
+    <error-page>
+        <error-code>401</error-code>
+        <location>/401</location>
+    </error-page>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/403</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/500</location>
+    </error-page>
+
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>

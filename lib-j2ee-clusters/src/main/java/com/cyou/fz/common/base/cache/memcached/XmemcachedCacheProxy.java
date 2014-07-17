@@ -167,8 +167,7 @@ public class XmemcachedCacheProxy implements ISimpleCacheProxy {
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		try {
-			XMemcachedClientBuilder builder = new XMemcachedClientBuilder(
-					addressList);
+			XMemcachedClientBuilder builder = new XMemcachedClientBuilder(addressList);
 			builder.setConnectionPoolSize(connectionPoolSize);
 			client = builder.build();
 		} catch (Exception e) {

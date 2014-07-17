@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class JSONPInterceptor implements HandlerInterceptor{
+public class MVCInterceptor implements HandlerInterceptor{
 	
 	public static final String DEFAULT_CALLBACK = "callback";
 	
@@ -26,7 +26,9 @@ public class JSONPInterceptor implements HandlerInterceptor{
 
 	@Override
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-		
-	}
+        if(ex != null){
+            ex.printStackTrace();
+        }
+    }
 
 }

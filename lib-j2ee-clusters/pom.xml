@@ -17,7 +17,7 @@
         <project.jdk_version>1.7</project.jdk_version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <springframework_version>3.2.8.RELEASE</springframework_version>
-        <com.google.code.simple-spring-memcached_version>3.1.0</com.google.code.simple-spring-memcached_version>
+        <com.googlecode.xmemcached_version>1.4.1</com.googlecode.xmemcached_version>
         <lib-j2ee-simple_version>1.0-SNAPSHOT</lib-j2ee-simple_version>
     </properties>
     <dependencies>
@@ -36,9 +36,9 @@
         </dependency>
         <!-- xmemcached -->
         <dependency>
-            <groupId>com.google.code.simple-spring-memcached</groupId>
-            <artifactId>xmemcached-provider</artifactId>
-            <version>${com.google.code.simple-spring-memcached_version}</version>
+            <groupId>com.googlecode.xmemcached</groupId>
+            <artifactId>xmemcached</artifactId>
+            <version>${com.googlecode.xmemcached_version}</version>
         </dependency>
         <dependency>
             <groupId>frog</groupId>

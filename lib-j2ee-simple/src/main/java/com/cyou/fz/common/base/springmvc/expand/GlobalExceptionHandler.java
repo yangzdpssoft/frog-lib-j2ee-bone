@@ -35,6 +35,10 @@ public class GlobalExceptionHandler implements HandlerExceptionResolver {
 	 * 前台500页面
 	 */
 	private String frontViewName = "front/500";
+    /**
+     * 默认500页面
+     */
+    private String defaultViewName = "500";
 	/**
 	 * 处理全局异常.
 	 * @param request
@@ -80,7 +84,9 @@ public class GlobalExceptionHandler implements HandlerExceptionResolver {
 				return new ModelAndView(adminViewName);
 			}else if(url.contains(frontUrl)){
 				return new ModelAndView(frontViewName);
-			}
+			}else{
+                return new ModelAndView(defaultViewName);
+            }
 		}
 		return new ModelAndView();
 	}

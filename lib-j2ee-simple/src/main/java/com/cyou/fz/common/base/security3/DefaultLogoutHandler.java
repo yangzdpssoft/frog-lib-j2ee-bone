@@ -1,4 +1,4 @@
-package com.frog.compoment.security3;
+package com.cyou.fz.common.base.security3;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AbstractAuthenticationTargetUrlRequestHandler;
@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
 /**
  * 注销默认的实现.
  * 

@@ -1,13 +1,9 @@
 package com.cyou.fz.common.base.security3;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.cyou.fz.common.base.springmvc.ajax.Response;
+import com.cyou.fz.common.base.util.IOUtil;
+import com.cyou.fz.common.base.util.JsonUtil;
+import com.cyou.fz.common.base.util.WebUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.security.core.AuthenticationException;
@@ -15,10 +11,12 @@ import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
 
-import com.cyou.fz.common.base.springmvc.ajax.Response;
-import com.cyou.fz.common.base.util.IOUtil;
-import com.cyou.fz.common.base.util.JsonUtil;
-import com.cyou.fz.common.base.util.WebUtil;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 
 /**
@@ -67,7 +65,7 @@ public class MultiRequestAuthenticationEntryPoint extends LoginUrlAuthentication
         } else {//ajax请求
             Response<Boolean> responseData = new Response<Boolean>();
             responseData.setResult(Response.RESULT_LOGIN); //访问被拒绝,请求登录.
-            responseData.setMessage("request refused, no login.");
+            responseData.setMessage("未登录");
             PrintWriter writer = response.getWriter();
             try {
                 writer.write(JsonUtil.toJson(responseData));

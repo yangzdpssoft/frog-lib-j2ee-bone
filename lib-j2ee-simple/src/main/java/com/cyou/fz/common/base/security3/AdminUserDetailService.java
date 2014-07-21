@@ -1,4 +1,4 @@
-package com.frog.compoment.security3;
+package com.cyou.fz.common.base.security3;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;

@@ -1,4 +1,4 @@
-package com.frog.compoment.security3;
+package com.cyou.fz.common.base.security3;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.ExceptionMappingAuthenticationFailureHandler;

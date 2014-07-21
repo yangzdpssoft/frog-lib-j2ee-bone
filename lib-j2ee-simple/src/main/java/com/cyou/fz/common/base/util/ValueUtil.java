@@ -22,7 +22,7 @@ public class ValueUtil {
 	 * @date 2012-7-28 下午03:15:11
 	 */
 	public static String getString(Object value){
-		String result = null;
+		String result = "";
 		if(!ObjectUtil.isEmpty(value)){
 			String sValue = StringUtil.trim(value.toString());
 			if(value instanceof Number){

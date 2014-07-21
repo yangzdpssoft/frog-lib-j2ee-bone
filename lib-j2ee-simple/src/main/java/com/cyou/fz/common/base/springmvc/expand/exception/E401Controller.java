@@ -4,7 +4,11 @@
  */
 package com.cyou.fz.common.base.springmvc.expand.exception;
 
+import com.cyou.fz.common.base.springmvc.ajax.Response;
+import com.cyou.fz.common.base.springmvc.ajax.ResponseFactory;
+import com.cyou.fz.common.base.util.JvmUtil;
 import com.cyou.fz.common.base.util.ValueUtil;
+import com.cyou.fz.common.base.util.WebUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -12,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class E401Controller {
@@ -42,28 +47,29 @@ public class E401Controller {
      * @author yangz 2013 2013-5-14 上午11:11:42
      */
     @RequestMapping("/401")
-    public ModelAndView errorHandle(HttpServletRequest request) {
+    public ModelAndView errorHandle(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView result = new ModelAndView();
         Exception e = (Exception) request.getAttribute("javax.servlet.error.exception");
+        String uri = ValueUtil.getString(request.getAttribute("javax.servlet.error.request_uri"));
         String status = ValueUtil.getString(request.getAttribute("javax.servlet.error.status_code"));
-        if (e != null) {
-            // 异常原因
-            Throwable t = e.getCause();
-            if (t != null) {
-                if (t.getMessage().contains(adminUrl)) { //后台
-                    result.setViewName(adminUrl + errorCode);
-                } else {
-                    result.setViewName(frontUrl + errorCode); //前台
-                }
-                LoggerFactory.getLogger(this.getClass()).error(status, t);
-            } else {
-                if (e.getMessage().contains(adminUrl)) { //后台
-                    result.setViewName(adminUrl + errorCode);
-                } else {
-                    result.setViewName(frontUrl + errorCode); //前台
-                }
-                LoggerFactory.getLogger(this.getClass()).error(status, e);
+        String errorLocation = status + " : " + uri;
+        if (uri.contains(adminUrl)) { //后台
+            result.setViewName(adminUrl + errorCode);
+        } else if(uri.contains(frontUrl)){
+            result.setViewName(frontUrl + errorCode); //前台
+        }else{
+            result.setViewName(errorCode);
+        }
+        if(e != null){
+            if(WebUtil.isAjaxRequest(request)){
+                Response<String> ajaxResponse = ResponseFactory.getDefaultErrorResponse(e.toString());
+                WebUtil.responseJson(response, ajaxResponse);
+            }else {
+                String errorMessage = JvmUtil.printHTMLStackTrace(e);
+                request.setAttribute("errorUri", "HTTP | " + errorLocation);
+                request.setAttribute("errorMessage", errorMessage);
             }
+            LoggerFactory.getLogger(this.getClass()).error(errorLocation, e);
         }
         return result;
     }

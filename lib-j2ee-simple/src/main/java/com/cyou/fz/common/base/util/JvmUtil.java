@@ -88,4 +88,23 @@ public class JvmUtil {
 			return result;
 		}
 	}
+
+    /**
+     * 输出字符串异常栈.
+     * @param t
+     * @return
+     */
+    public static String printHTMLStackTrace(Throwable t){
+        StringBuilder sb = new StringBuilder(1000);
+        if(t != null){
+            sb.append(t).append("<br/>");
+            StackTraceElement[] stacks = t.getStackTrace();
+            if(stacks != null){
+                for (StackTraceElement stack : stacks){
+                    sb.append(stack).append("<br/>");
+                }
+            }
+        }
+        return sb.toString();
+    }
 }

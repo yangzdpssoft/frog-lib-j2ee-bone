@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-    <body>
-       	<h1>哥，403</h1>
-    </body>
+<body>
+<h1>403</h1>
+<h2>${errorUri!""}</h2>
+
+<h3>${errorMessage!""}</h3>
+</body>
 </html>

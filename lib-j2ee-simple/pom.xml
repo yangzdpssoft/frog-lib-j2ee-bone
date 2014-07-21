@@ -41,6 +41,10 @@
         <springframework_version>3.2.8.RELEASE</springframework_version>
         <org.springframework.security_version>3.2.3.RELEASE</org.springframework.security_version>
         <freemarker_version>2.3.19</freemarker_version>
+        <mybatis_verion>3.2.0</mybatis_verion>
+        <mybatis-spring_verion>1.2.0</mybatis-spring_verion>
+        <testng_version>6.8.7</testng_version>
+        <org.quartz-scheduler_version>2.1.7</org.quartz-scheduler_version>
     </properties>
     <dependencies>
         <dependency>
@@ -167,6 +171,11 @@
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${springframework_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${springframework_version}</version>
         </dependency>
@@ -201,6 +210,35 @@
             <version>${springframework_version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+            <version>${springframework_version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${springframework_version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${springframework_version}</version>
+        </dependency>
+
+        <!-- mybatis -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${mybatis_verion}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>${mybatis-spring_verion}</version>
+        </dependency>
         <!-- Spring-security3 -->
         <dependency>
             <groupId>org.springframework.security</groupId>
@@ -221,6 +259,17 @@
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
             <version>${freemarker_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>${org.quartz-scheduler_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng_version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     <distributionManagement>

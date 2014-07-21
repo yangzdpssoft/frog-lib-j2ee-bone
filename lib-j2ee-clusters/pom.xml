@@ -18,7 +18,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <springframework_version>3.2.8.RELEASE</springframework_version>
         <com.googlecode.xmemcached_version>1.4.1</com.googlecode.xmemcached_version>
+        <org.apache.activemq_version>5.8.0</org.apache.activemq_version>
         <lib-j2ee-simple_version>1.0-SNAPSHOT</lib-j2ee-simple_version>
+        <activemq-pool_version>5.9.0</activemq-pool_version>
     </properties>
     <dependencies>
         <dependency>
@@ -49,6 +51,23 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-jms</artifactId>
             <version>${springframework_version}</version>
+        </dependency>
+        <!-- activeMQ -->
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-all</artifactId>
+            <version>${org.apache.activemq_version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-pool</artifactId>
+            <version>${activemq-pool_version}</version>
         </dependency>
     </dependencies>
     <distributionManagement>

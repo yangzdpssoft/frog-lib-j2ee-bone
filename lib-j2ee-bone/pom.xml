@@ -16,6 +16,8 @@
         <!--JDK 版本 -->
         <project.jdk_version>1.7</project.jdk_version>
         <lib-j2ee-simple_version>1.0-SNAPSHOT</lib-j2ee-simple_version>
+        <mysql_version>5.1.30</mysql_version>
+        <druid_version>1.0.7</druid_version>
     </properties>
     <dependencies>
         <dependency>
@@ -35,6 +37,16 @@
             <groupId>frog</groupId>
             <artifactId>lib-j2ee-simple</artifactId>
             <version>${lib-j2ee-simple_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${druid_version}</version>
         </dependency>
     </dependencies>
     <distributionManagement>

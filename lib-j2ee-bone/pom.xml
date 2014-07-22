@@ -105,6 +105,6 @@
                 <version>2.12</version>
             </plugin>
         </plugins>
-        <finalName>lib-j2ee-web-bone</finalName>
+        <finalName>lib-j2ee-bone</finalName>
     </build>
 </project>

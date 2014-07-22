@@ -4,7 +4,8 @@ import com.cyou.fz.common.base.exception.UnCaughtException;
 
 import java.math.BigDecimal;
 import java.util.Date;
-
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -170,4 +171,28 @@ public class ValueUtil {
 			throw new UnCaughtException("unknow value type:" + type);
 		}
 	}
+
+    /**
+     * 解析map值级联.
+     * @param value
+     * @return
+     */
+    public static Map<String, Map<String, Object>> resolveValueCascade(Map<String, Object> value, String root, String split){
+        Map<String, Map<String, Object>> result = new HashMap<String, Map<String, Object>>();
+        Map<String, Object> rootMap = new HashMap<String, Object>();
+        result.put(root, rootMap);
+        if(!ObjectUtil.isEmpty(value)){
+            for(Map.Entry<String, Object> entry : value.entrySet()){
+                String trunk = StringUtil.subBefore(entry.getKey(), split);
+                String trunkKey = StringUtil.subLast(entry.getKey(), split);
+                if(ObjectUtil.isEmpty(trunkKey)){
+                    rootMap.put(trunk, entry.getValue());
+                }else {
+                    Map<String, Object> trunkMap = CollectionUtil.focusValueMap(result, trunk);
+                    trunkMap.put(trunkKey, entry.getValue());
+                }
+            }
+        }
+        return result;
+    }
 }

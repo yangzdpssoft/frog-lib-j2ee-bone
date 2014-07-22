@@ -19,7 +19,8 @@ public class CollectionUtil {
 	 * @author yangz
 	 * @date 2013-5-6 上午12:48:07
 	 */
-	public static <T> List<T> asList(T... array){
+	@SafeVarargs
+    public static <T> List<T> asList(T... array){
 		List<T> result = new ArrayList<T>();
 		for (T t : array) {
 			result.add(t);
@@ -58,4 +59,19 @@ public class CollectionUtil {
 		}
 		return true;
 	}
+
+    /**
+     * 获取非空ValueMap.
+     * @param root
+     * @param key
+     * @return
+     */
+    public static Map<String, Object> focusValueMap(Map<String, Map<String,Object>> root, String key){
+        Map<String, Object> valueMap = root.get(key);
+        if(valueMap == null){
+            valueMap = new HashMap<>();
+            root.put(key, valueMap);
+        }
+        return valueMap;
+    }
 }

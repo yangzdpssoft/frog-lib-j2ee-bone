@@ -41,8 +41,6 @@
         <springframework_version>3.2.8.RELEASE</springframework_version>
         <org.springframework.security_version>3.2.3.RELEASE</org.springframework.security_version>
         <freemarker_version>2.3.19</freemarker_version>
-        <mybatis_verion>3.2.0</mybatis_verion>
-        <mybatis-spring_verion>1.2.0</mybatis-spring_verion>
         <testng_version>6.8.7</testng_version>
         <org.quartz-scheduler_version>2.1.7</org.quartz-scheduler_version>
         <hibernate_version>4.3.5.Final</hibernate_version>
@@ -229,17 +227,6 @@
             <version>${springframework_version}</version>
         </dependency>
 
-        <!-- mybatis -->
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis</artifactId>
-            <version>${mybatis_verion}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis-spring</artifactId>
-            <version>${mybatis-spring_verion}</version>
-        </dependency>
         <!-- hibernate -->
         <dependency>
             <groupId>org.hibernate</groupId>

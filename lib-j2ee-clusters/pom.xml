@@ -21,6 +21,8 @@
         <org.apache.activemq_version>5.8.0</org.apache.activemq_version>
         <lib-j2ee-simple_version>1.0-SNAPSHOT</lib-j2ee-simple_version>
         <activemq-pool_version>5.9.0</activemq-pool_version>
+        <mybatis_verion>3.2.0</mybatis_verion>
+        <mybatis-spring_verion>1.2.0</mybatis-spring_verion>
     </properties>
     <dependencies>
         <dependency>
@@ -68,6 +70,17 @@
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-pool</artifactId>
             <version>${activemq-pool_version}</version>
+        </dependency>
+        <!-- mybatis -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${mybatis_verion}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>${mybatis-spring_verion}</version>
         </dependency>
     </dependencies>
     <distributionManagement>

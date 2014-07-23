@@ -38,8 +38,8 @@
         <unrar_version>0.3</unrar_version>
         <aspectj_version>1.7.2</aspectj_version>
         <javassist_version>3.15.0-GA</javassist_version>
-        <springframework_version>3.2.8.RELEASE</springframework_version>
-        <org.springframework.security_version>3.2.3.RELEASE</org.springframework.security_version>
+        <springframework_version>4.0.5.RELEASE</springframework_version>
+        <org.springframework.security_version>3.2.4.RELEASE</org.springframework.security_version>
         <freemarker_version>2.3.19</freemarker_version>
         <testng_version>6.8.7</testng_version>
         <org.quartz-scheduler_version>2.1.7</org.quartz-scheduler_version>
@@ -237,6 +237,11 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>${hibernate_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-jpamodelgen</artifactId>
+            <version>1.2.0.Final</version>
         </dependency>
         <!-- Spring-security3 -->
         <dependency>

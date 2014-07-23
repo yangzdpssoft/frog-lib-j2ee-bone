@@ -16,7 +16,7 @@
         <!--JDK 版本 -->
         <project.jdk_version>1.7</project.jdk_version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <springframework_version>3.2.8.RELEASE</springframework_version>
+        <springframework_version>4.0.5.RELEASE</springframework_version>
         <com.googlecode.xmemcached_version>1.4.1</com.googlecode.xmemcached_version>
         <org.apache.activemq_version>5.8.0</org.apache.activemq_version>
         <lib-j2ee-simple_version>1.0-SNAPSHOT</lib-j2ee-simple_version>

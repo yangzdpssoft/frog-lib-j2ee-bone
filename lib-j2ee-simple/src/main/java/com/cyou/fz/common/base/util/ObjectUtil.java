@@ -1,6 +1,6 @@
 package com.cyou.fz.common.base.util;
 
-import com.cyou.fz.common.base.annotation.UpdateOnlyNotEmpty;
+import com.cyou.fz.common.base.util.annotation.UpdateOnlyNotEmpty;
 import com.cyou.fz.common.base.exception.UnCaughtException;
 import org.apache.commons.beanutils.BeanUtils;
 

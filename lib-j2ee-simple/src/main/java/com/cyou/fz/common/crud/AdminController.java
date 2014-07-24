@@ -17,7 +17,7 @@ import java.util.Map;
  * @date 2014/7/22
  *
  */
-public class AdminController {
+public class AdminController<T> {
 
     /**
      * 保存或更新.
@@ -25,7 +25,7 @@ public class AdminController {
      * @return
      */
     @RequestMapping("/admin/{domain}/save")
-    public ModelAndView save(@PathVariable String domain, Form form){
+    public ModelAndView save(@PathVariable String domain, T t){
         ModelAndView result = new ModelAndView();
         return result;
     }

@@ -1,4 +1,4 @@
-package com.cyou.fz.common.base.db;
+package com.cyou.fz.common.base.db.mysql;
 
 /**
  * mysql数据库信息查询窗口.

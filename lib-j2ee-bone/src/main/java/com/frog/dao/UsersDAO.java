@@ -20,7 +20,7 @@ public class UsersDAO {
     }
 
     public Serializable save(Users users) {
-        Serializable serializable = this.getCurrentSession().save(users);
+        Serializable serializable = getCurrentSession().save(users);
         return serializable;
     }
 }

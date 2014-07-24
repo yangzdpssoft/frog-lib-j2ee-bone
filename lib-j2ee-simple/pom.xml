@@ -44,6 +44,7 @@
         <testng_version>6.8.7</testng_version>
         <org.quartz-scheduler_version>2.1.7</org.quartz-scheduler_version>
         <hibernate_version>4.3.5.Final</hibernate_version>
+        <mongodb-java-driver_version>2.12.2</mongodb-java-driver_version>
     </properties>
     <dependencies>
         <dependency>
@@ -274,6 +275,11 @@
             <artifactId>testng</artifactId>
             <version>${testng_version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>${mongodb-java-driver_version}</version>
         </dependency>
     </dependencies>
     <distributionManagement>

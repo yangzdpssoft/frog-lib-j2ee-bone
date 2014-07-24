@@ -1,4 +1,4 @@
-package com.cyou.fz.common.base.annotation;
+package com.cyou.fz.common.base.util.annotation;
 
 import java.lang.annotation.*;
 

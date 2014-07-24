@@ -12,6 +12,16 @@
    http://www.springframework.org/schema/context      
    http://www.springframework.org/schema/context/spring-context-3.2.xsd" default-lazy-init="false">
 
+   <bean id="mongoDAO" class="com.cyou.fz.common.base.db.mongo.dao.MongoDAO">
+       <property name="config" ref="mongoDBConnectionConfig"></property>
+   </bean>
 
+    <bean id="mongoDBConnectionConfig" class="com.cyou.fz.common.base.db.mongo.connection.MongoDBConnectionConfig">
+        <property name="host" value="${mongo.host}"></property>
+        <property name="port" value="${mongo.port}"></property>
+        <property name="dbname" value="${mongo.dbname}"></property>
+        <property name="username" value="${mongo.username}"></property>
+        <property name="password" value="${mongo.password}"></property>
+    </bean>
 
 </beans>

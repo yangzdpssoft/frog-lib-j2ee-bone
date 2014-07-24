@@ -11,25 +11,29 @@ public class CondPrefixConstant {
     /**
      * 范围查询开始值.
      */
-    public final static String S_ = "s_";
+    public final static String GT_ = "gt_";
     /**
      * 范围查询结束值.
      */
-    public final static String E_ = "e_";
+    public final static String LT_ = "lt_";
     /**
      * 条件不相等.
      */
-    public final static String N_ = "n_";
+    public final static String NEQ_ = "neq_";
+    /**
+     * 模糊查询.
+     */
+    public final static String REGEX_ = "regex_";
     /**
      * 条件相等.
      */
     public final static String EQ_ = "eq_";
     /**
+     * in.
+     */
+    public final static String IN_ = "in_";
+    /**
      * not in.
      */
-    public final static String NI_ = "ni_";
-    /**
-     * dot.
-     */
-    public final static String DOT = ".";
+    public final static String NIN_ = "nin_";
 }

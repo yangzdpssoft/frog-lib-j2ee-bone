@@ -1,4 +1,5 @@
 package com.cyou.fz.common.base.db.mongo.connection;
+import com.cyou.fz.common.base.db.mongo.annotation.ReReadEnable;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;

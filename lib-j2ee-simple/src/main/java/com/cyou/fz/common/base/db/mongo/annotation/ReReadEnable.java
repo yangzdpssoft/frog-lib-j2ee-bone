@@ -1,4 +1,6 @@
-package com.cyou.fz.common.base.db.mongo.connection;
+package com.cyou.fz.common.base.db.mongo.annotation;
+
+import com.cyou.fz.common.base.db.mongo.connection.MongoType;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

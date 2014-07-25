@@ -7,7 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Test;
 
-@ContextConfiguration(locations = { "classpath:applicationContent-*.xml" })
+@ContextConfiguration(locations = { "classpath*:applicationContent-*.xml" })
 public class UsersDAOTest extends AbstractTestNGSpringContextTests {
 
     @Autowired

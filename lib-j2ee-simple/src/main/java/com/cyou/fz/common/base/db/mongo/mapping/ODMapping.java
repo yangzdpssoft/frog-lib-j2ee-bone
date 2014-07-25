@@ -166,7 +166,7 @@ public class ODMapping {
                                 }
                             }
                             args[0] = collection;
-                        } else if (value instanceof BasicDBObject) {
+                        } else if (value instanceof DBObject) {
                             args[0] = toObject((DBObject) value, (Class) descriptor.getReadMethod().getReturnType(), fetchDeep - 1);
                         }
                         descriptor.getWriteMethod().invoke(t, args);

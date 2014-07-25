@@ -26,10 +26,12 @@ import java.util.Map;
  *
  */
 
-public class MongoDomainDAO<T> implements IDomainDAO<T> {
+public class MongoDomainDAO<T> {
 
     @Autowired
     private MongoDAO mongoDAO;
+
+
     /**
      * 领域对象数据库表名.
      */
@@ -50,78 +52,75 @@ public class MongoDomainDAO<T> implements IDomainDAO<T> {
         }
     }
 
-    @Override
     public String saveOrUpdate(T t) {
-        T temp = null;
+        DBObject dbObject = null;
         if(t instanceof IId){
-            IId m = (IId) temp;
+            IId m = (IId) t;
             if (!ObjectUtil.isEmpty(m.getId())){
-                temp = get(m.getId());
+                T temp = get(m.getId());
                 ObjectUtil.updateBean(temp, t);
+                dbObject = ODMapping.toDBObject(mongoDAO.getDB(), temp);
+            }else {
+                dbObject = ODMapping.toDBObject(mongoDAO.getDB(), t);
             }
-        }else{
-            temp = t;
         }
-        DBObject dbObject = ODMapping.toDBObject(mongoDAO.getDB(), temp);
         mongoDAO.saveOrUpdate(tableName, dbObject);
         String id = dbObject.get(DBFieldConstant._ID).toString();
         ObjectUtil.copyProperty(t, FieldConstant.ID, id);
         return id;
     }
 
-    @Override
+    
     public void update(Map<String, Object> fields, String... id){
         DBObject dbObject = new BasicDBObject();
         dbObject.putAll(fields);
         mongoDAO.update(tableName, dbObject, id);
     }
 
-    @Override
+
+    public void inc(String id, String field, long value){
+        mongoDAO.inc(tableName, id, field, value);
+    }
+
     public T get(String id) {
         return get(id);
     }
 
-    @Override
     public T get(String id, int fetchDeep) {
         DBObject dbObject = mongoDAO.get(tableName, id);
         return ODMapping.toObject(dbObject, domainClass, fetchDeep);
     }
 
-    @Override
     public T get(String id, String... fields){
         return ODMapping.toObject(mongoDAO.get(tableName, id, MongoUtil.conventFields(fields)), domainClass, 0);
     }
 
-    @Override
     public T unique(String key, Object value) {
         return unique(key, value, 1);
     }
 
-    @Override
     public T unique(String key, Object value, int fetchDeep) {
         DBObject cond = new BasicDBObject();
         cond.put(key, value);
         return ODMapping.toObject(mongoDAO.findOne(tableName, cond), domainClass, fetchDeep);
     }
 
-    @Override
     public T unique(String key, Object value, String... fields) {
         DBObject cond = new BasicDBObject();
         cond.put(key, value);
         return ODMapping.toObject(mongoDAO.findOne(tableName, cond, MongoUtil.conventFields(fields)), domainClass, 0);
     }
 
-    @Override
     public void delete(String... id) {
         mongoDAO.delete(tableName, id);
     }
 
-    @Override
+    
     public PaginationVO<T> query(Map<String, Object> cond, Map<String, Object> sort, int pageNo, int pageSize) {
         return query(cond, sort, pageNo, pageSize, 1);
     }
 
-    @Override
+    
     public PaginationVO<T> query(Map<String, Object> cond, Map<String, Object> sort, int pageNo, int pageSize, String... fields) {
         DBObject dbObjectCond = MongoUtil.conventCondQueryBuilder(cond, domainClass).get();
         DBObject sortDbo = new BasicDBObject();
@@ -137,7 +136,7 @@ public class MongoDomainDAO<T> implements IDomainDAO<T> {
         return result;
     }
 
-    @Override
+    
     public PaginationVO<T> query(Map<String, Object> cond, Map<String, Object> sort, int pageNo, int pageSize, int fetchDeep) {
         DBObject dbObjectCond = MongoUtil.conventCondQueryBuilder(cond, domainClass).get();
         DBObject sortDbo = new BasicDBObject();
@@ -153,12 +152,12 @@ public class MongoDomainDAO<T> implements IDomainDAO<T> {
         return result;
     }
 
-    @Override
+    
     public List<T> queryAll(Map<String, Object> cond, Map<String, Object> sort) {
         return queryAll(cond, sort, 1);
     }
 
-    @Override
+    
     public List<T> queryAll(Map<String, Object> cond, Map<String, Object> sort, String... fields) {
         DBObject dbObjectCond = MongoUtil.conventCondQueryBuilder(cond, domainClass).get();
         DBObject sortDBo = new BasicDBObject();
@@ -171,7 +170,7 @@ public class MongoDomainDAO<T> implements IDomainDAO<T> {
         return result;
     }
 
-    @Override
+    
     public List<T> queryAll(Map<String, Object> cond, Map<String, Object> sort, int fetchDeep) {
         DBObject dbObjectCond = MongoUtil.conventCondQueryBuilder(cond, domainClass).get();
         DBObject sortDBo = new BasicDBObject();
@@ -184,4 +183,11 @@ public class MongoDomainDAO<T> implements IDomainDAO<T> {
         return result;
     }
 
+    public MongoDAO getMongoDAO() {
+        return mongoDAO;
+    }
+
+    public void setMongoDAO(MongoDAO mongoDAO) {
+        this.mongoDAO = mongoDAO;
+    }
 }

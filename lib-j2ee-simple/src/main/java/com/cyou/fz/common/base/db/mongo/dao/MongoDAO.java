@@ -3,6 +3,7 @@ package com.cyou.fz.common.base.db.mongo.dao;
 
 import com.cyou.fz.common.base.db.mongo.connection.MongoDBConnectionConfig;
 import com.cyou.fz.common.base.db.mongo.constants.DBFieldConstant;
+import com.cyou.fz.common.base.db.mongo.util.MongoUtil;
 import com.cyou.fz.common.base.exception.UnCaughtException;
 import com.mongodb.*;
 import org.bson.types.ObjectId;
@@ -79,6 +80,7 @@ public class MongoDAO implements InitializingBean{
      * @return
      */
     public WriteResult saveOrUpdate(String tableName, DBObject dbObj) {
+        MongoUtil.markFK(this, dbObj);
         DBCollection table = this.getDB().getCollection(tableName);
         return table.save(dbObj);
     }
@@ -114,6 +116,11 @@ public class MongoDAO implements InitializingBean{
      * @param id
      */
     public WriteResult delete(String tableName, String... id) {
+        if(id != null){
+            for(String i : id){
+                MongoUtil.removeMarkFK(this, get(tableName, i));
+            }
+        }
         ObjectId[] oids = toObjectIds(id);
         QueryBuilder queryBuilder = QueryBuilder.start(DBFieldConstant._ID);
         DBObject dbObj = queryBuilder.in(oids).get();
@@ -136,6 +143,22 @@ public class MongoDAO implements InitializingBean{
         DBObject dbObj = queryBuilder.in(toObjectIds(id)).get();
         DBObject set = new BasicDBObject("$set", value);
         WriteResult result = getDB().getCollection(tableName).updateMulti(dbObj, set);
+        return result;
+    }
+
+    /**
+     * 计数器.
+     * @param tableName
+     * @param id
+     * @param field
+     * @param value
+     * @return
+     */
+    public WriteResult inc(String tableName, String id, String field, long value) {
+        QueryBuilder queryBuilder = QueryBuilder.start(DBFieldConstant._ID);
+        DBObject dbObj = queryBuilder.is(MongoUtil.toObjectId(id)).get();
+        DBObject inc = new BasicDBObject("$inc", new BasicDBObject(field, value));
+        WriteResult result = getDB().getCollection(tableName).update(dbObj, inc);
         return result;
     }
 

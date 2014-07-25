@@ -3,13 +3,13 @@ package com.cyou.fz.common.base.db.mongo.util;
 import com.cyou.fz.common.base.constant.CondPrefixConstant;
 import com.cyou.fz.common.base.constant.FieldConstant;
 import com.cyou.fz.common.base.db.mongo.constants.DBFieldConstant;
+import com.cyou.fz.common.base.db.mongo.constants.DBTableConstant;
+import com.cyou.fz.common.base.db.mongo.dao.MongoDAO;
 import com.cyou.fz.common.base.util.ClassUtil;
 import com.cyou.fz.common.base.util.ObjectUtil;
 import com.cyou.fz.common.base.util.StringUtil;
 import com.cyou.fz.common.base.util.ValueUtil;
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBObject;
-import com.mongodb.QueryBuilder;
+import com.mongodb.*;
 import org.bson.types.ObjectId;
 
 import java.util.*;
@@ -24,6 +24,15 @@ import java.util.regex.Pattern;
 
 public class MongoUtil {
 
+    /**
+     * 批量转换ObjectId.
+     *
+     * @param id
+     * @return
+     */
+    public static ObjectId toObjectId(String id) {
+        return new ObjectId(id);
+    }
 
     public static DBObject conventFields(String... fields){
         DBObject dbFields = new BasicDBObject();
@@ -32,6 +41,7 @@ public class MongoUtil {
         }
         return dbFields;
     }
+
     /**
      * 将查询条件转mongo查询条件.<br>
      * 1、不支持OR.<br>
@@ -201,5 +211,89 @@ public class MongoUtil {
         return StringUtil.clearPrefix(condKey, "cond!");
     }
 
+
+    /**
+     * 标记DBREF键值.
+     * @param dbObj
+     */
+    public static void markFK(MongoDAO dao, DBObject dbObj){
+        if(dbObj != null){
+            Map<String, Object> map = dbObj.toMap();
+            for(Map.Entry<String, Object> m : map.entrySet()){
+                Object value = m.getValue();
+                if(value != null){
+                    if(value instanceof com.mongodb.DBRef){
+                        saveFK(dao, (com.mongodb.DBRef) value);
+                    }else if (value instanceof List){
+                        List valueList = (List) value;
+                        for (Object o : valueList) {
+                            if (o instanceof DBObject) {
+                                DBObject dbO = (DBObject) o;
+                                markFK(dao, dbO);
+                            }else if(o instanceof com.mongodb.DBRef){
+                                saveFK(dao, (com.mongodb.DBRef) o);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * 标记DBREF键值.
+     * @param dbObj
+     */
+    public static void removeMarkFK(MongoDAO dao, DBObject dbObj){
+        if(dbObj != null){
+            Map<String, Object> map = dbObj.toMap();
+            for(Map.Entry<String, Object> m : map.entrySet()){
+                Object value = m.getValue();
+                if(value != null){
+                    if(value instanceof com.mongodb.DBRef){
+                        saveFK(dao, (com.mongodb.DBRef) value);
+                    }else if (value instanceof List){
+                        List valueList = (List) value;
+                        for (Object o : valueList) {
+                            if (o instanceof DBObject) {
+                                DBObject dbO = (DBObject) o;
+                                removeMarkFK(dao, dbO);
+                            }else if(o instanceof com.mongodb.DBRef){
+                                deleteFK(dao, (com.mongodb.DBRef) o);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * 保存外键.
+     * @param dao
+     * @param id
+     */
+    public static void saveFK(MongoDAO dao, com.mongodb.DBRef id){
+        DBCollection collection = dao.getDB().getCollection(DBTableConstant.FK);
+        if(id != null){
+            DBObject dbo = new BasicDBObject();
+            dbo.put(DBFieldConstant._ID, id.getId());
+            collection.save(dbo);
+        }
+    }
+
+    /**
+     * 保存外键.
+     * @param dao
+     * @param id
+     */
+    public static void deleteFK(MongoDAO dao, com.mongodb.DBRef id){
+        DBCollection collection = dao.getDB().getCollection(DBTableConstant.FK);
+        if(id != null){
+            DBObject dbo = new BasicDBObject();
+            dbo.put(DBFieldConstant._ID, id.getId());
+            collection.remove(dbo);
+        }
+    }
 
 }

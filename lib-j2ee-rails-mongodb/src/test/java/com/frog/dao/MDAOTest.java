@@ -27,7 +27,6 @@ public class MDAOTest extends AbstractTestNGSpringContextTests {
         bean.getSubBeans().add(sub1);
         bean.getSubBeans().add(sub2);
         mdao.saveOrUpdate(bean);
-        System.out.println("abc");
 //        SubBean sub1 = new SubBean();
 //        sub1.setSubName("您们好");
 //        subDAO.saveOrUpdate(sub1);

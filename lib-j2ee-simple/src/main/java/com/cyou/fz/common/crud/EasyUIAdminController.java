@@ -1,19 +1,13 @@
 package com.cyou.fz.common.crud;
 
+
 import com.cyou.fz.common.base.springmvc.ajax.Response;
 import com.cyou.fz.common.base.vo.PaginationVO;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-/**
- * 后台管理Controller.
- *
- * @author yangz
- * @date 2014/7/22
- *
- */
-public class AdminController<T> {
+public class EasyUIAdminController<T> {
 
     /**
      * 保存或更新.
@@ -69,5 +63,4 @@ public class AdminController<T> {
     public Response<PaginationVO<T>> list(@PathVariable String domain, Form form){
         return null;
     }
-
 }

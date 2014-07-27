@@ -123,7 +123,7 @@ public class MongoDAO implements InitializingBean{
         queryBuilder2.put(DBFieldConstant.FK_NUM).greaterThan(0);
         DBObject fkCond = queryBuilder2.get();
         DBCollection fk = this.getDB().getCollection(DBTableConstant.FK);
-        if(fk.findOne(fkCond) != null){
+        if(fk.findOne(fkCond) == null){
             throw new InputException("800");
         }
         QueryBuilder queryBuilder = QueryBuilder.start(DBFieldConstant._ID);

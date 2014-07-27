@@ -48,7 +48,7 @@ public class MDAOTest extends AbstractTestNGSpringContextTests {
 
     @Test
     public void testDelete(){
-        mdao.delete(new String[]{"53d49e0066bfd2b8611bb74e"});
+        subDAO.delete(new String[]{"53d213c0441eee6cdaa0bac2"});
     }
     @Test
     public void testString(){

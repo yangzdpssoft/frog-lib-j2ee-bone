@@ -38,7 +38,6 @@ public class MDAOTest extends AbstractTestNGSpringContextTests {
     @Test
     public void testInc(){
 
-        mdao.inc("53d2194a441e5f83eeb4adee", "inc", 1);
 //        SubBean sub1 = new SubBean();
 //        sub1.setSubName("您们好");
 //        subDAO.saveOrUpdate(sub1);
@@ -49,7 +48,7 @@ public class MDAOTest extends AbstractTestNGSpringContextTests {
 
     @Test
     public void testDelete(){
-        mdao.delete(new String[]{"53d21526441ed16efa4dc877"});
+        mdao.delete(new String[]{"53d49e0066bfd2b8611bb74e"});
     }
     @Test
     public void testString(){

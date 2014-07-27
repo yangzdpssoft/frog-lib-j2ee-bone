@@ -112,7 +112,9 @@ public class MongoDomainDAO<T> {
     }
 
     public void delete(String... id) {
-        mongoDAO.delete(tableName, id);
+        for(String i : id){
+            mongoDAO.delete(tableName, i);
+        }
     }
 
     

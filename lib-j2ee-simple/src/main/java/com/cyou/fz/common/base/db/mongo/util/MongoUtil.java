@@ -278,7 +278,8 @@ public class MongoUtil {
         if(id != null){
             DBObject dbo = new BasicDBObject();
             dbo.put(DBFieldConstant._ID, id.getId());
-            collection.save(dbo);
+            DBObject inc = new BasicDBObject("$inc", new BasicDBObject(DBFieldConstant.FK_NUM, 1));
+            collection.findAndModify(dbo, null, null, false, inc, false, true);
         }
     }
 
@@ -292,7 +293,8 @@ public class MongoUtil {
         if(id != null){
             DBObject dbo = new BasicDBObject();
             dbo.put(DBFieldConstant._ID, id.getId());
-            collection.remove(dbo);
+            DBObject inc = new BasicDBObject("$inc", new BasicDBObject(DBFieldConstant.FK_NUM, -1));
+            collection.findAndModify(dbo, null, null, false, inc, false, true);
         }
     }
 

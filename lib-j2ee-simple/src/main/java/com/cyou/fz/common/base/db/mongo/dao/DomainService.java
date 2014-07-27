@@ -8,5 +8,5 @@ package com.cyou.fz.common.base.db.mongo.dao;
  */
 
 public class DomainService<T> {
-
+    
 }

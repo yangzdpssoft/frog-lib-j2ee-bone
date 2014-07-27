@@ -3,7 +3,9 @@ package com.cyou.fz.common.base.db.mongo.dao;
 
 import com.cyou.fz.common.base.db.mongo.connection.MongoDBConnectionConfig;
 import com.cyou.fz.common.base.db.mongo.constants.DBFieldConstant;
+import com.cyou.fz.common.base.db.mongo.constants.DBTableConstant;
 import com.cyou.fz.common.base.db.mongo.util.MongoUtil;
+import com.cyou.fz.common.base.exception.InputException;
 import com.cyou.fz.common.base.exception.UnCaughtException;
 import com.mongodb.*;
 import org.bson.types.ObjectId;
@@ -80,8 +82,8 @@ public class MongoDAO implements InitializingBean{
      * @return
      */
     public WriteResult saveOrUpdate(String tableName, DBObject dbObj) {
-        MongoUtil.markFK(this, dbObj);
         DBCollection table = this.getDB().getCollection(tableName);
+        MongoUtil.markFK(this, dbObj);
         return table.save(dbObj);
     }
 
@@ -115,17 +117,20 @@ public class MongoDAO implements InitializingBean{
      *
      * @param id
      */
-    public WriteResult delete(String tableName, String... id) {
-        if(id != null){
-            for(String i : id){
-                MongoUtil.removeMarkFK(this, get(tableName, i));
-            }
+    public WriteResult delete(String tableName, String id) {
+        QueryBuilder queryBuilder2 = QueryBuilder.start(DBFieldConstant._ID);
+        queryBuilder2.is(id);
+        queryBuilder2.put(DBFieldConstant.FK_NUM).greaterThan(0);
+        DBObject fkCond = queryBuilder2.get();
+        DBCollection fk = this.getDB().getCollection(DBTableConstant.FK);
+        if(fk.findOne(fkCond) != null){
+            throw new InputException("800");
         }
-        ObjectId[] oids = toObjectIds(id);
         QueryBuilder queryBuilder = QueryBuilder.start(DBFieldConstant._ID);
-        DBObject dbObj = queryBuilder.in(oids).get();
+        DBObject dbObj = queryBuilder.is(id).get();
         DBCollection table = this.getDB().getCollection(tableName);
         WriteResult result = table.remove(dbObj);
+        MongoUtil.removeMarkFK(this, get(tableName, id));
         return result;
     }
 
@@ -154,12 +159,11 @@ public class MongoDAO implements InitializingBean{
      * @param value
      * @return
      */
-    public WriteResult inc(String tableName, String id, String field, long value) {
+    public void inc(String tableName, String id, String field, long value) {
         QueryBuilder queryBuilder = QueryBuilder.start(DBFieldConstant._ID);
         DBObject dbObj = queryBuilder.is(MongoUtil.toObjectId(id)).get();
         DBObject inc = new BasicDBObject("$inc", new BasicDBObject(field, value));
-        WriteResult result = getDB().getCollection(tableName).update(dbObj, inc);
-        return result;
+        getDB().getCollection(tableName).findAndModify(dbObj, null, null, false, inc, false, true);
     }
 
     /**

@@ -13,4 +13,8 @@ public class DBFieldConstant {
      * 数据库主键.
      */
     public final static String _ID = "_id";
+    /**
+     * 外键引用数量.
+     */
+    public final static String FK_NUM = "FK_NUM";
 }

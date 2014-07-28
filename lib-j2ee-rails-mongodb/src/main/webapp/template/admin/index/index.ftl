@@ -52,13 +52,25 @@
             </div>
         </div>
         <div class="col-md-10">
-            <div class="input-group">
-                <span class="input-group-addon">用么发</span>
-                <input type="text" class="form-control" />
-                <span class="input-group-addon" >mim</span>
-                <input type="text" class="form-control" />
-                <span class="input-group-addon" >222</span>
-                <input type="text" class="form-control" />
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">用么发</span>
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">用么发</span>
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">用么发</span>
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
             </div>
             <div  style="margin:20px 0px; float: right;">
                 <button type="button" class="btn btn-primary" style="margin-left: 10px;"><i class="glyphicon glyphicon-search" style="color: #ffffff;"></i>&nbsp;查询&nbsp;</button>

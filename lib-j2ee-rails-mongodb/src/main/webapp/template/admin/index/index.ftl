@@ -2,11 +2,13 @@
 <html lang="zh-cn">
 <head>
 <#include "/template/admin/include/bootstrap.ftl">
+
 </head>
 <body>
+<header id="header">
 <div class="container-fluid">
     <div class="row">
-        <nav class="navbar navbar-default" role="navigation">
+        <nav class="navbar navbar-default " role="navigation">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -28,7 +30,7 @@
                         <li><a href="#">Link</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><i class="glyphicon glyphicon-user" style="padding-right: 10px;color: #CC2222;"></i>林志忠</a></li>
+                        <p class="navbar-text"><i class="glyphicon glyphicon-user" style="padding-right: 10px;color: #CC2222;"></i>林志忠</p>
                         <li><a href="#"><i class="glyphicon glyphicon-pencil" style="padding-right: 10px;"></i>个人资料</a></li>
                         <li><a href="#"><i class="glyphicon glyphicon-lock" style="padding-right: 10px;"></i>修改密码</a></li>
                         <li><a href="#"><i class="glyphicon glyphicon-off" style="padding-right: 10px;"></i>退出</a></li>
@@ -38,13 +40,70 @@
         </nav>
     </div>
 </div>
+</header>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2">
-
+            <div class="list-group">
+                <a href="#" class="list-group-item active">
+                    Cras justo odio
+                </a>
+                <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+                <a href="#" class="list-group-item">Morbi leo risus</a>
+                <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                <a href="#" class="list-group-item">Vestibulum at eros</a>
+            </div>
         </div>
         <div class="col-md-10">
-
+            <div class="input-group">
+                <span class="input-group-addon" >用么发</span>
+                <input type="text" class="form-control"  placeholder="Username"/>
+                <span class="input-group-addon" >mim</span>
+                <input type="text" class="form-control"  placeholder="Username"/>
+                <span class="input-group-addon" >222</span>
+                <input type="text" class="form-control"  placeholder="Username"/>
+            </div>
+            <div class="btn-group" style="margin:20px 0px;">
+                <button type="button" class="btn btn-default">Left</button>
+                <button type="button" class="btn btn-default">Middle</button>
+                <button type="button" class="btn btn-default">Right</button>
+            </div>
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td >1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>Otto</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@TwBootstrap</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

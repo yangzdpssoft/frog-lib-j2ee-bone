@@ -63,10 +63,8 @@
                 <span class="input-group-addon" >222</span>
                 <input type="text" class="form-control"  placeholder="Username"/>
             </div>
-            <div class="btn-group" style="margin:20px 0px;">
-                <button type="button" class="btn btn-default">Left</button>
-                <button type="button" class="btn btn-default">Middle</button>
-                <button type="button" class="btn btn-default">Right</button>
+            <div  style="margin:20px 0px;">
+                <button type="button" class="btn btn-primary" style="margin-right: 10px;">查询</button>
             </div>
             <table class="table table-bordered table-hover">
                 <thead>

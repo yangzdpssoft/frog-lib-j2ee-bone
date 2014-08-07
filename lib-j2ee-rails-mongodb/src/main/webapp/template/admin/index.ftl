@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <meta charset="UTF-8" />
-    <#include "/template/admin/include/bootstrap.ftl">
+    <#include "/lib/include/bootstrap.ftl">
 </head>
 <body>
 <header id="header">

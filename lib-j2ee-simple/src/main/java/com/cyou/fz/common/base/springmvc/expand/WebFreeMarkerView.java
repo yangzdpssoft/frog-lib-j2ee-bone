@@ -1,14 +1,10 @@
 package com.cyou.fz.common.base.springmvc.expand;
 
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-
+import com.cyou.fz.common.base.util.WebUtil;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerView;
 
-import com.cyou.fz.common.base.util.ObjectUtil;
-import com.cyou.fz.common.base.util.StringUtil;
-import com.cyou.fz.common.base.util.WebUtil;
+import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 
 /**
@@ -19,18 +15,16 @@ import com.cyou.fz.common.base.util.WebUtil;
  */
 public class WebFreeMarkerView extends FreeMarkerView {
 
-    public static String CDN_PATH;
-
 	@Override
 	protected void exposeHelpers(Map<String, Object> model, HttpServletRequest request) throws Exception {
         String hostPath = WebUtil.getHostPath(request);
         model.put("ctx", request.getContextPath());
         model.put("hostPath", hostPath);
-        if (ObjectUtil.isEmpty(CDN_PATH)){
-            model.put("cdnPath", StringUtil.appendPath(hostPath, "/cdn"));
+        if(!"/".equals(request.getContextPath())){
+            model.put("defaultjs", ("template/" + request.getRequestURI().replace(request.getContextPath() + "/", "") + ".js").replace(".html.js", ".js"));
         }else{
-            model.put("cdnPath", CDN_PATH);
+            model.put("defaultjs", ("template/" + request.getRequestURI().substring(1) + ".js").replace(".html.js", ".js"));
         }
-	}
+    }
 	
 }

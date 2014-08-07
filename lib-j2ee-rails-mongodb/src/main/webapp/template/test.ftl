@@ -2,7 +2,8 @@
 <html lang="zh-cn">
 <head>
     <meta charset="UTF-8" />
-    <script src="lib/seajs2.3.0/sea.js" type="text/javascript"></script>
+    <#include "/lib/include/sea.ftl">
+    <script type="text/javascript" src="${defaultjs}"></script>
 </head>
 <body>
 

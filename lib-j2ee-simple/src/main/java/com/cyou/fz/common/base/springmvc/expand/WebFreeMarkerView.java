@@ -20,10 +20,10 @@ public class WebFreeMarkerView extends FreeMarkerView {
         String hostPath = WebUtil.getHostPath(request);
         model.put("ctx", request.getContextPath());
         model.put("hostPath", hostPath);
-        if(!"/".equals(request.getContextPath())){
-            model.put("defaultjs", ("template/" + request.getRequestURI().replace(request.getContextPath() + "/", "") + ".js").replace(".html.js", ".js"));
+        if(!"".equals(request.getContextPath())){
+            model.put("defaultjs", (request.getContextPath() + "/template/" + request.getRequestURI().replace(request.getContextPath() + "/", "") + ".js").replace(".html.js", ".js"));
         }else{
-            model.put("defaultjs", ("template/" + request.getRequestURI().substring(1) + ".js").replace(".html.js", ".js"));
+            model.put("defaultjs", ("/template/" + request.getRequestURI().substring(1) + ".js").replace(".html.js", ".js"));
         }
     }
 	

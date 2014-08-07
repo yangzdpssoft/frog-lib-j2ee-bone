@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
+<head>
+    <meta charset="UTF-8" />
+</head>
 <body>
 <h1 style="color: green;">痛，疼！</h1>
 <h2>${errorUri!"好像不是HTTP请求，你不会是直接访问500页面吧？"}</h2>

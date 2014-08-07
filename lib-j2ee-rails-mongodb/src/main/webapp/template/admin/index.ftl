@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-<#include "/template/admin/include/bootstrap.ftl">
-
+    <meta charset="UTF-8" />
+    <#include "/template/admin/include/bootstrap.ftl">
 </head>
 <body>
 <header id="header">

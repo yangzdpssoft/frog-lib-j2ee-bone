@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
+    <meta charset="UTF-8" />
     <#include "/template/admin/include/bootstrap.ftl">
 </head>
 <style type="text/css">

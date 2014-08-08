@@ -35,7 +35,7 @@ app.config(function($routeSegmentProvider, $routeProvider) {
             templateUrl: 'templates/section1.shtml',
             controller: MainCtrl})
 
-        .within()
+        .within('s1')
 
         .segment('home', {
             default: true,
@@ -176,10 +176,6 @@ app.config(function($routeSegmentProvider, $routeProvider) {
                 templateUrl: 'templates/loading.shtml'
             }
         })
-
-
-
-
     $routeProvider.otherwise({redirectTo: '/section1'});
 }) ;
 

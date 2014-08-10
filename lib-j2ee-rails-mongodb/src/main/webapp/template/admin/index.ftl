@@ -9,13 +9,13 @@
 
 <body class="easyui-layout">
 <div data-options="region:'north',split:false,collapsible:false,iconCls:null" style="height:100px;"></div>
-<div data-options="region:'west',title:'West',split:true,iconCls:'icon-man'" style="width:200px;">
+<div data-options="region:'west',title:'admin',split:true,iconCls:'icon-man'" style="width:200px;">
     <div id="contentMenu" class="easyui-accordion" data-options="fit:true,border:false">
         <div title="菜单管理" data-options="iconCls:'icon icon-module'" style="overflow:auto;padding:10px;">
             <ul>
                 <li>
                     <div>
-                        <a menuid="ss" href="javascript:" url="aaaa">
+                        <a menuid="ss" href="javascript:" url="http://pt-jq.cn">
                             <span class="icon icon-fun">&nbsp;</span>
                             <span class="menuname">用户管理</span>
                         </a>
@@ -23,165 +23,9 @@
                 </li>
                 <li>
                     <div>
-                        <a menuid="ss" href="javascript:" url="aaaa">
+                        <a menuid="ss" href="javascript:" url="http://localhost:8080/rm">
                             <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">用户管理</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <a menuid="ss" href="javascript:" url="aaaa">
-                            <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">用户管理</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <a menuid="ss" href="javascript:" url="aaaa">
-                            <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">用户管理</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <a menuid="ss" href="javascript:" url="aaaa">
-                            <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">用户管理</span>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div title="菜单管理" data-options="iconCls:'icon icon-module'" style="overflow:auto;padding:10px;">
-            <ul>
-                <li>
-                    <div>
-                        <a menuid="ss" href="javascript:" url="aaaa">
-                            <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">用户管理</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <a menuid="ss" href="javascript:" url="aaaa">
-                            <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">用户管理</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <a menuid="ss" href="javascript:" url="aaaa">
-                            <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">用户管理</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <a menuid="ss" href="javascript:" url="aaaa">
-                            <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">用户管理</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <a menuid="ss" href="javascript:" url="aaaa">
-                            <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">用户管理</span>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div title="菜单管理" data-options="iconCls:'icon icon-module'" style="overflow:auto;padding:10px;">
-            <ul>
-                <li>
-                    <div>
-                        <a menuid="ss" href="javascript:" url="aaaa">
-                            <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">用户管理</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <a menuid="ss" href="javascript:" url="aaaa">
-                            <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">用户管理</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <a menuid="ss" href="javascript:" url="aaaa">
-                            <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">用户管理</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <a menuid="ss" href="javascript:" url="aaaa">
-                            <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">用户管理</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <a menuid="ss" href="javascript:" url="aaaa">
-                            <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">用户管理</span>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div title="菜单管理" data-options="iconCls:'icon icon-module'" style="overflow:auto;padding:10px;">
-            <ul>
-                <li>
-                    <div>
-                        <a menuid="ss" href="javascript:" url="aaaa">
-                            <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">用户管理</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <a menuid="ss" href="javascript:" url="aaaa">
-                            <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">用户管理</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <a menuid="ss" href="javascript:" url="aaaa">
-                            <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">用户管理</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <a menuid="ss" href="javascript:" url="aaaa">
-                            <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">用户管理</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <a menuid="ss" href="javascript:" url="aaaa">
-                            <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">用户管理</span>
+                            <span class="menuname">部门管理</span>
                         </a>
                     </div>
                 </li>
@@ -191,10 +35,8 @@
     </div>
 </div>
 <div data-options="region:'center', border : false">
-    <div id="tt" class="easyui-tabs" data-options="fit:true">
-        <div id="contentTabs" title="Tab1" data-options="iconCls:'icon-reload',closable:true">
+    <div id="contentTabs" class="easyui-tabs" data-options="fit:true">
 
-        </div>
     </div>
 </div>
 

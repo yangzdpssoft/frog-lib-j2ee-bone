@@ -14,11 +14,11 @@ function initContentMenu() {
 //        }
 //    },'json');
 
-    $(".easyui-accordion li a").click(function () {
+    $(".easyui-accordion li a").click(function (event) {
         var menuname = $(this).children('.menuname').text();
         var url = $(this).attr("url");
-        var icon = getIcon($(this).attr("menuid"));
-        addTab(menuname,url,icon);
+        var icon = $(event.target).parent().children('.icon').attr("class");
+        addTab(menuname, url, icon);
         $(".easyui-accordion li div").removeClass("selected");
     }).hover(function () {
         $(this).parent().addClass("hover");
@@ -28,17 +28,18 @@ function initContentMenu() {
 
 }
 
-function addTab(menuname, url){
+function addTab(menuname, url, icon){
     var contentTabs = '#contentTabs';
     if(!$(contentTabs).tabs('exists', menuname)){
         $(contentTabs).tabs('add',{
             title:menuname,
             content:createFrame(url),
-            closable:true
+            closable:true,
+            icon : icon
         });
     }else{
         $(contentTabs).tabs('select', menuname);
-        $(contentTabs).tabs('update',{tab: $(contentTabs).tabs('getSelected')});
+        $(contentTabs).tabs('update',{tab: $(contentTabs).tabs('getSelected'), options: {}});
     }
 }
 
@@ -46,21 +47,9 @@ function createDiv(id){
     return '<div id= ' + id + '></div>';
 }
 
-//获取左侧导航的图标
-function getIcon(menuid){
-    var icon = 'icon ';
-    $.each(_menus.menus, function(i, n) {
-        $.each(n.menus, function(j, o) {
-            if(o.menuid==menuid){
-                icon += o.icon;
-            }
-        });
-    });
-    return icon;
-}
 
 function createFrame(url)
 {
-    var s = '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:100%;"></iframe>';
+    var s = '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:99.6%"></iframe>';
     return s;
 }

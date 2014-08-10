@@ -15,7 +15,7 @@
             <ul>
                 <li>
                     <div>
-                        <a menuid="ss" href="javascript:" url="http://pt-jq.cn">
+                        <a menuid="ss" href="javascript:" url="${ctx}/admin/form">
                             <span class="icon icon-fun">&nbsp;</span>
                             <span class="menuname">用户管理</span>
                         </a>

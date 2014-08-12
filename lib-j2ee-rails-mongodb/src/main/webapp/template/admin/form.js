@@ -5,7 +5,7 @@
             maxFilesCount: 100
         });
         $("#upload").click(function(){
-            alert(1);
+            alert(2);
         });
     });
 })(jQuery);

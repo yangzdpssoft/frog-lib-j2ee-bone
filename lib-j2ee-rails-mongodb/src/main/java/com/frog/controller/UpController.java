@@ -22,7 +22,7 @@ public class UpController {
 
     @RequestMapping(value="/admin/up", method= RequestMethod.POST)
     @ResponseBody
-    public Response<Boolean> up(@RequestParam MultipartFile[] myfiles, HttpServletRequest request){
+    public Response<Boolean> up(@RequestParam MultipartFile[] file, HttpServletRequest request){
         Response<Boolean> result = ResponseFactory.getDefaultSuccessResponse();
         return result;
     }

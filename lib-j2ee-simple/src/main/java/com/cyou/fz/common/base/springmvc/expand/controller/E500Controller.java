@@ -2,7 +2,7 @@
  * 北京畅游时空软件技术有限公司福州分公司 - 版权所有
  * 2013-5-14 上午9:12:06
  */
-package com.cyou.fz.common.base.springmvc.expand.exception;
+package com.cyou.fz.common.base.springmvc.expand.controller;
 
 import com.cyou.fz.common.base.springmvc.ajax.Response;
 import com.cyou.fz.common.base.springmvc.ajax.ResponseFactory;
@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
-public class E404Controller {
+public class E500Controller {
 
     /**
      * 后台请求地址.
@@ -32,21 +32,22 @@ public class E404Controller {
     /**
      * 错误代码.
      */
-    private String errorCode = "404";
+    private String errorCode = "500";
 
     /**
      * 日志.
      */
-    private static final Logger logger = LoggerFactory.getLogger(E404Controller.class);
+    private static final Logger logger = LoggerFactory.getLogger(E500Controller.class);
 
     /**
      * 处理发生错误时的跳转.
      *
      * @param request 请求
+     * @param response
      * @return 页面地址
      * @author yangz 2013 2013-5-14 上午11:11:42
      */
-    @RequestMapping("/404")
+    @RequestMapping("/500")
     public ModelAndView errorHandle(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView result = new ModelAndView();
         Exception e = (Exception) request.getAttribute("javax.servlet.error.exception");

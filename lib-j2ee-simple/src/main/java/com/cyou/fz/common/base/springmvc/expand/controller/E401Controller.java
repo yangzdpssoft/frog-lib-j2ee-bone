@@ -2,7 +2,7 @@
  * 北京畅游时空软件技术有限公司福州分公司 - 版权所有
  * 2013-5-14 上午9:12:06
  */
-package com.cyou.fz.common.base.springmvc.expand.exception;
+package com.cyou.fz.common.base.springmvc.expand.controller;
 
 import com.cyou.fz.common.base.springmvc.ajax.Response;
 import com.cyou.fz.common.base.springmvc.ajax.ResponseFactory;

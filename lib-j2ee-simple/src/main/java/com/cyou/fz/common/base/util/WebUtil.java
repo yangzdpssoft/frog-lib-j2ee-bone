@@ -1,14 +1,12 @@
 package com.cyou.fz.common.base.util;
 
-import java.io.PrintWriter;
+import com.cyou.fz.common.base.exception.UnCaughtException;
+import com.cyou.fz.common.base.holder.UrlPathHelperHolder;
+import org.springframework.web.util.UrlPathHelper;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.web.util.UrlPathHelper;
-
-import com.cyou.fz.common.base.exception.UnCaughtException;
-import com.cyou.fz.common.base.holder.UrlPathHelperHolder;
+import java.io.PrintWriter;
 
 
 
@@ -110,5 +108,14 @@ public class WebUtil {
 			IOUtil.close(writer);
 		}
 	}
-	
+
+    /**
+     * 获取webapp根路径.
+     * @param request
+     * @param path
+     * @return
+     */
+    public static String getWebAppRoot(HttpServletRequest request, String path){
+        return request.getSession().getServletContext().getRealPath(path);
+    }
 }

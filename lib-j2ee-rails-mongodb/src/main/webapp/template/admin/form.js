@@ -1,5 +1,7 @@
 (function($){
     $(function(){
+        $('.webuploader_file').parent().removeClass().addClass('well');
+//        $('.webuploader_file').parent().html('<div class="file_up_button">选择文件</div><h3 id="uploadStatusbar" style="display: none;"></h3>');
         var uploader = WebUploader.create({
 
             // swf文件路径
@@ -10,14 +12,12 @@
 
             // 选择文件的按钮。可选。
             // 内部根据当前运行是创建，可能是input元素，也可能是flash.
-            pick: '#picker',
+            pick: '.file_up_button',
 
             // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
             resize: false
         });
-        $('#ctlBtn').click(function() {
 
-        });
         uploader.on('fileQueued', function(file){
             $('#uploadStatusbar').fadeIn();
             $('#fileName').text(file.name);

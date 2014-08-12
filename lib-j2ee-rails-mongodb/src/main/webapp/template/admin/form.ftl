@@ -18,7 +18,11 @@
 <body style="padding: 40px;">
 <div id="uploader" class="well">
     <div id="picker">选择文件</div>
-    <button id="ctlBtn" class="btn btn-default">开始上传</button>
+    <h3 id="uploadStatusbar" style="display: none;"><span id="uploadStatus" class="label label-success"style="display: none;">已上传</span>&nbsp;<span id="fileName" class="label label-warning"></span></h3>
+    <div id="progressbar" class="progress" style="display: none;">
+        <div id="progress" class="progress-bar progress-bar-success active"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+        </div>
+    </div>
 </div>
 <div class="container-fluid">
 <#--<div class="row">-->

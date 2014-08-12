@@ -13,7 +13,7 @@ public class ResponseFactory {
 	 * @date 2012-9-29 下午02:30:07
 	 */
 	public static <T> Response<T> getDefaultSuccessResponse(){
-		Response<T> response = new Response<T>();
+		Response<T> response = new Response();
 		response.setResult(Response.RESULT_SUCCESS);
 		return response;
 	}
@@ -25,7 +25,7 @@ public class ResponseFactory {
 	 * @date 2012-11-14 下午04:37:39
 	 */
 	public static <T> Response<T> getDefaultFailureResponse(String message){
-		Response<T> response = new Response<T>();
+		Response<T> response = new Response();
 		response.setResult(Response.RESULT_FAILURE);
         response.setMessage(message);
 		return response;
@@ -37,7 +37,7 @@ public class ResponseFactory {
      * @date 2012-11-14 下午04:37:39
      */
     public static <T> Response<T> getDefaultErrorResponse(String message){
-        Response<T> response = new Response<T>();
+        Response<T> response = new Response();
         response.setResult(Response.RESULT_ERROR);
         response.setMessage(message);
         return response;
@@ -49,7 +49,7 @@ public class ResponseFactory {
      * @date 2013-5-31 上午11:58:23
      */
     public static Response<String> getDefaultLoginResponse(){
-        Response<String> response = new Response<String>();
+        Response<String> response = new Response();
         response.setResult(Response.RESULT_LOGIN);
         return response;
     }
@@ -60,7 +60,7 @@ public class ResponseFactory {
      * @date 2013-5-31 上午11:59:27
      */
     public static <T> Response<T> getDefaultInputResponse(){
-        Response<T> response = new Response<T>();
+        Response<T> response = new Response();
         response.setResult(Response.RESULT_INPUT);
         return response;
     }

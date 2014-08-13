@@ -12,20 +12,12 @@
     <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="${ctx}/lib/webUploader/0.1.4/webuploader.css">
     <script src="${ctx}/lib/webUploader/0.1.4/webuploader.js"></script>
-    <script src="${defaultjs}" type="text/javascript"></script>
+    <script src="${ctx}/lib/base/upload.js" type="text/javascript"></script>
 </head>
 
 <body style="padding: 40px;">
 <div>
-    <#--<div id="picker">选择文件</div>-->
     <input type="hidden" class="admin_file"/>
-    <#--<h3 id="uploadStatusbar" style="display: none;">-->
-        <#--<span id="uploadStatus" class="label label-success"style="display: none;">已上传</span>&nbsp;-->
-        <#--<a id="fileName" href="javascript:" class="btn  btn-warning"></a></h3>-->
-    <#--<div id="progressbar" class="progress" style="display: none;">-->
-        <#--<div id="progress" class="progress-bar progress-bar-success active"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">-->
-        <#--</div>-->
-    <#--</div>-->
 </div>
 <div>
     <input type="hidden" class="admin_file" />

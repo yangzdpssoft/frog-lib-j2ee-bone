@@ -46,7 +46,6 @@
                 uploader.upload();
             });
             uploader.on('uploadProgress', function(file, percentage){
-                console.log(percentage);
                 var p = percentage.toFixed(2) * 100;
                 $progress.attr('aria-valuenow', p);
                 $progress.css('width', p + "%");

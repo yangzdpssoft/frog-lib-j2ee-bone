@@ -16,19 +16,20 @@
                     '<span class="label label-success">已上传</span>&nbsp;' +
                     '<a  href="javascript:" class="btn  btn-warning" target="_blank">' + $(this).val() + '</a>' +
                     '</h3>' +
-                    '<div style="display: none;" class="progress"><div  class="progress-bar progress-bar-success active"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div></div>');
+                    '<div style="display: none;" class="progress"><div  class="progress-bar progress-bar-success active"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div></div><button type="button" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i> 清空</button>');
             }else{
                 $uploadDiv.append('<div id="' + file_up_button_id + '"></div>' +
                     '<h3 style="display: none;">&nbsp;' +
                     '<span class="label label-success">已上传</span>&nbsp;' +
                     '<a  href="javascript:" class="btn  btn-warning" target="_blank"></a>' +
                     '</h3>' +
-                    '<div style="display: none;" class="progress"> <div  class="progress-bar progress-bar-success active"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div></div>');
+                    '<div style="display: none;" class="progress"> <div  class="progress-bar progress-bar-success active"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div></div><button type="button" class="btn btn-default" style="display: none;"><i class="glyphicon glyphicon-trash"></i> 清空</button>');
             }
             var $uploadStatusBar = $uploadDiv.find('h3');
             var $fileName = $uploadDiv.find('a');
             var $progressBar = $uploadDiv.find('.progress');
             var $progress = $uploadDiv.find('.progress-bar');
+            var $clear = $uploadDiv.find('button');
             var uploader = WebUploader.create({
                 auto: true,
                 swf: swfPath,
@@ -41,6 +42,13 @@
                 resize: false,
                 fileNumLimit: 1
             });
+            $clear.click(function(){
+                $clear.fadeOut();
+                $uploadStatusBar.fadeOut();
+                $fileName.removeAttr('href');
+                $fileName.text('');
+                $value.removeAttr('value');
+            });
             uploader.on('fileQueued', function(file){
                 $uploadStatusBar.fadeOut();
                 $progressBar.fadeIn();
@@ -52,6 +60,7 @@
             });
             uploader.on('uploadSuccess', function(file, response){
                 if(isSuccess(response)){
+                    $clear.fadeIn();
                     $uploadStatusBar.fadeIn();
                     $progress.text("上传成功");
                     $fileName.attr('href', adminDownloadServerPath + response.data);
@@ -84,14 +93,14 @@
                     '<span class="label label-success">已上传</span>&nbsp;' +
                     '<a  href="javascript:" class="btn  btn-warning" target="_blank">' + $(this).val() + '</a>' +
                     '</h3>' +
-                    '<div style="display: none;" class="progress"><div  class="progress-bar progress-bar-success active"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div></div>');
+                    '<div style="display: none;" class="progress"><div  class="progress-bar progress-bar-success active"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div></div><button type="button" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i> 清空</button>');
             }else{
                 $uploadDiv.append('<div id="' + file_up_button_id + '"></div>' +
                     '<h3 style="display: none;">' +
                     '<span class="label label-success">已上传</span>&nbsp;' +
                     '<a  href="javascript:" class="btn  btn-warning" target="_blank"></a>' +
                     '</h3>' +
-                    '<div style="display: none;" class="progress"><div  class="progress-bar progress-bar-success active"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div></div>');
+                    '<div style="display: none;" class="progress"><div  class="progress-bar progress-bar-success active"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div></div><button type="button" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i> 清空</button>');
             }
             var $uploadStatusBar = $uploadDiv.find('h3');
             var $fileName = $uploadDiv.find('a');

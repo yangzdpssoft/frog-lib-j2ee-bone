@@ -62,7 +62,8 @@ public class E403Controller {
         }
         if(e != null){
             if(WebUtil.isAjaxRequest(request)){
-                Response<String> ajaxResponse = ResponseFactory.getDefaultErrorResponse(e.toString());
+                Response<String> ajaxResponse = ResponseFactory.getDefaultErrorResponse();
+                ajaxResponse.setData(e.toString());
                 WebUtil.responseJson(response, ajaxResponse);
             }else {
                 String errorMessage = JvmUtil.printHTMLStackTrace(e);

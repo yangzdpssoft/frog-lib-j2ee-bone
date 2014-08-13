@@ -76,7 +76,8 @@ public class GlobalExceptionHandler implements HandlerExceptionResolver {
 	 */
 	private ModelAndView dealException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex){
 		if(WebUtil.isAjaxRequest(request)){
-			Response<String> ajaxResponse = ResponseFactory.getDefaultErrorResponse(ex.getMessage());
+			Response<String> ajaxResponse = ResponseFactory.getDefaultErrorResponse();
+            ajaxResponse.setData(ex.getMessage());
 			WebUtil.responseJson(response, ajaxResponse);
 		}else{
 			String url = request.getRequestURI();
@@ -103,7 +104,7 @@ public class GlobalExceptionHandler implements HandlerExceptionResolver {
 	private ModelAndView dealInputException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex){
 		if(WebUtil.isAjaxRequest(request)){
             Response<String> ajaxResponse = ResponseFactory.getDefaultInputResponse();
-            ajaxResponse.setMessage(ex.getMessage());
+            ajaxResponse.setData(ex.getMessage());
 			WebUtil.responseJson(response, ajaxResponse);
 		}else{
 			String url = request.getRequestURI();

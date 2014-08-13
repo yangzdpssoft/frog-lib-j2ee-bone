@@ -1,10 +1,6 @@
 package com.cyou.fz.common.base.springmvc.ajax;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
 * @Description: 前后端交互类.
@@ -34,19 +30,10 @@ public class Response<T> implements Serializable{
 
 	// 标识变量
 	private String result;
-	// 数组, 存放业务失败提示
-	private List<String> messages;
-	// 对象, 存放字段格式错误信息
-	private Map<String, String> fieldErrors;
-	// 数组, 存放系统错误消息
-	private List<String> errors;
-	
+
 	private T data;
 
 	public Response(){
-		messages = new ArrayList<String>(1);
-		errors = new ArrayList<String>(1);
-		fieldErrors = new HashMap<String, String>();
 	}
 	
 	public String getResult() {
@@ -55,42 +42,6 @@ public class Response<T> implements Serializable{
 
 	public void setResult(String result) {
 		this.result = result;
-	}
-
-	public List<String> getMessages() {
-		return messages;
-	}
-	/**
-	 * 设置业务错误信息
-	 * @param message
-	 */
-	public void setMessage(String message) {
-		this.messages.clear();
-		this.messages.add(message);
-	}
-
-	public Map<String, String> getFieldErrors() {
-		return fieldErrors;
-	}
-	/**
-	 * 添加字段错误
-	 * @param key 
-	 * @param value
-	 */
-	public void addFieldErrors(String key,String value) {
-		this.fieldErrors.put(key, value);
-	}
-
-	public List<String> getErrors() {
-		return errors;
-	}
-	/**
-	 * 设置系统错误信息
-	 * @param error
-	 */
-	public void setError(String error) {
-		this.errors.clear();
-		this.errors.add(error);
 	}
 
 	public T getData() {

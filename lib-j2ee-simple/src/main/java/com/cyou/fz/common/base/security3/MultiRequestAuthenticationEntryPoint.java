@@ -63,9 +63,9 @@ public class MultiRequestAuthenticationEntryPoint extends LoginUrlAuthentication
             }
             redirectStrategy.sendRedirect(request, response, redirectUrl);
         } else {//ajax请求
-            Response<Boolean> responseData = new Response<Boolean>();
+            Response<String> responseData = new Response<String>();
             responseData.setResult(Response.RESULT_LOGIN); //访问被拒绝,请求登录.
-            responseData.setMessage("未登录");
+            responseData.setData("未登录");
             PrintWriter writer = response.getWriter();
             try {
                 writer.write(JsonUtil.toJson(responseData));

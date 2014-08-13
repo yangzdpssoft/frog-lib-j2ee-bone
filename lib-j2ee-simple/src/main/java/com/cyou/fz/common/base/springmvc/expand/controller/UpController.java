@@ -48,7 +48,8 @@ public class UpController {
                 FileUtils.copyInputStreamToFile(file.getInputStream(), new File(realPath, fileName + "." + StringUtil.getFilenameExtension(file.getOriginalFilename())));
                 result.setData(adminUpload + "/" + fileName);
             }else{
-                result = ResponseFactory.getDefaultFailureResponse("文件未正确上传");
+                result = ResponseFactory.getDefaultFailureResponse();
+                result.setData("文件未能正确上传");
             }
         } catch (IOException e) {
             throw new UnCaughtException(e);
@@ -73,7 +74,8 @@ public class UpController {
                 FileUtils.copyInputStreamToFile(file.getInputStream(), new File(realPath, fileName + "." + StringUtil.getFilenameExtension(file.getOriginalFilename())));
                 result.setData(frontUpload + "/" + fileName);
             }else{
-                result = ResponseFactory.getDefaultFailureResponse("文件未正确上传");
+                result = ResponseFactory.getDefaultFailureResponse();
+                result.setData("文件未正确上传");
             }
         } catch (IOException e) {
             throw new UnCaughtException(e);

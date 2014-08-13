@@ -24,10 +24,9 @@ public class ResponseFactory {
 	 * @author yangz
 	 * @date 2012-11-14 下午04:37:39
 	 */
-	public static <T> Response<T> getDefaultFailureResponse(String message){
+	public static <T> Response<T> getDefaultFailureResponse(){
 		Response<T> response = new Response();
 		response.setResult(Response.RESULT_FAILURE);
-        response.setMessage(message);
 		return response;
 	}
     /**
@@ -36,10 +35,9 @@ public class ResponseFactory {
      * @author yangz
      * @date 2012-11-14 下午04:37:39
      */
-    public static <T> Response<T> getDefaultErrorResponse(String message){
+    public static <T> Response<T> getDefaultErrorResponse(){
         Response<T> response = new Response();
         response.setResult(Response.RESULT_ERROR);
-        response.setMessage(message);
         return response;
     }
     /**

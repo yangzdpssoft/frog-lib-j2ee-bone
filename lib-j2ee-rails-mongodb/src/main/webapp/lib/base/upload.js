@@ -30,6 +30,7 @@
             var $progressBar = $uploadDiv.find('.progress');
             var $progress = $uploadDiv.find('.progress-bar');
             var uploader = WebUploader.create({
+                auto: true,
                 swf: swfPath,
                 server: adminServerPath,
                 pick: {
@@ -43,7 +44,6 @@
             uploader.on('fileQueued', function(file){
                 $uploadStatusBar.fadeOut();
                 $progressBar.fadeIn();
-                uploader.upload();
             });
             uploader.on('uploadProgress', function(file, percentage){
                 var p = percentage.toFixed(2) * 100;

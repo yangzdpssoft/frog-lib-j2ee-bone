@@ -19,11 +19,11 @@
                     '<div style="display: none;" class="progress"><div  class="progress-bar progress-bar-success active"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div></div>');
             }else{
                 $uploadDiv.append('<div id="' + file_up_button_id + '"></div>' +
-                    '<h3 style="display: none;">' +
+                    '<h3 style="display: none;">&nbsp;' +
                     '<span class="label label-success">已上传</span>&nbsp;' +
                     '<a  href="javascript:" class="btn  btn-warning" target="_blank"></a>' +
                     '</h3>' +
-                    '<div style="display: none;" class="progress"><div  class="progress-bar progress-bar-success active"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div></div>');
+                    '<div style="display: none;" class="progress"> <div  class="progress-bar progress-bar-success active"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div></div>');
             }
             var $uploadStatusBar = $uploadDiv.find('h3');
             var $fileName = $uploadDiv.find('a');
@@ -46,6 +46,7 @@
                 uploader.upload();
             });
             uploader.on('uploadProgress', function(file, percentage){
+                console.log(percentage);
                 var p = percentage.toFixed(2) * 100;
                 $progress.attr('aria-valuenow', p);
                 $progress.css('width', p + "%");

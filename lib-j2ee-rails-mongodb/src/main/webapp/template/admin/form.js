@@ -3,6 +3,8 @@
         var swfPath = ctx + '/lib/webUploader/0.1.4/Uploader.swf';
         var adminServerPath = ctx + '/admin/up';
         var frontServerPath = ctx + '/front/up';
+        var adminDownloadServerPath = ctx + '/admin/download?fileName=';
+        var frontDownloadServerPath = ctx + '/front/download?fileName=';
         $('.admin_file').each(function(){
             var $value = $(this);
             var $uploadDiv = $(this).parent();
@@ -52,7 +54,7 @@
                 if(isSuccess(response)){
                     $uploadStatusBar.fadeIn();
                     $progress.text("上传成功");
-                    $fileName.attr('href', ctx + response.data);
+                    $fileName.attr('href', adminDownloadServerPath + response.data);
                     $fileName.text(response.data);
                     $value.val(response.data);
                 }else if(isError(response) || isFailure(response)){
@@ -120,7 +122,7 @@
                 if(isSuccess(response)){
                     $uploadStatusBar.fadeIn();
                     $progress.text("上传成功");
-                    $fileName.attr('href', response.data);
+                    $fileName.attr('href', frontDownloadServerPath + response.data);
                     $fileName.text(response.data);
                     $value.val(response.data);
                 }else if(isError(response) || isFailure(response)){

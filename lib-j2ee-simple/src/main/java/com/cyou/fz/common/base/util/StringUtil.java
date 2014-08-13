@@ -279,6 +279,21 @@ public class StringUtil extends StringUtils{
 	}
 
     /**
+     * 获取不含路径文件名.
+     * @param fileName
+     * @return
+     */
+    public static String getWithoutPath(String fileName){
+        String fn = fileName;
+        if(fileName.contains("/")){
+            fn = StringUtil.subLast(fileName, "/");
+        }else if(fileName.contains("\\")){
+            fn = StringUtil.subLast(fileName, "\\");
+        }
+        return fn;
+    }
+
+    /**
      * 剔除前缀.
      * @param source
      * @param prefix

@@ -18,7 +18,7 @@
 <body style="padding: 40px;">
 <div>
     <#--<div id="picker">选择文件</div>-->
-    <input type="hidden" class="webuploader_file"/>
+    <input type="hidden" class="admin_file"/>
     <#--<h3 id="uploadStatusbar" style="display: none;">-->
         <#--<span id="uploadStatus" class="label label-success"style="display: none;">已上传</span>&nbsp;-->
         <#--<a id="fileName" href="javascript:" class="btn  btn-warning"></a></h3>-->
@@ -28,13 +28,13 @@
     <#--</div>-->
 </div>
 <div>
-    <input type="hidden" class="webuploader_file" />
+    <input type="hidden" class="admin_file" />
 </div>
 <div>
-    <input type="hidden" class="webuploader_file"/>
+    <input type="hidden" class="admin_file"/>
 </div>
 <div>
-    <input type="hidden" class="webuploader_file"/>
+    <input type="hidden" class="admin_file"/>
 </div>
 <div class="container-fluid">
 <#--<div class="row">-->

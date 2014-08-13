@@ -67,7 +67,6 @@
         </property>
     </bean>
 
-    <bean class="com.cyou.fz.common.base.springmvc.expand.GlobalExceptionHandler" />
     <mvc:interceptors>
         <bean class="com.cyou.fz.common.base.springmvc.expand.MVCInterceptor" />
     </mvc:interceptors>

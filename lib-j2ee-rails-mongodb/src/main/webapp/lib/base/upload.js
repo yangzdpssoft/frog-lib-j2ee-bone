@@ -14,7 +14,7 @@
                 $uploadDiv.append('<div id="' + file_up_button_id + '"></div>' +
                     '<h3>' +
                     '<span class="label label-success">已上传</span>&nbsp;' +
-                    '<a  href="javascript:" class="btn  btn-warning" target="_blank">' + $(this).val() + '</a>' +
+                    '<a  href="' + adminDownloadServerPath + $(this).val() + '" class="btn  btn-warning" target="_blank">' + $(this).val() + '</a>' +
                     '</h3>' +
                     '<div style="display: none;" class="progress"><div  class="progress-bar progress-bar-success active"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div></div><button type="button" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i> 清空</button>');
             }else{
@@ -91,7 +91,7 @@
                 $uploadDiv.append('<div id="' + file_up_button_id + '"></div>' +
                     '<h3>' +
                     '<span class="label label-success">已上传</span>&nbsp;' +
-                    '<a  href="javascript:" class="btn  btn-warning" target="_blank">' + $(this).val() + '</a>' +
+                    '<a  href="' + frontDownloadServerPath + $(this).val() + '" class="btn  btn-warning" target="_blank">' + $(this).val() + '</a>' +
                     '</h3>' +
                     '<div style="display: none;" class="progress"><div  class="progress-bar progress-bar-success active"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div></div><button type="button" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i> 清空</button>');
             }else{

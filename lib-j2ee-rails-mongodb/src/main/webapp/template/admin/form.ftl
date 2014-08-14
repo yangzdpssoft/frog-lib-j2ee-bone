@@ -18,7 +18,7 @@
 
 <body style="padding: 40px;">
 <div>
-    <input type="hidden" class="admin_file"/>
+    <input type="hidden" class="admin_file" value="111.zip"/>
 </div>
 <div>
     <input type="hidden" class="admin_file" />

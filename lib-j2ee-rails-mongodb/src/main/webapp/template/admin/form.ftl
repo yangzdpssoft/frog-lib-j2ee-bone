@@ -16,19 +16,37 @@
     <script src="${ctx}/lib/base/upload.js" type="text/javascript"></script>
 </head>
 
-<body style="padding: 40px;">
-<div>
-    <input type="hidden" class="admin_file" value="111.zip"/>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <ul class="nav nav-pills nav-stacked" role="tablist">
+                <li role="presentation" class="active"><a href="#">Home</a></li>
+                <li role="presentation"><a href="#">Profile</a></li>
+                <li role="presentation"><a href="#">Messages</a></li>
+                <li role="presentation"><a href="#">Messages</a></li>
+                <li role="presentation"><a href="#">Messages</a></li>
+                <li role="presentation"><a href="#">Messages</a></li>
+            </ul>
+        </div>
+        <div class="col-md-10">
+
+        </div>
+    </div>
 </div>
-<div>
-    <input type="hidden" class="admin_file" />
-</div>
-<div>
-    <input type="hidden" class="admin_file"/>
-</div>
-<div>
-    <input type="hidden" class="admin_file"/>
-</div>
+
+<#--<div>-->
+    <#--<input type="hidden" class="admin_file" value="111.zip"/>-->
+<#--</div>-->
+<#--<div>-->
+    <#--<input type="hidden" class="admin_file" />-->
+<#--</div>-->
+<#--<div>-->
+    <#--<input type="hidden" class="admin_file"/>-->
+<#--</div>-->
+<#--<div>-->
+    <#--<input type="hidden" class="admin_file"/>-->
+<#--</div>-->
 <div class="container-fluid">
 <#--<div class="row">-->
         <#--<button type="button" class="btn btn-success" style="margin-left: 10px;"><i class="glyphicon glyphicon-search" style="color: #ffffff;"></i>&nbsp;保存&nbsp;</button>-->

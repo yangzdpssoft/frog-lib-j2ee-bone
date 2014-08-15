@@ -1,6 +1,13 @@
+{
+
+}
 .glyphicon{
     top : 2px;
 }
 .navbar{
-    border-radius: 0px;
+     border-radius: 0px;
+     color: #f1f1f1;
+ }
+.navbar-brand{
+    color: #f1f1f1;
 }

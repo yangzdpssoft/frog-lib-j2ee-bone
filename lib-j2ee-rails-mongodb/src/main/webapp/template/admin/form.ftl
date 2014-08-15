@@ -6,7 +6,6 @@
     <#include "/lib/include/common.ftl">
     <!-- 新 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="${ctx}/lib/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="${ctx}/lib/base/bootstrap3.chinese.css">
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <!-- 文件上传 -->
@@ -19,6 +18,7 @@
     <script src="${ctx}/lib/metisMenu/1.1.0/metisMenu.min.js"></script>
     <link rel="stylesheet" href="${defaultcss}">
     <script src="${defaultjs}"></script>
+    <link rel="stylesheet" href="${ctx}/lib/base/bootstrap3.chinese.css">
 </head>
 
 <body>
@@ -28,7 +28,10 @@
             <nav class="navbar navbar-inverse " role="navigation">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="#">中文字体</a>
+                        <a class="navbar-brand" href="#" style="font-weight: bold;font-size: 24px;">
+                            <img alt="Brand" src="${ctx}/template/admin/static/images/brand.png" width="30" height="30" style="margin-top: -5px;">
+                            搜索管理平台
+                        </a>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -89,87 +92,6 @@
                                     </a>
                                 </li>
 
-                                <li>
-                                    <a href="https://github.com/onokumus/metisMenu">
-                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
-                                        Fork
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://github.com/onokumus/metisMenu">
-                                        <span class="sidebar-nav-item-icon fa fa-star"></span>
-                                        Star
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://github.com/onokumus/metisMenu/issues">
-                                        <span class="sidebar-nav-item-icon fa fa-exclamation-triangle"></span>
-                                        Issues
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="sidebar-nav-item-icon fa fa-github fa-lg"></span>
-                                <span class="sidebar-nav-item">metisMenu</span>
-                                <span class="fa arrow"></span>
-                            </a>
-                            <ul>
-                                <li>
-                                    <a href="https://github.com/onokumus/metisMenu">
-                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
-                                        Fork
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://github.com/onokumus/metisMenu">
-                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
-                                        Fork
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://github.com/onokumus/metisMenu">
-                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
-                                        Fork
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://github.com/onokumus/metisMenu">
-                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
-                                        Fork
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://github.com/onokumus/metisMenu">
-                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
-                                        Fork
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://github.com/onokumus/metisMenu">
-                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
-                                        Fork
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://github.com/onokumus/metisMenu">
-                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
-                                        Fork
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://github.com/onokumus/metisMenu">
-                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
-                                        Fork
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://github.com/onokumus/metisMenu">
-                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
-                                        Fork
-                                    </a>
-                                </li>
                                 <li>
                                     <a href="https://github.com/onokumus/metisMenu">
                                         <span class="sidebar-nav-item-icon fa fa-code-fork"></span>

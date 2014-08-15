@@ -1,13 +1,13 @@
-{
-
+*{
+font-family: Tahoma, Verdana, font-family: 'Microsoft YaHei';
 }
 .glyphicon{
     top : 2px;
 }
 .navbar{
      border-radius: 0px;
-     color: #f1f1f1;
  }
-.navbar-brand{
-    color: #f1f1f1;
+.navbar-inverse{
+    background: #3399FF;
+    border-color: #3399FF;
 }

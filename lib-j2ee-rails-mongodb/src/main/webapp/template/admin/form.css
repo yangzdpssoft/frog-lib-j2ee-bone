@@ -59,7 +59,7 @@
 .sidebar-nav ul ul a:hover,
 .sidebar-nav ul ul a:focus,
 .sidebar-nav ul ul a:active {
-    background: #0099FF;
+    background: #3399FF;
     color: #ffffff;
 }
 .sidebar-nav-item {
@@ -70,7 +70,7 @@
 }
 
 .sidebar-nav ul a {
-    background: #f7f7f9;
+    background: #ffffff;
     border-bottom: 1px solid #f0f0f0;
 }
 .sidebar-nav ul li ul a {

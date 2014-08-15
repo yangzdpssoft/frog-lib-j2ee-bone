@@ -20,7 +20,7 @@
 </style>
 <body>
 <div class="container-fluid">
-    <div class="row" style="background: #5bc0de;height: 350px;margin-bottom: 20px;">
+    <div class="row" style="background: #3399FF;height: 350px;margin-bottom: 20px;">
         <div class="col-md-4"></div>
         <div class="col-md-4" style="padding-top: 200px;">
             <div style=" font-family: 微软雅黑; font-size: 42px; padding:20px; font-weight:bold;">

@@ -24,7 +24,7 @@
         <div class="col-md-4"></div>
         <div class="col-md-4" style="padding-top: 200px;">
             <div style=" font-family: 微软雅黑; font-size: 42px; padding:20px; font-weight:bold;">
-                <span style="text-shadow: 2px 2px 2px #000, 0px 0px 10px #fff, 0px 0px 20px #fff; color: darkcyan;">协和医院烧伤科</span><br>
+                <span style="text-shadow: 2px 2px 2px #000, 0px 0px 10px #fff, 0px 0px 20px #fff; color: #0099FF;">协和医院烧伤科</span><br>
                 <span style="text-shadow: 2px 2px 2px #000, 0px 0px 10px #fff, 0px 0px 20px #fff; color: #F9F9F9; float: right;font-size: 28px;">会诊管理平台</span><br>
             </div>
         </div>

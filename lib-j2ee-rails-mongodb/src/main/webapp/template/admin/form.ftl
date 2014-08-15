@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <#include "/lib/include/common.ftl">
     <!-- 新 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${ctx}/lib/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="${ctx}/lib/base/bootstrap3.chinese.css">
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <!-- 文件上传 -->
@@ -26,89 +24,87 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2">
-
+        <div class="col-xs-3 col-md-2">
+            <aside class="sidebar">
+                <nav class="sidebar-nav">
+                    <ul id="menu">
+                        <li class="active">
+                            <a href="#">
+                                <span class="sidebar-nav-item-icon fa fa-github fa-lg"></span>
+                                <span class="sidebar-nav-item">metisMenu</span>
+                                <span class="fa arrow"></span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                        Fork
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-star"></span>
+                                        Star
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu/issues">
+                                        <span class="sidebar-nav-item-icon fa fa-exclamation-triangle"></span>
+                                        Issues
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Menu 0 <span class="fa arrow"></span></a>
+                            <ul>
+                                <li><a href="#">item 0.1</a></li>
+                                <li><a href="#">item 0.2</a></li>
+                                <li><a href="http://onokumus.com">onokumus</a></li>
+                                <li><a href="#">item 0.4</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Menu 1 <span class="fa arrow"></span></a>
+                            <ul>
+                                <li><a href="#">item 1.1</a></li>
+                                <li><a href="#">item 1.2</a></li>
+                                <li>
+                                    <a href="#">Menu 1.3 <span class="fa plus-times"></span></a>
+                                    <ul>
+                                        <li><a href="#">item 1.3.1</a></li>
+                                        <li><a href="#">item 1.3.2</a></li>
+                                        <li><a href="#">item 1.3.3</a></li>
+                                        <li><a href="#">item 1.3.4</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">item 1.4</a></li>
+                                <li>
+                                    <a href="#">Menu 1.5 <span class="fa plus-minus"></span></a>
+                                    <ul>
+                                        <li><a href="#">item 1.5.1</a></li>
+                                        <li><a href="#">item 1.5.2</a></li>
+                                        <li><a href="#">item 1.5.3</a></li>
+                                        <li><a href="#">item 1.5.4</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Menu 2 <span class="fa arrow"></span></a>
+                            <ul>
+                                <li><a href="#">item 2.1</a></li>
+                                <li><a href="#">item 2.2</a></li>
+                                <li><a href="#">item 2.3</a></li>
+                                <li><a href="#">item 2.4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
         </div>
-        <div class="col-md-10">
-            <div>
-                <aside class="sidebar">
-                    <nav class="sidebar-nav">
-                        <ul id="menu">
-                            <li class="active">
-                                <a href="#">
-                                    <span class="sidebar-nav-item-icon fa fa-github fa-lg"></span>
-                                    <span class="sidebar-nav-item">metisMenu</span>
-                                    <span class="fa arrow"></span>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="https://github.com/onokumus/metisMenu">
-                                            <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
-                                            Fork
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://github.com/onokumus/metisMenu">
-                                            <span class="sidebar-nav-item-icon fa fa-star"></span>
-                                            Star
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://github.com/onokumus/metisMenu/issues">
-                                            <span class="sidebar-nav-item-icon fa fa-exclamation-triangle"></span>
-                                            Issues
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Menu 0 <span class="fa arrow"></span></a>
-                                <ul>
-                                    <li><a href="#">item 0.1</a></li>
-                                    <li><a href="#">item 0.2</a></li>
-                                    <li><a href="http://onokumus.com">onokumus</a></li>
-                                    <li><a href="#">item 0.4</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Menu 1 <span class="fa arrow"></span></a>
-                                <ul>
-                                    <li><a href="#">item 1.1</a></li>
-                                    <li><a href="#">item 1.2</a></li>
-                                    <li>
-                                        <a href="#">Menu 1.3 <span class="fa plus-times"></span></a>
-                                        <ul>
-                                            <li><a href="#">item 1.3.1</a></li>
-                                            <li><a href="#">item 1.3.2</a></li>
-                                            <li><a href="#">item 1.3.3</a></li>
-                                            <li><a href="#">item 1.3.4</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">item 1.4</a></li>
-                                    <li>
-                                        <a href="#">Menu 1.5 <span class="fa plus-minus"></span></a>
-                                        <ul>
-                                            <li><a href="#">item 1.5.1</a></li>
-                                            <li><a href="#">item 1.5.2</a></li>
-                                            <li><a href="#">item 1.5.3</a></li>
-                                            <li><a href="#">item 1.5.4</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Menu 2 <span class="fa arrow"></span></a>
-                                <ul>
-                                    <li><a href="#">item 2.1</a></li>
-                                    <li><a href="#">item 2.2</a></li>
-                                    <li><a href="#">item 2.3</a></li>
-                                    <li><a href="#">item 2.4</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-                </aside>
-            </div>
+        <div class="col-xs-9 col-md-10">
+            fsdf
         </div>
     </div>
 </div>

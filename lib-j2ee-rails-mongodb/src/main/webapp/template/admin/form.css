@@ -1,8 +1,30 @@
+
 .sidebar {
     display: block;
     float: left;
-    width: 250px;
+    width: 25% !important;
     background: #333;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+@media (min-width: 768px) {
+    .sidebar {
+        width: 25% !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .sidebar {
+        width: 16.66666667%  !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .sidebar {
+        width: 16.66666667%  !important;
+    }
 }
 .content {
     display: block;

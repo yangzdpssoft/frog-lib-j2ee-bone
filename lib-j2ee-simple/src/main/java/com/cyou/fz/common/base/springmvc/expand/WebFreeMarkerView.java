@@ -25,6 +25,11 @@ public class WebFreeMarkerView extends FreeMarkerView {
         }else{
             model.put("defaultjs", ("/template/" + request.getRequestURI().substring(1) + ".js").replace(".html.js", ".js"));
         }
+        if(!"".equals(request.getContextPath())){
+            model.put("defaultcss", (request.getContextPath() + "/template/" + request.getRequestURI().replace(request.getContextPath() + "/", "") + ".css").replace(".html.css", ".css"));
+        }else{
+            model.put("defaultcss", ("/template/" + request.getRequestURI().substring(1) + ".css").replace(".html.css", ".css"));
+        }
     }
 	
 }

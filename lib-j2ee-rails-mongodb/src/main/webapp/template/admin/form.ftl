@@ -14,7 +14,7 @@
     <script src="${ctx}/lib/webUploader/0.1.4/webuploader.js"></script>
     <script src="${ctx}/lib/base/upload.js" type="text/javascript"></script>
     <!-- metisMenu -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="${ctx}/lib/font-awesome/4.1.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="${ctx}/lib/metisMenu/1.1.0/metisMenu.min.css">
     <script src="${ctx}/lib/metisMenu/1.1.0/metisMenu.min.js"></script>
     <link rel="stylesheet" href="${defaultcss}">
@@ -104,7 +104,9 @@
             </aside>
         </div>
         <div class="col-xs-9 col-md-10">
-            fsdf
+            <div class="page-header">
+                <h1>Example page header <small>Subtext for header</small></h1>
+            </div>
         </div>
     </div>
 </div>

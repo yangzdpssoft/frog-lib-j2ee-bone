@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <#include "/lib/include/common.ftl">
+<#include "/lib/include/common.ftl">
     <!-- 新 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="${ctx}/lib/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="${ctx}/lib/base/bootstrap3.chinese.css">
@@ -22,6 +22,53 @@
 </head>
 
 <body>
+<div class="container-fluid">
+    <header id="header">
+        <div class="row">
+            <nav class="navbar navbar-inverse " role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Brand</a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Link</a></li>
+                            <li><a href="#">Link</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#">Link</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+        </div>
+    </header>
+</div>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-xs-3 col-md-2">
@@ -43,6 +90,60 @@
                                 </li>
                                 <li>
                                     <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                        Fork
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                        Fork
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                        Fork
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                        Fork
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                        Fork
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                        Fork
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                        Fork
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                        Fork
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                        Fork
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
                                         <span class="sidebar-nav-item-icon fa fa-star"></span>
                                         Star
                                     </a>
@@ -56,47 +157,84 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">Menu 0 <span class="fa arrow"></span></a>
+                            <a href="#">
+                                <span class="sidebar-nav-item-icon fa fa-github fa-lg"></span>
+                                <span class="sidebar-nav-item">metisMenu</span>
+                                <span class="fa arrow"></span>
+                            </a>
                             <ul>
-                                <li><a href="#">item 0.1</a></li>
-                                <li><a href="#">item 0.2</a></li>
-                                <li><a href="http://onokumus.com">onokumus</a></li>
-                                <li><a href="#">item 0.4</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Menu 1 <span class="fa arrow"></span></a>
-                            <ul>
-                                <li><a href="#">item 1.1</a></li>
-                                <li><a href="#">item 1.2</a></li>
                                 <li>
-                                    <a href="#">Menu 1.3 <span class="fa plus-times"></span></a>
-                                    <ul>
-                                        <li><a href="#">item 1.3.1</a></li>
-                                        <li><a href="#">item 1.3.2</a></li>
-                                        <li><a href="#">item 1.3.3</a></li>
-                                        <li><a href="#">item 1.3.4</a></li>
-                                    </ul>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                        Fork
+                                    </a>
                                 </li>
-                                <li><a href="#">item 1.4</a></li>
                                 <li>
-                                    <a href="#">Menu 1.5 <span class="fa plus-minus"></span></a>
-                                    <ul>
-                                        <li><a href="#">item 1.5.1</a></li>
-                                        <li><a href="#">item 1.5.2</a></li>
-                                        <li><a href="#">item 1.5.3</a></li>
-                                        <li><a href="#">item 1.5.4</a></li>
-                                    </ul>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                        Fork
+                                    </a>
                                 </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Menu 2 <span class="fa arrow"></span></a>
-                            <ul>
-                                <li><a href="#">item 2.1</a></li>
-                                <li><a href="#">item 2.2</a></li>
-                                <li><a href="#">item 2.3</a></li>
-                                <li><a href="#">item 2.4</a></li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                        Fork
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                        Fork
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                        Fork
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                        Fork
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                        Fork
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                        Fork
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                        Fork
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-code-fork"></span>
+                                        Fork
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu">
+                                        <span class="sidebar-nav-item-icon fa fa-star"></span>
+                                        Star
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/onokumus/metisMenu/issues">
+                                        <span class="sidebar-nav-item-icon fa fa-exclamation-triangle"></span>
+                                        Issues
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -105,23 +243,25 @@
         </div>
         <div class="col-xs-9 col-md-10">
             <div class="page-header">
-                <h1>Example page header <small>Subtext for header</small></h1>
+                <h1>Example page header
+                    <small>Subtext for header</small>
+                </h1>
             </div>
         </div>
     </div>
 </div>
 
 <#--<div>-->
-    <#--<input type="hidden" class="admin_file" value="111.zip"/>-->
+<#--<input type="hidden" class="admin_file" value="111.zip"/>-->
 <#--</div>-->
 <#--<div>-->
-    <#--<input type="hidden" class="admin_file" />-->
+<#--<input type="hidden" class="admin_file" />-->
 <#--</div>-->
 <#--<div>-->
-    <#--<input type="hidden" class="admin_file"/>-->
+<#--<input type="hidden" class="admin_file"/>-->
 <#--</div>-->
 <#--<div>-->
-    <#--<input type="hidden" class="admin_file"/>-->
+<#--<input type="hidden" class="admin_file"/>-->
 <#--</div>-->
 <div class="container-fluid">
 <#--<div class="row">-->

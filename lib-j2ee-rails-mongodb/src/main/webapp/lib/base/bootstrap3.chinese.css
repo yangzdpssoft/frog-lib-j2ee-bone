@@ -11,3 +11,17 @@ font-family: Tahoma, Verdana, font-family: 'Microsoft YaHei';
     background: #3399FF;
     border-color: #3399FF;
 }
+
+.navbar-inverse .navbar-toggle{
+    border-color: #ffffff;
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus{
+    background-color: #0066FF;
+}
+.btn-info{
+    background-color: #3399FF;
+}
+.btn-info:hover{
+    background-color: #0099FF;
+}

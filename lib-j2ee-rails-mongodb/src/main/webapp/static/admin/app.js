@@ -15,9 +15,10 @@ app.config(function($routeSegmentProvider, $routeProvider) {
 (function($){
     $(function(){
         $('#sidebar').metisMenu({});
-        $('#navbar ul li').click(function(){
+        $('.selectpicker').selectpicker();
+        $('#bs-example-navbar-collapse-1 ul li').click(function(){
             if(!$(this).attr('class')){
-                $('#navbar ul li').removeClass('active');
+                $('#bs-example-navbar-collapse-1 ul li').removeClass('active');
                 $(this).addClass('active');
             }
         });

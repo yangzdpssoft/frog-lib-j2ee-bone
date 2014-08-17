@@ -1,3 +1,7 @@
+.dropdown-menu>li.selected>a{
+    color: #ffffff;
+    background-color: #3399FF;
+}
 .dropdown-menu>li>a:hover{
     color: #ffffff;
     background-color: #33CCFF;
@@ -5,4 +9,13 @@
 .dropdown-menu>li>a:focus{
     color: #ffffff;
     background-color: #3399FF;
+}
+.bootstrap-select.btn-group .dropdown-menu li.selected>a.opt{
+    color: #ffffff;
+    background-color: #3399FF;
+}
+.select-item-icon{
+    top: -1px;
+    width: 19px;
+    height: 19px;
 }

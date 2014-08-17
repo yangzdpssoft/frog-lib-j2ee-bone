@@ -16,6 +16,7 @@ app.config(function($routeSegmentProvider, $routeProvider) {
     $(function(){
         $('#sidebar').metisMenu({});
         $('.selectpicker').selectpicker();
+        $("input:checkbox").bootstrapSwitch();
         $('#bs-example-navbar-collapse-1 ul li').click(function(){
             if(!$(this).attr('class')){
                 $('#bs-example-navbar-collapse-1 ul li').removeClass('active');

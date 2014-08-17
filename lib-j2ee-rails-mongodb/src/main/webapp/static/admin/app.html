@@ -38,6 +38,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../../lib/base/silviomoreto.cover.css">
     <script src="../../lib/silviomoreto/1.0.0/js/bootstrap-select.min.js"></script>
     <script src="../../lib/silviomoreto/1.0.0/js/i18n/defaults-zh_CN.min.js"></script>
+    <!-- bootstrap switch -->
+    <link rel="stylesheet" type="text/css" href="../../lib/bootstrap-switch/1.0.0/css/bootstrap3/bootstrap-switch.min.css">
+    <script src="../../lib/bootstrap-switch/1.0.0/js/bootstrap-switch.js"></script>
     <!-- app -->
     <script type="text/javascript" src="app.js"></script>
     <link rel="stylesheet" href="app.css">
@@ -154,10 +157,125 @@
 
             <h3 style="font-weight: bold;">下拉框</h3>
             <select class="selectpicker">
+                <option></option>
+                <option data-icon="glyphicon glyphicon-cloud">中文</option>
+                <option data-divider="true"></option>
+                <option data-icon="glyphicon glyphicon-envelope">语文</option>
+                <option data-icon="glyphicon glyphicon-list-alt">Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
                 <option>Mustard</option>
                 <option>Ketchup</option>
                 <option>Relish</option>
             </select>
+            <h3 style="font-weight: bold;">分组下拉框</h3>
+            <select class="selectpicker">
+                <optgroup label="Picnic">
+                    <option>Mustard</option>
+                    <option>Ketchup</option>
+                    <option>Relish</option>
+                </optgroup>
+                <optgroup label="Camping">
+                    <option>Tent</option>
+                    <option>Flashlight</option>
+                    <option>Toilet Paper</option>
+                </optgroup>
+            </select>
+            <h3 style="font-weight: bold;">多选分组下拉框</h3>
+            <select class="selectpicker" multiple data-max-options="2" data-live-search="true">
+                <optgroup label="Picnic">
+                    <option>Mustard</option>
+                    <option>Ketchup</option>
+                    <option>Relish</option>
+                </optgroup>
+                <optgroup label="Camping">
+                    <option>Tent</option>
+                    <option>Flashlight</option>
+                    <option>Toilet Paper</option>
+                </optgroup>
+            </select>
+            <h3 style="font-weight: bold;">状态下拉框</h3>
+            <select class="selectpicker"data-live-search="false">
+                    <option data-content="<span class='label label-success'>中文</span>" style="padding-bottom: 7px;"></option>
+                    <option data-content="<span class='label label-info'>中文</span>" style="padding-bottom: 7px;"></option>
+                    <option data-content="<span class='label label-warning'>过于</span>" style="padding-bottom: 7px;"></option>
+                    <option data-content="<span class='label label-danger'>中文</span>" style="padding-bottom: 7px;"></option>
+                    <option data-content="<span class='label label-primary'>过于</span>" style="padding-bottom: 7px;"></option>
+            </select>
+            <h3 style="font-weight: bold;">标签</h3>
+            <select class="selectpicker"data-live-search="false" multiple>
+                <option data-content="<span class='label label-success'>中文</span>" style="padding-bottom: 7px;"></option>
+                <option data-content="<span class='label label-success'>中文</span>" style="padding-bottom: 7px;"></option>
+                <option data-content="<span class='label label-success'>过于</span>" style="padding-bottom: 7px;"></option>
+                <option data-content="<span class='label label-success'>中文</span>" style="padding-bottom: 7px;"></option>
+                <option data-content="<span class='label label-success'>过于</span>" style="padding-bottom: 7px;"></option>
+            </select>
+            <h3 style="font-weight: bold;">开关</h3>
+                <input type="checkbox" data-on-color="success" data-off-color="danger" data-on-text="<i class='glyphicon glyphicon-ok'></i>" data-off-text="<i class='glyphicon glyphicon-remove'></i>"/>
         </div>
     </div>
 </div>

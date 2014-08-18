@@ -18,3 +18,7 @@
     color: #ffffff;
     background-color: #3399FF;
 }
+
+.selectpicker .filter-option{
+    height: 23px;
+}

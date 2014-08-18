@@ -5,11 +5,19 @@ seajs.config({
 seajs.use('main');
 
 //angularjs
-var app = angular.module('app', ['ngRoute', 'ngAnimate', 'route-segment', 'view-segment']);
-app.config(function($routeSegmentProvider, $routeProvider) {
-    $routeSegmentProvider.options.autoLoadTemplates = true;
-    $routeProvider.otherwise({redirectTo: '/section1'});
-}) ;
+var app = angular.module('app', ['ngRoute', 'ngAnimate']);
+app.config(['$routeProvider',function ($routeProvider) {
+    $routeProvider
+        .when('/list', {
+            templateUrl: 'views/list.html'
+        })
+        .when('/detail', {
+            templateUrl: 'views/detail.html'
+        })
+        .otherwise({
+            redirectTo: '/list'
+        });
+}]) ;
 
 //左侧导航菜单
 (function($){

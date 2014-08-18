@@ -10,6 +10,10 @@
     color: #ffffff;
     background-color: #3399FF;
 }
+.bootstrap-select.btn-group .dropdown-menu li.active>a.opt{
+    color: #ffffff;
+    background-color: #33CCFF;
+}
 .bootstrap-select.btn-group .dropdown-menu li.selected>a.opt{
     color: #ffffff;
     background-color: #3399FF;

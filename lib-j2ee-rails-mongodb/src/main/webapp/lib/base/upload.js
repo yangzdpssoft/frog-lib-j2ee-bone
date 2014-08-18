@@ -9,7 +9,6 @@
             var $value = $(this);
             var $uploadDiv = $(this).parent();
             var file_up_button_id = Math.uuid();
-            $uploadDiv.removeClass().addClass('well');
             if($(this).val() != ''){
                 $uploadDiv.append('<div id="' + file_up_button_id + '"></div>' +
                     '<h3>' +

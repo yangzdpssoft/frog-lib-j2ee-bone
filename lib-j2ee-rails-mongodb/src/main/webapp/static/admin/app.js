@@ -48,6 +48,10 @@ app.config(function($routeSegmentProvider, $routeProvider) {
             }
         });
         $('.input-mini').attr('disabled', 'disabled');
+
+        $.fn.editable.defaults.mode = 'inline';
+        $('#username').editable();
+        $('#username').editable('show');
         $('#bs-example-navbar-collapse-1 ul li').click(function(){
             if(!$(this).attr('class')){
                 $('#bs-example-navbar-collapse-1 ul li').removeClass('active');

@@ -3,22 +3,6 @@ seajs.config({
     base: "./sea-modules/"
 });
 seajs.use('main');
-
-//angularjs
-var app = angular.module('app', ['ngRoute', 'ngAnimate']);
-app.config(['$routeProvider',function ($routeProvider) {
-    $routeProvider
-        .when('/list', {
-            templateUrl: 'views/list.html'
-        })
-        .when('/detail', {
-            templateUrl: 'views/detail.html'
-        })
-        .otherwise({
-            redirectTo: '/list'
-        });
-}]) ;
-
 //左侧导航菜单
 (function($){
     $(function(){
@@ -56,16 +40,13 @@ app.config(['$routeProvider',function ($routeProvider) {
             }
         });
         $('.input-mini').attr('disabled', 'disabled');
-
-        $.fn.editable.defaults.mode = 'inline';
-        $('#username').editable();
-        $('#username').editable('show');
         $('#bs-example-navbar-collapse-1 ul li').click(function(){
             if(!$(this).attr('class')){
                 $('#bs-example-navbar-collapse-1 ul li').removeClass('active');
                 $(this).addClass('active');
             }
         });
+
     });
 })(jQuery);
 

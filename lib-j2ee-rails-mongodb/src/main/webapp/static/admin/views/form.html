@@ -1,0 +1,146 @@
+<div class="view" style="display: none;">
+    <button id="save" type="button" class="btn btn-info">保存</button>
+    <button type="button" class="btn btn-default">取消</button>
+    <br/>
+    <br/>
+    <table class="table table-bordered">
+        <tr>
+            <td style="text-align: right;vertical-align: middle; width: 21%">文本</td>
+            <td><input type="text" class="form-control" placeholder="Username"/></td>
+        </tr>
+        <tr>
+            <td style="text-align: right;vertical-align: middle;">密码</td>
+            <td><input type="text" class="form-control" placeholder="Username"/></td>
+        </tr>
+        <tr>
+            <td style="text-align: right;vertical-align: middle;">下拉框</td>
+            <td>
+                <select class="selectpicker" data-width="100%">
+                    <option></option>
+                    <option data-icon="glyphicon glyphicon-cloud">中文</option>
+                    <option data-divider="true"></option>
+                    <option data-icon="glyphicon glyphicon-envelope">语文</option>
+                    <option data-icon="glyphicon glyphicon-list-alt">Relish</option>
+                    <option>Mustard</option>
+                    <option>Ketchup</option>
+                    <option>Relish</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right;vertical-align: middle;">分组下拉框</td>
+            <td>
+                <select class="selectpicker">
+                    <optgroup label="Picnic">
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                    </optgroup>
+                    <optgroup label="Camping">
+                        <option>Tent</option>
+                        <option>Flashlight</option>
+                        <option>Toilet Paper</option>
+                    </optgroup>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right;vertical-align: middle;">多选分组下拉框</td>
+            <td>
+                <select class="selectpicker" multiple data-max-options="2" data-live-search="true">
+                    <optgroup label="Picnic">
+                        <option>Mustard</option>
+                        <option>Ketchup</option>
+                        <option>Relish</option>
+                    </optgroup>
+                    <optgroup label="Camping">
+                        <option>Tent</option>
+                        <option>Flashlight</option>
+                        <option>Toilet Paper</option>
+                    </optgroup>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right;vertical-align: middle;">状态下拉框</td>
+            <td>
+                <select class="selectpicker"data-live-search="false">
+                    <option data-content="<span class='label label-success'>中文</span>" style="padding-bottom: 7px;"></option>
+                    <option data-content="<span class='label label-info'>中文</span>" style="padding-bottom: 7px;"></option>
+                    <option data-content="<span class='label label-warning'>过于</span>" style="padding-bottom: 7px;"></option>
+                    <option data-content="<span class='label label-danger'>中文</span>" style="padding-bottom: 7px;"></option>
+                    <option data-content="<span class='label label-primary'>过于</span>" style="padding-bottom: 7px;"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right;vertical-align: middle;">标签</td>
+            <td>
+                <select class="selectpicker"data-live-search="false" multiple>
+                    <option data-content="<span class='label label-success'>中文</span>" style="padding-bottom: 7px;"></option>
+                    <option data-content="<span class='label label-success'>中文</span>" style="padding-bottom: 7px;"></option>
+                    <option data-content="<span class='label label-success'>过于</span>" style="padding-bottom: 7px;"></option>
+                    <option data-content="<span class='label label-success'>中文</span>" style="padding-bottom: 7px;"></option>
+                    <option data-content="<span class='label label-success'>过于</span>" style="padding-bottom: 7px;"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right;vertical-align: middle;">开关</td>
+            <td>
+                <input type="checkbox" data-on-color="success" data-off-color="danger" data-on-text="<i class='glyphicon glyphicon-ok'></i>" data-off-text="<i class='glyphicon glyphicon-remove'></i>"/>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right;vertical-align: middle;">日期范围</td>
+            <td>
+                <input type="text" class="form-control" daterange="daterange"  placeholder="请选择日期"/>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right;vertical-align: middle;">富文本</td>
+            <td>
+                <div class="summernote"></div>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right;vertical-align: middle;">文件</td>
+            <td>
+                <div>
+                    <input type="hidden" class="admin_file" />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right;vertical-align: middle;">图片</td>
+            <td>
+                <div>
+                    <input type="hidden" class="admin_file" />
+                </div>
+            </td>
+        </tr>
+    </table>
+    <h3>行向项目</h3>
+    <hr />
+    <table class="table table-bordered">
+        <tr>
+            <th width="200px;">真的</th>
+            <th width="200px;">真的</th>
+            <th width="200px;">真的</th>
+            <th width="200px;">真的</th>
+            <th width="200px;">真的</th>
+            <th width="200px;">真的</th>
+            <th width="200px;">真的</th>
+        </tr>
+        <tr>
+            <td><input type="text" class="form-control" placeholder="Username"/></td>
+            <td><input type="text" class="form-control" placeholder="Username"/></td>
+            <td><input type="text" class="form-control" placeholder="Username"/></td>
+            <td><input type="text" class="form-control" placeholder="Username"/></td>
+            <td><input type="text" class="form-control" placeholder="Username"/></td>
+            <td><input type="text" class="form-control" placeholder="Username"/></td>
+            <td><input type="text" class="form-control" placeholder="Username"/></td>
+        </tr>
+    </table>
+    <hr />
+</div>

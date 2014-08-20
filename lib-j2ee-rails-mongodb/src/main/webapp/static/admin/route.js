@@ -9,14 +9,14 @@ app.config(['$routeProvider', '$controllerProvider', function ($routeProvider, $
             controller : 'form',
             resolve: {
                 resolver: function ($rootScope, $q) {
-                    var deferred = $q.defer();
-                    seajs.use('form', function(form){
-                        $rootScope.$apply(function () {
-                            deferred.resolve();
-                        });
-                    });
-                    var t = deferred.promise;
-                    return t;
+//                    var deferred = $q.defer();
+//                    seajs.use('form', function(form){
+//                        $rootScope.$apply(function () {
+//                            deferred.resolve();
+//                        });
+//                    });
+//                    var t = deferred.promise;
+//                    return t;
                 }
             }
         })

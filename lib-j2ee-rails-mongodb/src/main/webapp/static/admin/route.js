@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute', 'ngAnimate', '$http']);
+var app = angular.module('app', ['ngRoute', 'ngAnimate']);
 app.config(['$routeProvider', '$controllerProvider', function ($routeProvider, $controllerProvider, applyProvider) {
     app.register = function(name, constructor) {
         return $controllerProvider.register(name, constructor)

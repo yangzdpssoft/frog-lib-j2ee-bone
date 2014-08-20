@@ -1,5 +1,8 @@
 var app = angular.module('app', ['ngRoute', 'ngAnimate']);
-app.config(['$routeProvider', function ($routeProvider) {
+app.config(['$routeProvider', '$controllerProvider', function ($routeProvider, applyProvider) {
+    app.register = function(name, constructor) {
+        return $controllerProvider.register(name, constructor)
+    };
     $routeProvider
         .when('/form', {
             templateUrl: 'views/form.html',
@@ -9,27 +12,15 @@ app.config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'views/list.html',
             controller : function(){
                 $('.view').fadeIn();
-            },
-            resolve: {
-                resolver: function () {
-
-                }
             }
         })
         .when('/detail', {
             templateUrl: 'views/detail.html',
             controller : function(){
                 $('.view').fadeIn();
-            },
-            resolve: {
-                resolver: function () {
-
-                }
             }
         })
         .otherwise({
             redirectTo: '/list'
         });
 }]);
-
-

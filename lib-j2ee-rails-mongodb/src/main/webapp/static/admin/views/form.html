@@ -132,8 +132,8 @@
             <th width="200px;">真的</th>
             <th width="200px;">真的</th>
         </tr>
-        <tr>
-            <td><input type="text" class="form-control" placeholder="Username"/></td>
+        <tr ng-repeat="item in lists">
+            <td><input type="text" class="form-control" placeholder="Username" value="{{item}}"/></td>
             <td><input type="text" class="form-control" placeholder="Username"/></td>
             <td><input type="text" class="form-control" placeholder="Username"/></td>
             <td><input type="text" class="form-control" placeholder="Username"/></td>

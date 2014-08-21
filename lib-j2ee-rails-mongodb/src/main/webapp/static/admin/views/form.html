@@ -4,18 +4,12 @@
     <br/>
     <br/>
     <table class="table table-bordered">
-        <tr>
+        <tr ng-repeat="item in formMeta">
             <td style="text-align: right;vertical-align: middle; width: 21%">文本</td>
-            <td><input type="text" class="form-control" placeholder="Username"/></td>
-        </tr>
-        <tr>
-            <td style="text-align: right;vertical-align: middle;">密码</td>
-            <td><input type="text" class="form-control" placeholder="Username"/></td>
-        </tr>
-        <tr>
-            <td style="text-align: right;vertical-align: middle;">下拉框</td>
-            <td>
-                <select class="selectpicker" data-width="100%">
+            <td ng-switch="item.type">
+                <input ng-switch-when="text" type="text" class="form-control" placeholder="Username"/>
+                <input ng-switch-when="password" type="password" class="form-control" placeholder="Username"/>
+                <select ng-switch-when="select" class="selectpicker" data-width="100%">
                     <option></option>
                     <option data-icon="glyphicon glyphicon-cloud">中文</option>
                     <option data-divider="true"></option>
@@ -25,12 +19,7 @@
                     <option>Ketchup</option>
                     <option>Relish</option>
                 </select>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;vertical-align: middle;">分组下拉框</td>
-            <td>
-                <select class="selectpicker">
+                <select ng-switch-when="groupSelect" class="selectpicker">
                     <optgroup label="Picnic">
                         <option>Mustard</option>
                         <option>Ketchup</option>
@@ -42,6 +31,33 @@
                         <option>Toilet Paper</option>
                     </optgroup>
                 </select>
+                <select ng-switch-when="statusSelect" class="selectpicker" data-live-search="false">
+                    <option data-content="<span class='label label-success'>中文</span>" style="padding-bottom: 7px;"></option>
+                    <option data-content="<span class='label label-info'>中文</span>" style="padding-bottom: 7px;"></option>
+                    <option data-content="<span class='label label-warning'>过于</span>" style="padding-bottom: 7px;"></option>
+                    <option data-content="<span class='label label-danger'>中文</span>" style="padding-bottom: 7px;"></option>
+                    <option data-content="<span class='label label-primary'>过于</span>" style="padding-bottom: 7px;"></option>
+                </select>
+                <select ng-switch-when="tag" class="selectpicker"data-live-search="false" multiple>
+                    <option data-content="<span class='label label-success'>中文</span>" style="padding-bottom: 7px;"></option>
+                    <option data-content="<span class='label label-success'>中文</span>" style="padding-bottom: 7px;"></option>
+                    <option data-content="<span class='label label-success'>过于</span>" style="padding-bottom: 7px;"></option>
+                    <option data-content="<span class='label label-success'>中文</span>" style="padding-bottom: 7px;"></option>
+                    <option data-content="<span class='label label-success'>过于</span>" style="padding-bottom: 7px;"></option>
+                </select>
+                <input ng-switch-when="switch" type="checkbox" data-on-color="success" data-off-color="danger" data-on-text="<i class='glyphicon glyphicon-ok'></i>" data-off-text="<i class='glyphicon glyphicon-remove'></i>"/>
+                <input ng-switch-when="date" type="text" class="form-control" daterange="daterange"  placeholder="请选择日期"/>
+                <input ng-switch-when="time" type="text" class="form-control" daterange="daterange"  placeholder="请选择日期"/>
+                <input ng-switch-when="dateRange" type="text" class="form-control" daterange="daterange"  placeholder="请选择日期"/>
+                <input ng-switch-when="timeRange" type="text" class="form-control" daterange="daterange"  placeholder="请选择日期"/>
+                <div ng-switch-when="htmlText" class="summernote"></div>
+                <div ng-switch-when="file">
+                    <input type="hidden" class="admin_file" />
+                </div>
+                <div ng-switch-when="image">
+                    <input type="hidden" class="admin_file" />
+                </div>
+                <input ng-switch-when="hidden" type="hidden" />
             </td>
         </tr>
         <tr>
@@ -59,64 +75,6 @@
                         <option>Toilet Paper</option>
                     </optgroup>
                 </select>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;vertical-align: middle;">状态下拉框</td>
-            <td>
-                <select class="selectpicker"data-live-search="false">
-                    <option data-content="<span class='label label-success'>中文</span>" style="padding-bottom: 7px;"></option>
-                    <option data-content="<span class='label label-info'>中文</span>" style="padding-bottom: 7px;"></option>
-                    <option data-content="<span class='label label-warning'>过于</span>" style="padding-bottom: 7px;"></option>
-                    <option data-content="<span class='label label-danger'>中文</span>" style="padding-bottom: 7px;"></option>
-                    <option data-content="<span class='label label-primary'>过于</span>" style="padding-bottom: 7px;"></option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;vertical-align: middle;">标签</td>
-            <td>
-                <select class="selectpicker"data-live-search="false" multiple>
-                    <option data-content="<span class='label label-success'>中文</span>" style="padding-bottom: 7px;"></option>
-                    <option data-content="<span class='label label-success'>中文</span>" style="padding-bottom: 7px;"></option>
-                    <option data-content="<span class='label label-success'>过于</span>" style="padding-bottom: 7px;"></option>
-                    <option data-content="<span class='label label-success'>中文</span>" style="padding-bottom: 7px;"></option>
-                    <option data-content="<span class='label label-success'>过于</span>" style="padding-bottom: 7px;"></option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;vertical-align: middle;">开关</td>
-            <td>
-                <input type="checkbox" data-on-color="success" data-off-color="danger" data-on-text="<i class='glyphicon glyphicon-ok'></i>" data-off-text="<i class='glyphicon glyphicon-remove'></i>"/>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;vertical-align: middle;">日期范围</td>
-            <td>
-                <input type="text" class="form-control" daterange="daterange"  placeholder="请选择日期"/>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;vertical-align: middle;">富文本</td>
-            <td>
-                <div class="summernote"></div>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;vertical-align: middle;">文件</td>
-            <td>
-                <div>
-                    <input type="hidden" class="admin_file" />
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;vertical-align: middle;">图片</td>
-            <td>
-                <div>
-                    <input type="hidden" class="admin_file" />
-                </div>
             </td>
         </tr>
     </table>

@@ -2,8 +2,7 @@ app.controller('form', function ($scope, _ajax) {
     initForm();
     $('.view').fadeIn();
     _ajax.postCall('http://www.baidu.com');
-
-    $scope.formMeta = {items: [
+    $scope.formMeta = [
         {label: '用户名', field : '', type: 'text', placeholder: 'placeholder', required: true, norepeat: true, minlength: 2, maxlength: 30, pattern: '', defaultValue: '', attr : [{}]},
         {label: '用户名', field : '', type: 'number', placeholder: 'placeholder', required: true, min: 2, max: 30, defaultValue: '', attr : [{}]},
         {label: '用户名', field : '', type: 'password', placeholder: 'placeholder', required: true, minlength: 2, maxlength: 30, defaultValue: '', attr : [{}]},
@@ -23,6 +22,6 @@ app.controller('form', function ($scope, _ajax) {
         {label: '用户名', field : '', type: 'hidden', value : ''},
         {label: '用户名', field : '', type: 'grid', column : [{label: '用户名', field : '', type: 'text', placeholder: 'placeholder', required: true, minlength: 2, maxlength: 30, pattern: '', defaultValue: '', attr : [{}]}]},
         {label: '用户名', field : '', type: 'easyuigrid', column : [{label: '用户名', field : '', type: 'text', placeholder: 'placeholder', required: true, minlength: 2, maxlength: 30, pattern: '', defaultValue: '', attr : [{}]}], attr : [{}]}
-    ]};
+    ];
     $scope.formData = {id : '', aaa : ''};
 });

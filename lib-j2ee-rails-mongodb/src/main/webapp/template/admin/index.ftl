@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <#include "/lib/include/common.ftl">
+    <#include "/lib/include/easyui.ftl">
     <link href="${ctx}/template/admin/static/css/accordion.css" rel="stylesheet" />
     <script src="${defaultjs}" type="text/javascript"></script>
 </head>

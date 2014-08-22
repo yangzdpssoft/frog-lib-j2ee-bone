@@ -23,5 +23,8 @@ app.controller('form', function ($scope, _ajax) {
         {label: '用户名', field : '', type: 'grid', column : [{label: '用户名', field : '', type: 'text', placeholder: 'placeholder', required: true, minlength: 2, maxlength: 30, pattern: '', defaultValue: '', attr : [{}]}]},
         {label: '用户名', field : '', type: 'easyuigrid', column : [{label: '用户名', field : '', type: 'text', placeholder: 'placeholder', required: true, minlength: 2, maxlength: 30, pattern: '', defaultValue: '', attr : [{}]}], attr : [{}]}
     ];
+    $scope.$watch('formMeta', function(){
+        initForm();
+    });
     $scope.formData = {id : '', aaa : ''};
 });

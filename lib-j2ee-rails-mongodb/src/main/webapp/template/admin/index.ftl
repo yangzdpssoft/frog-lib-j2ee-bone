@@ -36,7 +36,6 @@
 </div>
 <div data-options="region:'center', border : false">
     <div id="contentTabs" class="easyui-tabs" data-options="fit:true">
-
     </div>
 </div>
 

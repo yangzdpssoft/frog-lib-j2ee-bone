@@ -33,7 +33,7 @@ function addTab(menuname, url, icon){
     if(!$(contentTabs).tabs('exists', menuname)){
         $(contentTabs).tabs('add',{
             title:menuname,
-            content:createFrame(url),
+            href : url,
             closable:true,
             icon : icon
         });
@@ -43,13 +43,3 @@ function addTab(menuname, url, icon){
     }
 }
 
-function createDiv(id){
-    return '<div id= ' + id + '></div>';
-}
-
-
-function createFrame(url)
-{
-    var s = '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:99.5%;"></iframe>';
-    return s;
-}

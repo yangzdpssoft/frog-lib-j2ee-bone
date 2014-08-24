@@ -25,7 +25,7 @@
 <script src="${ctx}/lib/summernote/1.0.0/summernote.min.js"></script>
 <script src="${ctx}/lib/summernote/1.0.0/lang/summernote-zh-CN.js"></script>
 <!-- x-edittable -->
-<link rel="stylesheet" type="text/css" href="${ctx}/lib/x-edittable/1.5.1/bootstrap3-editable/css/bootstrap-editable.css">
-<script src="${ctx}/lib/x-edittable/1.5.1/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+<#--<link rel="stylesheet" type="text/css" href="${ctx}/lib/x-edittable/1.5.1/bootstrap3-editable/css/bootstrap-editable.css">-->
+<#--<script src="${ctx}/lib/x-edittable/1.5.1/bootstrap3-editable/js/bootstrap-editable.min.js"></script>-->
 <!-- forminit -->
 <script src="${ctx}/lib/base/forminit.js" type="text/javascript"></script>

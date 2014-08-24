@@ -50,6 +50,6 @@ function createDiv(id){
 
 function createFrame(url)
 {
-    var s = '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:99.6%"></iframe>';
+    var s = '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:99.5%;"></iframe>';
     return s;
 }

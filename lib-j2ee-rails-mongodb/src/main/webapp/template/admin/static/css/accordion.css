@@ -25,3 +25,12 @@ a:hover{ text-decoration:underline;}
 .icon-fun {
     background-position: -180px -280px;
 }
+.icon-add {
+    background-position: -20px 0px;
+}
+.icon-edit {
+    background-position: -380px -320px;
+}
+.icon-delete {
+    background-position: -140px -120px;
+}

@@ -43,21 +43,13 @@
 </div>
 <div data-options="region:'west',split:true, title:'菜单'" style="width:200px;">
     <div id="contentMenu" class="easyui-accordion" data-options="fit:true,border:false" style="border: 0px;">
-        <div title="菜单管理" data-options="iconCls:'icon icon-module'" style="overflow:auto;padding:10px;">
+        <div title="自动化控制台" data-options="iconCls:'icon icon-module'" style="overflow:auto;padding:10px;">
             <ul>
                 <li>
                     <div>
-                        <a menuid="ss" href="javascript:" url="${ctx}/admin/form">
+                        <a menuid="ss" href="javascript:" url="${ctx}/admin/define/module">
                             <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">用户管理</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <a menuid="ss" href="javascript:" url="http://localhost:8080/rm">
-                            <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">部门管理</span>
+                            <span class="menuname">定义模块</span>
                         </a>
                     </div>
                 </li>

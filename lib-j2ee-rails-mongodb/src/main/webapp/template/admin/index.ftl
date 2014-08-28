@@ -5,6 +5,7 @@
     <#include "/lib/include/common.ftl">
     <#include "/lib/include/bootstrap.ftl">
     <#include "/lib/include/easyui.ftl">
+    <#include "/lib/include/formcompoment.ftl">
     <link href="${ctx}/template/admin/static/css/accordion.css" rel="stylesheet" />
     <script src="${defaultjs}" type="text/javascript"></script>
 </head>

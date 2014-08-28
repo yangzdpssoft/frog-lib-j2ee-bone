@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <#include "/lib/include/common.ftl">
-    <#include "/lib/include/bootstrap.ftl">
-    <#include "/lib/include/easyui.ftl">
-    <#include "/lib/include/formcompoment.ftl">
-</head>
-
 <body class="easyui-layout">
-    <table id="grid"  class="easyui-datagrid" toolbar="#toolbar" pagination="true" rownumbers="true" fitColumns="true" singleSelect="true" fit="true">
+    <table id="grid"  class="easyui-datagrid" toolbar="#toolbar" pagination="true" fitColumns="true" rownumbers="true" singleSelect="true" fit="true">
         <thead>
         <tr>
-            <th field="firstname" width="100">编码</th>
-            <th field="lastname" width="100">名称</th>
+            <th field="collection" width="100">集合</th>
+            <th field="name" width="100">名称</th>
+            <th field="saveOrUpdate" width="100">saveOrUpdate</th>
+            <th field="update" width="100">update</th>
+            <th field="delete" width="100">delete</th>
+            <th field="list" width="100">list</th>
+            <th field="get" width="100">get</th>
+            <th field="get" width="100">moduleJS</th>
         </tr>
         </thead>
     </table>
     <div id="toolbar">
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon icon-add" plain="true" onclick="newUser()">添加</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon icon-edit" plain="true" onclick="editUser()">修改</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon icon-delete" plain="true" onclick="destroyUser()">删除</a>
+        <a href="javascript:void(0)" id="add" class="easyui-linkbutton" iconCls="icon icon-add" plain="true">添加</a>
+        <a href="javascript:void(0)" id="edit" class="easyui-linkbutton" iconCls="icon icon-edit" plain="true" >修改</a>
+        <a href="javascript:void(0)" id="delete" class="easyui-linkbutton" iconCls="icon icon-delete" plain="true">删除</a>
     </div>
+<script type="text/javascript" src="${defaultjs}"></script>
 </body>
 </html>

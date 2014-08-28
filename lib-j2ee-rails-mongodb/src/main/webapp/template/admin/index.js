@@ -1,6 +1,10 @@
 (function($){
     $(function(){
         initContentMenu();
+        $('#add').click(function(){
+            alert(1);
+            $('#grid').datagrid('appendRow', {});
+        });
     });
 })(jQuery);
 

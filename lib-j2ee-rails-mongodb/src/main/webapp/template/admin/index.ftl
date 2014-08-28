@@ -10,7 +10,6 @@
 </head>
 
 <body class="easyui-layout">
-
 <div data-options="region:'north',split:false,collapsible:false,iconCls:null" style="height:52px;">
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="margin-bottom: 0px;">
         <div class="container-fluid">
@@ -50,6 +49,14 @@
                         <a menuid="ss" href="javascript:" url="${ctx}/admin/define/module">
                             <span class="icon icon-fun">&nbsp;</span>
                             <span class="menuname">定义模块</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a menuid="ss" href="javascript:" url="http://www.baidu.com">
+                            <span class="icon icon-fun">&nbsp;</span>
+                            <span class="menuname">百度</span>
                         </a>
                     </div>
                 </li>

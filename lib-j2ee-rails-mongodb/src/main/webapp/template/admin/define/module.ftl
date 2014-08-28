@@ -20,6 +20,6 @@
         <a href="javascript:void(0)" id="edit" class="easyui-linkbutton" iconCls="icon icon-edit" plain="true" >修改</a>
         <a href="javascript:void(0)" id="delete" class="easyui-linkbutton" iconCls="icon icon-delete" plain="true">删除</a>
     </div>
-<script type="text/javascript" src="${defaultjs}"></script>
+    <script type="text/javascript" src="${defaultjs}"></script>
 </body>
 </html>

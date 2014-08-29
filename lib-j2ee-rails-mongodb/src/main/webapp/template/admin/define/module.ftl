@@ -24,19 +24,19 @@
             <tr>
                 <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;">文本</td>
                 <td>
-                    <input  type="text" class="sdw" placeholder="Username"/>
+                    <input  type="text" placeholder="Username"/>
                 </td>
             </tr>
             <tr>
                 <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;">文本</td>
                 <td>
-                    <input type="text" class="sdw" class="form-control" placeholder="Username"/>
+                    <input type="text" placeholder="Username"/>
                 </td>
             </tr>
             <tr>
                 <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;">文本</td>
                 <td>
-                    <input type="text" class="sdw" class="form-control" placeholder="Username"/>
+                    <input type="text" placeholder="Username"/>
                 </td>
             </tr>
         </table>

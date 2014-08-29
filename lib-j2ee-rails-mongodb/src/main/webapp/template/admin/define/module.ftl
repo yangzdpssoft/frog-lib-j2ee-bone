@@ -19,23 +19,23 @@
         </div>
     </div>
     <div data-options="region:'center',title:'属性'">
-        <table class="table table-bordered">
+        <table class="table">
             <tr>
-                <td style="text-align: right;vertical-align: middle; width: 21%">文本</td>
+                <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;">文本</td>
                 <td>
-                    <input ng-switch-when="text" type="text" class="form-control" placeholder="Username"/>
+                    <input  type="text" class="sdw" placeholder="Username"/>
                 </td>
             </tr>
             <tr>
-                <td style="text-align: right;vertical-align: middle; width: 21%">文本</td>
+                <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;">文本</td>
                 <td>
-                    <input ng-switch-when="text" type="text" class="form-control" placeholder="Username"/>
+                    <input type="text" class="sdw" class="form-control" placeholder="Username"/>
                 </td>
             </tr>
             <tr>
-                <td style="text-align: right;vertical-align: middle; width: 21%">文本</td>
+                <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;">文本</td>
                 <td>
-                    <div class="summernote"></div>
+                    <input type="text" class="sdw" class="form-control" placeholder="Username"/>
                 </td>
             </tr>
         </table>

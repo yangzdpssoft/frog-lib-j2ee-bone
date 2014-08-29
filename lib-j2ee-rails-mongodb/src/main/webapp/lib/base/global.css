@@ -4,3 +4,31 @@
 hr{
     border-color: #ddd;
 }
+
+input[type='text'], textarea,.wttxt{
+    outline: none;min-height: 23px;
+    border: 1px solid #CFCFCF;
+    padding: 5px;transition:all .2s ease-out;
+    border-radius: 3px;
+    width: 95%;
+}
+
+input[type='password']{
+    outline: none;min-height: 23px;
+    border: 1px solid #CFCFCF;
+    padding: 5px;transition:all .2s ease-out;
+    border-radius: 3px;
+}
+
+.sdw:focus{
+    transition:border linear .2s,box-shadow linear .5s;
+    -moz-transition:border linear .2s,-moz-box-shadow linear .5s;
+    -webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;
+    outline:none;border-color: #3399FF;
+    box-shadow:0 0 8px #3399FF;
+    -moz-box-shadow:0 0 8px #3399FF;
+    -webkit-box-shadow:0 0 8px #3399FF;
+}
+.table{
+    width: 100%;
+}

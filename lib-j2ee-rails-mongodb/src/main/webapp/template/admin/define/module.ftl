@@ -3,7 +3,7 @@
 <body>
 <div id="layout" class="easyui-layout" fit="true">
     <div data-options="region:'west',split:true" style="width:60%;">
-        <table id="grid" edatagrid  toolbar="#grid_toolbar">
+        <table id="grid" edatagrid  toolbar="#grid_toolbar" dataUrl="" saveUrl="" deleteUrl="" destroyUrl="" defaultValueUrl="">
             <thead>
             <tr>
                 <th field="collection" width="32%" editor="{type:'validatebox',options:{required:true}}">集合</th>

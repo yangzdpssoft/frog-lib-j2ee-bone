@@ -3,8 +3,10 @@
         $("[edatagrid]").each(function(){
             var dg = $(this);
             dg.datagrid({
+                pagination : false,
                 rownumbers : true,
                 singleSelect :true,
+                idField : 'id',
                 fit:true,
                 onSelect : function (rowIndex, rowData) {
                     var preSelectIndex = dg.data('preSelectIndex');
@@ -59,6 +61,8 @@
                             var buttonType = buttonId.split('_')[1];
                             if($.inArray(buttonType, commonButton) > -1){
                                 $('#' + buttonId).linkbutton('disable');
+                            }else if(buttonType === 'destroy'){
+                                $('#' + buttonId).linkbutton('enable');
                             }
                         }
                     });
@@ -72,6 +76,8 @@
                             var buttonType = buttonId.split('_')[1];
                             if($.inArray(buttonType, commonButton) > -1){
                                 $('#' + buttonId).linkbutton('enable');
+                            }else if(buttonType === 'destroy'){
+                                $('#' + buttonId).linkbutton('disable');
                             }
                         }
                     });
@@ -169,11 +175,18 @@
                 if(!edit){
                     return;
                 }
+            }else if(act === 'destroy'){
+                var edit = $(grid).data('edit');
+                if(edit){
+                    return;
+                }
+                $.messager.confirm('请确认','确认清空所有数据，当前操作不可逆转？', function(r){
+                    if(r){
+                        //清空
+                    }
+                });
             }
-        });
-        $("#insert").tooltip({
-            position: 'bottom',
-            content: '<span>当前选中行上面插入一行！</span>'
+
         });
     });
 })(jQuery);

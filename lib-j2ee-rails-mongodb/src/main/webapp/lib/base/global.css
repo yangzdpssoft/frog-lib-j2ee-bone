@@ -84,4 +84,6 @@ a:hover{ text-decoration:underline;}
 }
 .icon-insert {
     background-position: -380px -140px;
+}.icon-destroy {
+    background-position: -340px -40px;
 }

@@ -76,6 +76,9 @@ a:hover{ text-decoration:underline;}
 .icon-delete {
     background-position: -140px -120px;
 }
-.icon-xx {
-    background-position: -140px -120px;
+.icon-up {
+    background-position: -240px -300px;
+}
+.icon-down {
+    background-position: -360px -300px;
 }

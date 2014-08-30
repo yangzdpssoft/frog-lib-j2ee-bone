@@ -55,6 +55,38 @@
                         }
                     }
                 });
+            }else if(act === 'up'){
+                if(validateAllRow($(grid), 'ud')){
+                    var selectIndex = $(grid).datagrid('getRowIndex', $(grid).datagrid('getSelected'));
+                    if(selectIndex > 0){
+                        $(grid).datagrid('endEdit', selectIndex);
+                        var selectRowTemp = $.extend(true, {}, $(grid).datagrid('getSelected'));
+                        var targetIndex = selectIndex - 1;
+                        var targetRowTemp = $.extend(true, {}, $(grid).datagrid('getRows')[targetIndex]);
+                        $(grid).datagrid('updateRow', {index : targetIndex, row : selectRowTemp});
+                        $(grid).datagrid('updateRow', {index : selectIndex, row : targetRowTemp});
+                        $(grid).datagrid('selectRow', targetIndex);
+                        $(grid).datagrid('beginEdit', targetIndex);
+                    }else{
+                        $.messager.show({title: '操作警告', msg: '已经移动至第一行，无法继续上移！'});
+                    }
+                }
+            }else if(act === 'down'){
+                if(validateAllRow($(grid), 'ud')){
+                    var selectIndex = $(grid).datagrid('getRowIndex', $(grid).datagrid('getSelected'));
+                    if(selectIndex < ($(grid).datagrid('getRows').length - 1)){
+                        $(grid).datagrid('endEdit', selectIndex);
+                        var selectRowTemp = $.extend(true, {}, $(grid).datagrid('getSelected'));
+                        var targetIndex = selectIndex + 1;
+                        var targetRowTemp = $.extend(true, {}, $(grid).datagrid('getRows')[targetIndex]);
+                        $(grid).datagrid('updateRow', {index : targetIndex, row : selectRowTemp});
+                        $(grid).datagrid('updateRow', {index : selectIndex, row : targetRowTemp});
+                        $(grid).datagrid('selectRow', targetIndex);
+                        $(grid).datagrid('beginEdit', targetIndex);
+                    }else{
+                        $.messager.show({title: '操作警告', msg: '已经移动至最后一行，无法继续下移！'});
+                    }
+                }
             }else if(act === 'save'){
 
             }
@@ -67,9 +99,11 @@ function validateAllRow(dg, act){
     for(var i = 0; i < rows; i++){
         if(!dg.datagrid('validateRow', i)){
             if(act == 'add'){
-                $.messager.show({title: '操作警告', msg: '第' + (i + 1) + '行校验不通过，无法新增行!'});
+                $.messager.show({title: '操作警告', msg: '第' + (i + 1) + '行校验不通过，无法新增行！'});
             }else if(act == 'save'){
                 $.messager.show({title: '操作警告', msg: '第' + (i + 1) + '行校验不通过，请正确填写后保存！'});
+            }else if(act == 'ud'){
+                $.messager.show({title: '操作警告', msg: '第' + (i + 1) + '行校验不通过，无法移动！'});
             }
             return false;
         }

@@ -13,10 +13,32 @@
             </thead>
         </table>
         <div id="toolbar">
-            <a href="javascript:void(0)" id="save" datagridButton="#grid" class="easyui-linkbutton" iconCls="icon icon-save" plain="true">保存</a>
-            <a href="javascript:void(0)" id="add" datagridButton="#grid" class="easyui-linkbutton" iconCls="icon icon-add" plain="true">添加</a>
-            <a href="javascript:void(0)" id="edit" datagridButton="#grid" class="easyui-linkbutton" iconCls="icon icon-edit" plain="true" >修改</a>
-            <a href="javascript:void(0)" id="delete" datagridButton="#grid" class="easyui-linkbutton" iconCls="icon icon-delete" plain="true">删除</a>
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>
+                        <a href="javascript:void(0)" id="save" datagridButton="#grid" class="easyui-linkbutton" iconCls="icon icon-save" plain="true">保存</a>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0)" id="add" datagridButton="#grid" class="easyui-linkbutton" iconCls="icon icon-add" plain="true">添加</a>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0)" id="edit" datagridButton="#grid" class="easyui-linkbutton" iconCls="icon icon-edit" plain="true" >修改</a>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0)" id="delete" datagridButton="#grid" class="easyui-linkbutton" iconCls="icon icon-delete" plain="true">删除</a>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0)" class="datagrid-btn-separator" />
+                    </td>
+                    <td>
+                        <a href="javascript:void(0)" id="up" datagridButton="#grid" class="easyui-linkbutton" iconCls="icon icon-up" plain="true">上移</a>
+                    </td>
+                    <td>
+                        <a href="javascript:void(0)" id="down" datagridButton="#grid" class="easyui-linkbutton" iconCls="icon icon-down" plain="true">下移</a>
+                    </td>
+                </tr>
+            </table>
+
         </div>
     </div>
     <div data-options="region:'center',title:'属性'">

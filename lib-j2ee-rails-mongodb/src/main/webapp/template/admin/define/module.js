@@ -18,7 +18,7 @@
                 },
                 onClickRow : function(rowIndex, rowData){
                     var reSelectIndex = dg.data('reSelectIndex');
-                    if(reSelectIndex != rowIndex && reSelectIndex && reSelectIndex != -1){
+                    if(reSelectIndex != rowIndex && reSelectIndex != -1){
                         dg.datagrid('selectRow', reSelectIndex);
                         $.messager.show({title: '警告', msg:  '第' + (reSelectIndex + 1) + '行输入错误，无法修改其他行！'});
                     }
@@ -56,6 +56,11 @@
                     }
                 });
             }else if(act === 'up'){
+                var selectRow = $(grid).datagrid('getSelected');
+                if(selectRow == null){
+                    $.messager.alert('警告', '请选中一行.', 'warning');
+                    return;
+                }
                 if(validateAllRow($(grid), 'ud')){
                     var selectIndex = $(grid).datagrid('getRowIndex', $(grid).datagrid('getSelected'));
                     if(selectIndex > 0){
@@ -72,6 +77,11 @@
                     }
                 }
             }else if(act === 'down'){
+                var selectRow = $(grid).datagrid('getSelected');
+                if(selectRow == null){
+                    $.messager.alert('警告', '请选中一行.', 'warning');
+                    return;
+                }
                 if(validateAllRow($(grid), 'ud')){
                     var selectIndex = $(grid).datagrid('getRowIndex', $(grid).datagrid('getSelected'));
                     if(selectIndex < ($(grid).datagrid('getRows').length - 1)){
@@ -87,9 +97,26 @@
                         $.messager.show({title: '操作警告', msg: '已经移动至最后一行，无法继续下移！'});
                     }
                 }
+            }else if(act === 'insert'){
+                var selectRow = $(grid).datagrid('getSelected');
+                if(selectRow == null){
+                    $.messager.alert('警告', '请选中一行.', 'warning');
+                    return;
+                }
+                if(validateAllRow($(grid), 'insert')){
+                    var selectIndex = $(grid).datagrid('getRowIndex', $(grid).datagrid('getSelected'));
+                    $(grid).datagrid('endEdit', selectIndex);
+                    $(grid).datagrid('insertRow',{index : selectIndex, row : {id: ''}});
+                    $(grid).datagrid('selectRow', selectIndex);
+                    $(grid).datagrid('beginEdit', selectIndex);
+                }
             }else if(act === 'save'){
 
             }
+        });
+        $("#insert").tooltip({
+            position: 'bottom',
+            content: '<span>当前选中行上面插入一行！</span>'
         });
     });
 })(jQuery);
@@ -104,6 +131,8 @@ function validateAllRow(dg, act){
                 $.messager.show({title: '操作警告', msg: '第' + (i + 1) + '行校验不通过，请正确填写后保存！'});
             }else if(act == 'ud'){
                 $.messager.show({title: '操作警告', msg: '第' + (i + 1) + '行校验不通过，无法移动！'});
+            }else if(act == 'insert'){
+                $.messager.show({title: '操作警告', msg: '第' + (i + 1) + '行校验不通过，无法插入！'});
             }
             return false;
         }

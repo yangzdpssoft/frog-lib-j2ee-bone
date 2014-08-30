@@ -19,6 +19,9 @@
                         <a href="javascript:void(0)" id="save" datagridButton="#grid" class="easyui-linkbutton" iconCls="icon icon-save" plain="true">保存</a>
                     </td>
                     <td>
+                        <a href="javascript:void(0)" class="datagrid-btn-separator" />
+                    </td>
+                    <td>
                         <a href="javascript:void(0)" id="add" datagridButton="#grid" class="easyui-linkbutton" iconCls="icon icon-add" plain="true">添加</a>
                     </td>
                     <td>
@@ -28,7 +31,7 @@
                         <a href="javascript:void(0)" id="delete" datagridButton="#grid" class="easyui-linkbutton" iconCls="icon icon-delete" plain="true">删除</a>
                     </td>
                     <td>
-                        <a href="javascript:void(0)" class="datagrid-btn-separator" />
+                        <a href="javascript:void(0)" id="insert" datagridButton="#grid" class="easyui-linkbutton" iconCls="icon icon-insert" plain="true">插入</a>
                     </td>
                     <td>
                         <a href="javascript:void(0)" id="up" datagridButton="#grid" class="easyui-linkbutton" iconCls="icon icon-up" plain="true">上移</a>

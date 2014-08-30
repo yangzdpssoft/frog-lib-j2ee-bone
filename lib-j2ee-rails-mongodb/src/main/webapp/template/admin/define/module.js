@@ -3,6 +3,9 @@
         $("[edatagrid]").each(function(){
             var dg = $(this);
             dg.datagrid({
+                rownumbers : true,
+                singleSelect :true,
+                fit:true,
                 onSelect : function (rowIndex, rowData) {
                     var preSelectIndex = dg.data('preSelectIndex');
                     if(dg.datagrid('validateRow', preSelectIndex)){
@@ -24,11 +27,18 @@
                     }
                 }
             });
+            dg.data('edit', false);
         });
         $("[datagridButton]").click(function(){
-            var grid = $(this).attr('datagridButton');
-            var act = $(this).attr('id');
+            var datagrid = $(this).attr('id');
+            var d = datagrid.split('_');
+            var grid = '#' + d[0];
+            var act = d[1];
             if(act === 'add'){
+                var edit = $(grid).data('edit');
+                if(!edit){
+                    return;
+                }
                 if(validateAllRow($(grid), 'add')){
                     $(grid).datagrid('appendRow', {id:''});
                     var currIndex = $(grid).datagrid('getRowIndex', $(grid).datagrid('getSelected'));
@@ -38,9 +48,41 @@
                     $(grid).datagrid('beginEdit', lastRowIndex);
                 }
             }else if(act === 'edit'){
+                var commonButton = ["save", "add", "delete", "insert", "up", "down"];
+                var edit = $(grid).data('edit');
+                if(edit){
+                    $(grid).data('edit', false);
+                    $(this).linkbutton({text:'编辑'});
+                    $(this).parent().parent().children().each(function(){
+                        var buttonId = $(this).find('a').attr('id');
+                        if(buttonId){
+                            var buttonType = buttonId.split('_')[1];
+                            if($.inArray(buttonType, commonButton) > -1){
+                                $('#' + buttonId).linkbutton('disable');
+                            }
+                        }
+                    });
+                    $(grid).datagrid('rejectChanges');
+                }else{
+                    $(grid).data('edit', true);
+                    $(this).linkbutton({text:'退出编辑'});
+                    $(this).parent().parent().children().each(function(){
+                        var buttonId = $(this).find('a').attr('id');
+                        if(buttonId){
+                            var buttonType = buttonId.split('_')[1];
+                            if($.inArray(buttonType, commonButton) > -1){
+                                $('#' + buttonId).linkbutton('enable');
+                            }
+                        }
+                    });
+                }
                 var currIndex = $(grid).datagrid('getRowIndex', $(grid).datagrid('getSelected'));
                 $(grid).datagrid('beginEdit', currIndex);
             }else if(act === 'delete'){
+                var edit = $(grid).data('edit');
+                if(!edit){
+                    return;
+                }
                 var selectRow = $(grid).datagrid('getSelected');
                 if(selectRow == null){
                     $.messager.alert('警告', '请选择要删除的行.', 'warning');
@@ -56,6 +98,10 @@
                     }
                 });
             }else if(act === 'up'){
+                var edit = $(grid).data('edit');
+                if(!edit){
+                    return;
+                }
                 var selectRow = $(grid).datagrid('getSelected');
                 if(selectRow == null){
                     $.messager.alert('警告', '请选中一行.', 'warning');
@@ -77,6 +123,10 @@
                     }
                 }
             }else if(act === 'down'){
+                var edit = $(grid).data('edit');
+                if(!edit){
+                    return;
+                }
                 var selectRow = $(grid).datagrid('getSelected');
                 if(selectRow == null){
                     $.messager.alert('警告', '请选中一行.', 'warning');
@@ -98,6 +148,10 @@
                     }
                 }
             }else if(act === 'insert'){
+                var edit = $(grid).data('edit');
+                if(!edit){
+                    return;
+                }
                 var selectRow = $(grid).datagrid('getSelected');
                 if(selectRow == null){
                     $.messager.alert('警告', '请选中一行.', 'warning');
@@ -111,7 +165,10 @@
                     $(grid).datagrid('beginEdit', selectIndex);
                 }
             }else if(act === 'save'){
-
+                var edit = $(grid).data('edit');
+                if(!edit){
+                    return;
+                }
             }
         });
         $("#insert").tooltip({

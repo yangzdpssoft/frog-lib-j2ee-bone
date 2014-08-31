@@ -3,7 +3,7 @@
 <body>
 <div id="layout" class="easyui-layout" fit="true">
     <div data-options="region:'west',split:true" style="width:60%;">
-        <table id="grid" edatagrid  toolbar="#grid_toolbar" dataUrl="" saveUrl="" deleteUrl="" destroyUrl="" defaultValueUrl="">
+        <table id="grid" gridIndexForm  toolbar="#grid_toolbar" dataUrl="" saveUrl="" deleteUrl="" destroyUrl="" defaultValueUrl="">
             <thead>
             <tr>
                 <th field="collection" width="32%" editor="{type:'validatebox',options:{required:true}}">集合</th>
@@ -44,7 +44,6 @@
                     </td>
                 </tr>
             </table>
-
         </div>
     </div>
     <div data-options="region:'center',title:'属性'">
@@ -71,6 +70,8 @@
     </div>
 </div>
 <script type="text/javascript" src="${defaultjs}"></script>
+<script type="text/javascript" src="${ctx}/lib/easyui/extends/gridIndexForm.gridForm.js"></script>
+<script type="text/javascript" src="${ctx}/lib/easyui/extends/editdatagrid.js"></script>
 <script type="text/javascript" src="${ctx}/lib/base/tip.js"></script>
 </body>
 </html>

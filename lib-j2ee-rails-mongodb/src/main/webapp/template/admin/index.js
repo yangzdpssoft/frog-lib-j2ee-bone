@@ -37,7 +37,7 @@ function addTab(menuname, url, icon){
     if(!$(contentTabs).tabs('exists', menuname)){
         $(contentTabs).tabs('add',{
             title:menuname,
-            href : url,
+            content : createIFrame(url),
             closable:true,
             icon : icon
         });
@@ -46,4 +46,6 @@ function addTab(menuname, url, icon){
         $(contentTabs).tabs('update',{tab: $(contentTabs).tabs('getSelected'), options: {}});
     }
 }
-
+function createIFrame(url){
+    return '<iframe src="' + url + '" class="easyui-layout" frameborder="0" scrolling="auto" data-options="fit:true"></iframe>';
+}

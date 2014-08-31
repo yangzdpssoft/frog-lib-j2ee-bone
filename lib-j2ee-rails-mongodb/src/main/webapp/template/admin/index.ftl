@@ -6,6 +6,7 @@
 <#include "/lib/include/easyui.ftl">
 <#include "/lib/include/formcompoment.ftl">
 <script src="${defaultjs}" type="text/javascript"></script>
+
 </head>
 
 <body class="easyui-layout">
@@ -16,6 +17,14 @@
     <div id="contentMenu" class="easyui-accordion" data-options="fit:true,border:false" style="border: 0px;">
         <div title="自动化控制台" data-options="iconCls:'icon icon-module'" style="overflow:auto;padding:10px;">
             <ul>
+                <li>
+                    <div>
+                        <a menuid="ss" href="javascript:" url="${ctx}/admin/define/menu">
+                            <span class="icon icon-fun">&nbsp;</span>
+                            <span class="menuname">菜单管理</span>
+                        </a>
+                    </div>
+                </li>
                 <li>
                     <div>
                         <a menuid="ss" href="javascript:" url="${ctx}/admin/define/module">

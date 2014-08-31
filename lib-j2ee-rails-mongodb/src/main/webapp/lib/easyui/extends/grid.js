@@ -1,6 +1,6 @@
 (function($){
     $(function(){
-        $("[gridIndexForm]").each(function(){
+        $("[grid]").each(function(){
             var dg = $(this);
             dg.datagrid({
                 pagination : false,

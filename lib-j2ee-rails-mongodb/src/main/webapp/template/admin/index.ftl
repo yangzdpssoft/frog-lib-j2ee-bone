@@ -26,9 +26,9 @@
                 </li>
                 <li>
                     <div>
-                        <a menuid="ss" href="javascript:" url="http://www.baidu.com">
+                        <a menuid="ss" href="javascript:" url="${ctx}/admin/define/field">
                             <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">百度</span>
+                            <span class="menuname">定义字段</span>
                         </a>
                     </div>
                 </li>

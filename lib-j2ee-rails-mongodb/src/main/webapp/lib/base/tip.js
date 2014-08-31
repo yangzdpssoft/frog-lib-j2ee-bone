@@ -2,8 +2,9 @@
     $(function(){
         $("[tip]").each(function(){
             var tip = $(this).attr('tip');
+            var tipPosition = $(this).attr('tipP');
             $(this).tooltip({
-                position: 'bottom',
+                position: tipPosition,
                 content: '<span>' + tip + '</span>'
             });
         });

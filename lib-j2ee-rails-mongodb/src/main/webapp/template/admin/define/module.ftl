@@ -31,10 +31,10 @@
                         <a href="javascript:void(0)" id="grid_delete" datagridButton class="easyui-linkbutton" iconCls="icon icon-delete" plain="true" data-options="disabled:true">删除</a>
                     </td>
                     <td>
-                        <a href="javascript:void(0)" id="grid_destroy" datagridButton class="easyui-linkbutton" iconCls="icon icon-destroy" plain="true" tip="全部删除！">清空</a>
+                        <a href="javascript:void(0)" id="grid_destroy" datagridButton class="easyui-linkbutton" iconCls="icon icon-destroy" plain="true" tip="全部删除！" tipP = "bottom">清空</a>
                     </td>
                     <td>
-                        <a href="javascript:void(0)" id="grid_insert" datagridButton class="easyui-linkbutton" iconCls="icon icon-insert" plain="true" data-options="disabled:true" tip="当前选中行上面插入一行！">插入</a>
+                        <a href="javascript:void(0)" id="grid_insert" datagridButton class="easyui-linkbutton" iconCls="icon icon-insert" plain="true" data-options="disabled:true" tip="当前选中行上面插入一行！" tipP = "bottom">插入</a>
                     </td>
                     <td>
                         <a href="javascript:void(0)" id="grid_up" datagridButton class="easyui-linkbutton" iconCls="icon icon-up" plain="true" data-options="disabled:true">上移</a>

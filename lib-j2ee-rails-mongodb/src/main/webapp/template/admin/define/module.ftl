@@ -4,7 +4,6 @@
     <meta charset="UTF-8"/>
     <#include "/lib/include/common.ftl">
     <#include "/lib/include/easyui.ftl">
-    <#include "/lib/include/formcompoment.ftl">
     <script type="text/javascript" src="${ctx}/lib/easyui/extends/grid.js"></script>
     <script type="text/javascript" src="${ctx}/lib/base/tip.js"></script>
     <script src="${defaultjs}" type="text/javascript"></script>
@@ -13,7 +12,7 @@
 <table id="moduleGrid" grid  toolbar="#moduleGrid_toolbar" dataUrl="" saveUrl="" deleteUrl="" destroyUrl="" defaultValueUrl="">
     <thead>
     <tr>
-        <th field="name" width="33%" editor="{type:'validatebox',options:{required:true}}" tip="sss" tipP="bottom">表名</th>
+        <th field="name" width="33%" editor="{type:'validatebox',options:{required:true}}"><span tip="模块对应数据库哪张表！" tipP="bottom">表名</span></th>
         <th field="type" width="33%" editor="{type:'validatebox',options:{required:true}}">管理类型</th>
         <th field="type" width="33%" editor="{type:'validatebox',options:{required:true}}">脚本路径</th>
     </tr>

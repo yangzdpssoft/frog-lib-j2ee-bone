@@ -4,7 +4,6 @@
     <meta charset="UTF-8"/>
 <#include "/lib/include/common.ftl">
 <#include "/lib/include/easyui.ftl">
-<#include "/lib/include/formcompoment.ftl">
     <script type="text/javascript" src="${ctx}/lib/easyui/extends/grid.js"></script>
     <script type="text/javascript" src="${ctx}/lib/base/tip.js"></script>
     <script src="${defaultjs}" type="text/javascript"></script>

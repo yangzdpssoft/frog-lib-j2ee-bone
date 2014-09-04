@@ -5,20 +5,27 @@
             dg.datagrid({
                 pagination : false,
                 rownumbers : true,
-                singleSelect :true,
+                singleSelect :false,
+                ctrlSelect : true,
                 idField : 'id',
                 fit:true,
                 onSelect : function (rowIndex, rowData) {
                     var preSelectIndex = dg.data('preSelectIndex');
-                    if(dg.datagrid('validateRow', preSelectIndex)){
-                        if (preSelectIndex != rowIndex){
-                            dg.datagrid('endEdit', preSelectIndex);
-                            dg.datagrid('beginEdit', rowIndex);
+                    var edit = dg.data('edit');
+                    if(edit){
+                        if(dg.datagrid('validateRow', preSelectIndex)){
+                            if (preSelectIndex != rowIndex) {
+                                dg.datagrid('endEdit', preSelectIndex);
+                                dg.datagrid('beginEdit', rowIndex);
+                            }
+                            dg.data('preSelectIndex', rowIndex);
+                            dg.data('reSelectIndex', -1);
+                        }else{
+                            dg.data('reSelectIndex', preSelectIndex);
                         }
+                    }else{
                         dg.data('preSelectIndex', rowIndex);
                         dg.data('reSelectIndex', -1);
-                    }else{
-                        dg.data('reSelectIndex', preSelectIndex);
                     }
                 },
                 onClickRow : function(rowIndex, rowData){
@@ -50,9 +57,10 @@
                     $(grid).datagrid('beginEdit', lastRowIndex);
                 }
             }else if(act === 'edit'){
-                var commonButton = ["save", "add", "delete", "insert", "up", "down"];
+                var commonButton = ["save", "add", "insert", "up", "down"];
                 var edit = $(grid).data('edit');
                 if(edit){
+                    $(grid).datagrid('options').singleSelect = false;
                     $(grid).data('edit', false);
                     $(this).linkbutton({text:'编辑'});
                     $(this).parent().parent().children().each(function(){
@@ -61,34 +69,36 @@
                             var buttonType = buttonId.split('_')[1];
                             if($.inArray(buttonType, commonButton) > -1){
                                 $('#' + buttonId).linkbutton('disable');
-                            }else if(buttonType === 'destroy'){
+                            }else if(buttonType === 'selectAll'){
                                 $('#' + buttonId).linkbutton('enable');
                             }
                         }
                     });
                     $(grid).datagrid('rejectChanges');
                 }else{
+                    var preSelectIndex = $(grid).data('preSelectIndex');
+                    $(grid).datagrid('unselectAll');
+                    if(preSelectIndex && preSelectIndex != -1){
+                        $(grid).datagrid('selectRow', preSelectIndex);
+                    }
+                    $(grid).datagrid('options').singleSelect = true;
                     $(grid).data('edit', true);
                     $(this).linkbutton({text:'退出编辑'});
+                    var currIndex = $(grid).datagrid('getRowIndex', $(grid).datagrid('getSelected'));
+                    $(grid).datagrid('beginEdit', currIndex);
                     $(this).parent().parent().children().each(function(){
                         var buttonId = $(this).find('a').attr('id');
                         if(buttonId){
                             var buttonType = buttonId.split('_')[1];
                             if($.inArray(buttonType, commonButton) > -1){
                                 $('#' + buttonId).linkbutton('enable');
-                            }else if(buttonType === 'destroy'){
+                            }else if(buttonType === 'selectAll'){
                                 $('#' + buttonId).linkbutton('disable');
                             }
                         }
                     });
                 }
-                var currIndex = $(grid).datagrid('getRowIndex', $(grid).datagrid('getSelected'));
-                $(grid).datagrid('beginEdit', currIndex);
             }else if(act === 'delete'){
-                var edit = $(grid).data('edit');
-                if(!edit){
-                    return;
-                }
                 var selectRow = $(grid).datagrid('getSelected');
                 if(selectRow == null){
                     $.messager.alert('警告', '请选择要删除的行.', 'warning');
@@ -175,16 +185,19 @@
                 if(!edit){
                     return;
                 }
-            }else if(act === 'destroy'){
+            }else if(act === 'selectAll'){
                 var edit = $(grid).data('edit');
                 if(edit){
                     return;
                 }
-                $.messager.confirm('请确认','确认清空所有数据，当前操作不可逆转？', function(r){
-                    if(r){
-                        //清空
-                    }
-                });
+                var text = $(this).text().trim();
+                if(text === '全选'){
+                    $(this).linkbutton({iconCls:'icon icon-unselectAll', text:'取消全选'});
+                    $(grid).datagrid('selectAll');
+                }else if(text === '取消全选'){
+                    $(this).linkbutton({iconCls:'icon icon-selectAll', text:'全选'});
+                    $(grid).datagrid('unselectAll');
+                }
             }
 
         });

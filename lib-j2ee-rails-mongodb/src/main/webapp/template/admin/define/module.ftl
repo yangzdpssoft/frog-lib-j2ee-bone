@@ -9,12 +9,12 @@
     <script src="${defaultjs}" type="text/javascript"></script>
 </head>
 <body class="easyui-layout" fit="true">
-<table id="moduleGrid" grid  toolbar="#moduleGrid_toolbar" dataUrl="" saveUrl="" deleteUrl="" destroyUrl="" defaultValueUrl="">
+<table id="moduleGrid" grid  toolbar="#moduleGrid_toolbar" url="${ctx}/template/admin/define/datagrid_data1.json" dataUrl="" saveUrl="" deleteUrl="" destroyUrl="" defaultValueUrl="">
     <thead>
     <tr>
         <th field="name" width="33%" editor="{type:'validatebox',options:{required:true}}"><span tip="模块对应数据库哪张表！" tipP="bottom">表名</span></th>
         <th field="type" width="33%" editor="{type:'validatebox',options:{required:true}}">管理类型</th>
-        <th field="type" width="33%" editor="{type:'validatebox',options:{required:true}}">脚本路径</th>
+        <th field="jsPath" width="33%" editor="{type:'validatebox',options:{required:true}}">脚本路径</th>
     </tr>
     </thead>
 </table>
@@ -34,10 +34,10 @@
                 <a href="javascript:void(0)" id="moduleGrid_add" datagridButton class="easyui-linkbutton" iconCls="icon icon-add" plain="true" data-options="disabled:true">添加</a>
             </td>
             <td>
-                <a href="javascript:void(0)" id="moduleGrid_delete" datagridButton class="easyui-linkbutton" iconCls="icon icon-delete" plain="true" data-options="disabled:true">删除</a>
+                <a href="javascript:void(0)" id="moduleGrid_delete" datagridButton class="easyui-linkbutton" iconCls="icon icon-delete" plain="true">删除</a>
             </td>
             <td>
-                <a href="javascript:void(0)" id="moduleGrid_destroy" datagridButton class="easyui-linkbutton" iconCls="icon icon-destroy" plain="true" tip="全部删除！" tipP = "bottom">清空</a>
+                <a href="javascript:void(0)" id="moduleGrid_selectAll" datagridButton class="easyui-linkbutton" iconCls="icon icon-selectAll" plain="true" tip="按住ctrl多选！" tipP = "bottom">全选</a>
             </td>
             <td>
                 <a href="javascript:void(0)" id="moduleGrid_insert" datagridButton class="easyui-linkbutton" iconCls="icon icon-insert" plain="true" data-options="disabled:true" tip="当前选中行上面插入一行！" tipP = "bottom">插入</a>

@@ -5,7 +5,6 @@
     <#include "/lib/include/common.ftl">
     <#include "/lib/include/easyui.ftl">
     <script type="text/javascript" src="${ctx}/lib/easyui/extends/grid.js"></script>
-    <script type="text/javascript" src="${ctx}/lib/base/tip.js"></script>
     <script src="${defaultjs}" type="text/javascript"></script>
 </head>
 <body class="easyui-layout" fit="true">

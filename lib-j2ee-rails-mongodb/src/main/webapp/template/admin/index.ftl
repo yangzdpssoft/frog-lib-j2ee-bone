@@ -41,6 +41,14 @@
                         </a>
                     </div>
                 </li>
+                <li>
+                    <div>
+                        <a menuid="ss" href="javascript:" url="${ctx}/admin/define/tree">
+                            <span class="icon icon-fun">&nbsp;</span>
+                            <span class="menuname">树导航</span>
+                        </a>
+                    </div>
+                </li>
             </ul>
         </div>
 

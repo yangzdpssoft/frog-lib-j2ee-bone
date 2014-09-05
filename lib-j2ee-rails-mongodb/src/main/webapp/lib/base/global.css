@@ -39,6 +39,9 @@ input:focus{
     border: 1px solid #f1f1f1;
 }
 
+.tree-editor{
+    width: 200px;
+}
 
 a{ color:Black; text-decoration:none;}
 a:hover{ text-decoration:underline;}
@@ -96,4 +99,7 @@ a:hover{ text-decoration:underline;}
 }
 .icon-undrag {
     background-position: -40px -140px;
+}
+.icon-subadd {
+    background-position: -360px -20px;
 }

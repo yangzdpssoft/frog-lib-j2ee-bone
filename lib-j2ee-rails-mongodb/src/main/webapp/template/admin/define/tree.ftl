@@ -8,7 +8,7 @@
 </head>
 <body>
 <div id="layout" class="easyui-layout" fit="true">
-    <div id="west" data-options="region:'west',split:true" style="width:20%;">
+    <div id="west" data-options="region:'west',split:true" style="width:300px;">
         <#--<input treeSearch="tree" type="text" placeholder="快速检索" style="margin: 0px;border-radius: 0px;min-height: 0px;"/>-->
         <ul id="tree" edittree class="easyui-tree" data-options="url:'${ctx}/template/admin/define/tree_data1.json'"></ul>
         <div treeContentMenu="west_tree" class="easyui-menu" style="width: 150px;">
@@ -28,7 +28,7 @@
             <div id="tree_add" treeContextMenuButton iconCls="icon-add">
                 添加节点
             </div>
-            <div id="tree_subadd" treeContextMenuButton iconCls="icon-add">
+            <div id="tree_subadd" treeContextMenuButton iconCls="icon icon-subadd">
                 添加子节点
             </div>
             <div id="tree_del" treeContextMenuButton iconCls="icon-cancel">

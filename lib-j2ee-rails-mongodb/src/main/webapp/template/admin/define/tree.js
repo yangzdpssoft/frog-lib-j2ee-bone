@@ -122,7 +122,12 @@
                 tree.tree('reload');
             }
             else if(act === 'save'){
-                tree.tree('reload');
+                var roots = tree.tree('getRoots');
+                $.each(roots, function(){
+                    var data = tree.tree('getData', this.target);
+                    var result = fetchProp(data, ["id", "text", "children"], "children");
+                    alert(JSON.stringify(result));
+                });
             }
         });
     });

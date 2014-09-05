@@ -18,3 +18,26 @@ function sleep(numberMillis) {
         if (now.getTime() > exitTime)    return;
     }
 }
+
+function fetchProp(obj, prop, deepKey){
+    var result = {};
+    $.each(prop, function(){
+        if(this.toString() === deepKey){
+            var deep = obj[deepKey];
+            if(deep){
+                if($.isArray(deep)){
+                    var sub = [];
+                    for(var i = 0; i < deep.length; i++){
+                        sub[i] = fetchProp(deep[i], prop, deepKey);
+                    }
+                    result[deepKey] = sub;
+                }else{
+                    result[deepKey] = fetchProp(obj[deepKey], prop, deepKey);
+                }
+            }
+        }else{
+            result[this.toString()] = obj[this.toString()];
+        }
+    });
+    return result;
+}

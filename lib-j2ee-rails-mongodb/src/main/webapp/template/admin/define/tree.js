@@ -123,11 +123,12 @@
             }
             else if(act === 'save'){
                 var roots = tree.tree('getRoots');
-                $.each(roots, function(){
-                    var data = tree.tree('getData', this.target);
-                    var newData = fetchProp(data, ["id", "text", "children"], "children");
-                    alert(JSON.stringify(newData));
-                });
+                var newData = [];
+                for(var i = 0; i < newD.length; i++){
+                    var data = tree.tree('getData', roots[i].target);
+                    newData[i] = fetchProp(data, ["id", "text", "children"], "children");
+                }
+                var value = JSON.stringify(newData);
             }
         });
     });

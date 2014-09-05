@@ -90,4 +90,10 @@ a:hover{ text-decoration:underline;}
 }
 .icon-unselectAll {
      background-position: -140px -360px;
- }
+}
+.icon-drag {
+    background-position: -20px -220px;
+}
+.icon-undrag {
+    background-position: -40px -140px;
+}

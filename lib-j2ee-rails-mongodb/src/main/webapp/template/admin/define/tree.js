@@ -7,22 +7,22 @@
                 fit : true
             });
         });
-        $("[treeSearch]").each(function(){
-            var tree = $('#' + $(this).attr('treeSearch'));
-            var text = $(this);
-            text.keydown(function(){
-                var url = tree.tree('options').url;
-                var i = url.indexOf('?');
-                if(i != -1){
-                    var u = url.substr(0, i);
-                    tree.tree('options').url = u + '?keyword=' + text.val();
-                    tree.tree('reload');
-                }else{
-                    tree.tree('options').url = url + '?keyword=' + text.val();
-                    tree.tree('reload');
-                }
-            });
-        });
+//        $("[treeSearch]").each(function(){
+//            var tree = $('#' + $(this).attr('treeSearch'));
+//            var text = $(this);
+//            text.keydown(function(){
+//                var url = tree.tree('options').url;
+//                var i = url.indexOf('?');
+//                if(i != -1){
+//                    var u = url.substr(0, i);
+//                    tree.tree('options').url = u + '?keyword=' + text.val();
+//                    tree.tree('reload');
+//                }else{
+//                    tree.tree('options').url = url + '?keyword=' + text.val();
+//                    tree.tree('reload');
+//                }
+//            });
+//        });
         $("[treeContentMenu]").each(function(){
             var menu = $(this);
             var treeContentMenu = $(this).attr('treeContentMenu');
@@ -125,8 +125,8 @@
                 var roots = tree.tree('getRoots');
                 $.each(roots, function(){
                     var data = tree.tree('getData', this.target);
-                    var result = fetchProp(data, ["id", "text", "children"], "children");
-                    alert(JSON.stringify(result));
+                    var newData = fetchProp(data, ["id", "text", "children"], "children");
+                    alert(JSON.stringify(newData));
                 });
             }
         });

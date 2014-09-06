@@ -11,9 +11,9 @@
 <table id="moduleGrid" grid  toolbar="#moduleGrid_toolbar" url="${ctx}/template/admin/define/datagrid_data1.json" dataUrl="" saveUrl="" deleteUrl="" destroyUrl="" defaultValueUrl="">
     <thead>
     <tr>
-        <th field="name" width="33%" editor="{type:'validatebox',options:{required:true}}"><span tip="模块对应数据库哪张表！" tipP="bottom">表名</span></th>
-        <th field="type" width="33%" editor="{type:'validatebox',options:{required:true}}">管理类型</th>
-        <th field="jsPath" width="33%" editor="{type:'validatebox',options:{required:true}}">脚本路径</th>
+        <th field="name" width="200" editor="{type:'validatebox',options:{required:true}}"><span tip="模块对应数据库哪张表！" tipP="bottom">表名</span></th>
+        <th field="type" width="320" editor="{type:'ref',options:{required:true}}" formatter="gridRefFormatter">管理类型</th>
+        <th field="jsPath" width="200" editor="{type:'validatebox',options:{required:true}}">脚本路径</th>
     </tr>
     </thead>
 </table>
@@ -46,6 +46,20 @@
             </td>
             <td>
                 <a href="javascript:void(0)" id="moduleGrid_down" datagridButton class="easyui-linkbutton" iconCls="icon icon-down" plain="true"  data-options="disabled:true">下移</a>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="gridRefDialog" data-options="toolbar: '#gridRefDialog_toolbar'"></div>
+<div id="gridRefDialog_toolbar" style="padding:2px 0">
+    <table cellpadding="0" cellspacing="0" style="width:100%">
+        <tr>
+            <td>
+                <span style="font-size: 12px;color: #333;">&nbsp;&nbsp;编码&nbsp;&nbsp;</span>
+                <input  type="text" placeholder="Username" style="width: 200px;min-height: 12px;"/>
+                <span style="font-size: 12px;color: #333;">&nbsp;&nbsp;名称&nbsp;&nbsp;</span>
+                <input  type="text" placeholder="Username" style="width: 200px;min-height: 12px;"/>
+                <a href="javascript:" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="margin-bottom: 2px;">查询</a>
             </td>
         </tr>
     </table>

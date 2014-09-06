@@ -1,5 +1,75 @@
 (function($){
     $(function(){
+        $.extend($.fn.datagrid.defaults.editors, {
+            ref: {
+                init: function(container, options){
+                    var input = $('<div><input type="hidden"><input type="text" class="datagrid-editable-input" readonly="true" style="background-color: #f1f1f1;"><a gridRef href="javascript:" class="button blue">选择</a><a gridClear href="#" class="button white">清空</a></div>').appendTo(container);
+                    $("[gridClear]").click(function(){
+                        var div = $(this).parent();
+                        div.find('input[type="hidden"]').val('');
+                        div.find('input[type="text"]').val('');
+                    });
+                    $('#gridRefDialog').dialog({
+                        title: '请选择',
+                        width: 800,
+                        height: 400,
+                        closed: true,
+                        cache: false,
+                        modal: true,
+                        href : ctx + '/admin/dialog/gridRef',
+                        buttons:[{
+                            iconCls:'icon-ok',
+                            text:'确定',
+                            handler:function(){
+
+                            }
+                        },{
+                            iconCls:'icon-cancel',
+                            text:'取消',
+                            handler:function(){
+                                $('#gridRefDialog').dialog('close');
+                            }
+                        }]
+                    });
+                    $("[gridRef]").click(function(){
+                        $('#gridRefDialog').dialog('open');
+                    });
+                    return input;
+                },
+                destroy: function(target){
+                   $(target).remove();
+                },
+                getValue: function(target){
+                    var hidden = $(target).find('input[type="hidden"]').val();
+                    var text = $(target).find('input[type="text"]').val();
+                    if(hidden && text && hidden != '' && text != ''){
+                        return  hidden + '@$##$@' + text;
+                    }else{
+                        return '';
+                    }
+                },
+                setValue: function(target, value){
+                    if(value && value != ''){
+                        var d = value.split('@$##$@');
+                        if(d.length === 2){
+                            $(target).find('input[type="hidden"]').val(d[0]);
+                            $(target).find('input[type="text"]').val(d[1]);
+                        }else{
+                            $(target).find('input[type="hidden"]').val('');
+                            $(target).find('input[type="text"]').val('');
+                        }
+                    }else{
+                        $(target).find('input[type="hidden"]').val('');
+                        $(target).find('input[type="text"]').val('');
+                    }
+                },
+                resize: function(target, width){
+                    $(target)._outerWidth(width);
+                    $(target).find('input[type="text"]')._outerWidth(width - 120);
+                    $(target).find('a')._outerWidth(60);
+                }
+            }
+        });
         $("[grid]").each(function(){
             var dg = $(this);
             dg.datagrid({

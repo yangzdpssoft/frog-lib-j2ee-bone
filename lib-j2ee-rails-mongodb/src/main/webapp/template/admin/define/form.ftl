@@ -38,7 +38,13 @@
     <tr>
         <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 42px;">文本</td>
         <td>
-            <select class="easyui-combobox" name="dept" style="width:300px;height: 35px;">
+            <input type="text" class="easyui-numberbox" value="100" data-options="min:0,precision:2, width:300, groupSeparator: '，'">
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 42px;">文本</td>
+        <td>
+            <select class="easyui-combobox" name="dept" style="width:300px;height: 35px;" data-options="editable:false">
                 <option value="aa">aitem1</option>
                 <option>bitem2</option>
                 <option>bitem3</option>
@@ -50,8 +56,30 @@
     <tr>
         <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 42px;">文本</td>
         <td>
-            <select class="easyui-combotree" style="width:300px;height: 35px;" multiple  data-options="url:'${ctx}/template/admin/define/tree_data1.json'">
+            <select class="easyui-combobox" name="dept" style="width:300px;height: 35px;" data-options="url: '${ctx}/template/admin/define/combobox_data2.json',
+                method: 'get',
+                valueField:'value',
+                textField:'text',
+                groupField:'group',editable:false">
             </select>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 42px;">文本</td>
+        <td>
+            <input class="easyui-datebox" style="width:300px;height: 35px;" data-options="editable:false"/>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 42px;">文本</td>
+        <td>
+            <input class="easyui-datetimebox" style="width:300px;height: 35px;" data-options="editable:false"/>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 60px;">文本</td>
+        <td style="padding-left: 10px;">
+            <div class="easyui-slider" data-options="min:10,max:90,step:10,showTip:true" style="width:290px;"></div>
         </td>
     </tr>
 </table>

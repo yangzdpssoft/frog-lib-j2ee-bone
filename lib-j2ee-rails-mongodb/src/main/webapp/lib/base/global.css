@@ -1,27 +1,24 @@
 @CHARSET "UTF-8";
 *{
-    font-family: 'Microsoft Yahei', arial, helvetica, sans-serif;;
+    font-family: 'Microsoft Yahei', arial, helvetica, sans-serif;
+    font-size: 12px;
 }
 hr{
     border-color: #ddd;
 }
 
-input[type='text'], textarea,.wttxt{
-    outline: none;min-height: 23px;
+input {
+    min-height: 23px;
+}
+.input{
+    outline: none;
     border: 1px solid #CFCFCF;
     padding: 5px;transition:all .2s ease-out;
     border-radius: 3px;
-    width: 95%;
+    width: 90%;
 }
 
-input[type='password']{
-    outline: none;min-height: 23px;
-    border: 1px solid #CFCFCF;
-    padding: 5px;transition:all .2s ease-out;
-    border-radius: 3px;
-}
-
-input:focus{
+.input:focus{
     transition:border linear .2s,box-shadow linear .5s;
     -moz-transition:border linear .2s,-moz-box-shadow linear .5s;
     -webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;
@@ -31,12 +28,14 @@ input:focus{
     -webkit-box-shadow:0 0 8px #3399FF;
 }
 .table{
-    width: 100%;
-    border: 1px solid #f0f0f0;
+    width: 99%;
+    border: 1px solid #eeeeee;
     border-collapse: collapse;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 .table td{
-    border: 1px solid #f1f1f1;
+    border: 1px solid #eeeeee;
 }
 
 .tree-editor{

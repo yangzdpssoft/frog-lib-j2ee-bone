@@ -56,9 +56,9 @@
         <tr>
             <td>
                 <span style="font-size: 12px;color: #333;">&nbsp;&nbsp;编码&nbsp;&nbsp;</span>
-                <input  type="text" style="width: 200px;min-height: 12px;"/>
+                <input class="input"  type="text" style="width: 200px;min-height: 12px;"/>
                 <span style="font-size: 12px;color: #333;">&nbsp;&nbsp;名称&nbsp;&nbsp;</span>
-                <input  type="text"  style="width: 200px;min-height: 12px;"/>
+                <input class="input"  type="text"  style="width: 200px;min-height: 12px;"/>
                 <a href="javascript:" class="easyui-linkbutton" data-options="iconCls:'icon-search'" style="margin-bottom: 2px;">查询</a>
             </td>
         </tr>

@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="${ctx}/lib/webUploader/0.1.4/webuploader.css">
     <script src="${ctx}/lib/webUploader/0.1.4/webuploader.js"></script>
     <script src="${ctx}/lib/base/upload.js" type="text/javascript"></script>
+    <script src="${ctx}/lib/base/imageUpload.js" type="text/javascript"></script>
 </head>
-<body class="easyui-layout" fit="true">
+<body>
 <div style="margin: 20px;">
 <a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存</a>
 <a id="btn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'">取消</a>
@@ -90,6 +91,38 @@
         <td>
             <div>
                 <input type="hidden" class="admin_file" />
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 60px;">文本</td>
+        <td>
+            <div>
+                <input type="hidden" class="admin_image" />
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 60px;">文本</td>
+        <td>
+            <div>
+                <input type="hidden" class="admin_image" />
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 60px;">文本</td>
+        <td>
+            <div>
+                <input type="hidden" class="admin_image" />
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 60px;">文本</td>
+        <td>
+            <div>
+                <input type="hidden" class="admin_image" />
             </div>
         </td>
     </tr>

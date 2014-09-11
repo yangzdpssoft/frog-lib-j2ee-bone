@@ -10,10 +10,12 @@
 })(jQuery);
 
 function gridRefFormatter(value, row, index){
-    var d = value.split('@$##$@');
-    if(d.length === 2) {
-        return d[1];
-    }else{
-        return value;
+    if(value){
+        var d = value.split('@$##$@');
+        if(d.length === 2) {
+            return d[1];
+        }else{
+            return value;
+        }
     }
 }

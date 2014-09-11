@@ -4,6 +4,9 @@
     <meta charset="UTF-8"/>
     <#include "/lib/include/common.ftl">
     <#include "/lib/include/easyui.ftl">
+    <link rel="stylesheet" href="${ctx}/lib/webUploader/0.1.4/webuploader.css">
+    <script src="${ctx}/lib/webUploader/0.1.4/webuploader.js"></script>
+    <script src="${ctx}/lib/base/upload.js" type="text/javascript"></script>
 </head>
 <body class="easyui-layout" fit="true">
 <div style="margin: 20px;">
@@ -80,6 +83,14 @@
         <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 60px;">文本</td>
         <td style="padding-left: 10px;">
             <div class="easyui-slider" data-options="min:10,max:90,step:10,showTip:true" style="width:290px;"></div>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 60px;">文本</td>
+        <td>
+            <div>
+                <input type="hidden" class="admin_file" />
+            </div>
         </td>
     </tr>
 </table>

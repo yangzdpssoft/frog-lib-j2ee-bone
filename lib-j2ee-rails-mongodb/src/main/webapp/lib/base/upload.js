@@ -10,32 +10,20 @@
             var $uploadDiv = $(this).parent();
             var file_up_button_id = Math.uuid();
             if($(this).val() != ''){
-                $uploadDiv.append('<div id="' + file_up_button_id + '"></div>' +
-                    '<h3>' +
-                    '<span class="label label-success">已上传</span>&nbsp;' +
-                    '<a  href="' + adminDownloadServerPath + $(this).val() + '" class="btn  btn-warning" target="_blank">' + $(this).val() + '</a>' +
-                    '</h3>' +
-                    '<div style="display: none;" class="progress"><div  class="progress-bar progress-bar-success active"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div></div><button type="button" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i> 清空</button>');
+                $uploadDiv.append('<div id="' + file_up_button_id + '" style="margin: 10px 10px 5px 10px;"></div><div progress style="width:100%;margin: 10px;display: none;"></div><a href="'+ adminDownloadServerPath + $(this).val() + '" style="display: none;margin-left: 10px;"><div class="yzbutton-orange" style="margin-bottom: 5px;">点击下载</div></a><div class="yzbutton-black" style="display: none;margin-left: 10px;margin-bottom: 5px;">撤销上传</div>');
             }else{
-                $uploadDiv.append('<div id="' + file_up_button_id + '"></div>' +
-                    '<h3 style="display: none;">&nbsp;' +
-                    '<span class="label label-success">已上传</span>&nbsp;' +
-                    '<a  href="javascript:" class="btn  btn-warning" target="_blank"></a>' +
-                    '</h3>' +
-                    '<div style="display: none;" class="progress"> <div  class="progress-bar progress-bar-success active"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div></div><button type="button" class="btn btn-default" style="display: none;"><i class="glyphicon glyphicon-trash"></i> 清空</button>');
+                $uploadDiv.append('<div id="' + file_up_button_id + '" style="margin: 10px 10px 5px 10px;"></div><div progress style="width:100%;margin: 10px;display: none;"></div><a href="javascript:" style="display: none;margin-left: 10px;"><div class="yzbutton-orange" style="margin-bottom: 5px;">点击下载</div></a><div class="yzbutton-black" style="display: none;margin-left: 10px;margin-bottom: 5px;">撤销上传</div>');
             }
-            var $uploadStatusBar = $uploadDiv.find('h3');
-            var $fileName = $uploadDiv.find('a');
-            var $progressBar = $uploadDiv.find('.progress');
-            var $progress = $uploadDiv.find('.progress-bar');
-            var $clear = $uploadDiv.find('button');
+            var $file = $uploadDiv.find('a');
+            var $progressBar = $uploadDiv.find('[progress]');
+            var $clear = $uploadDiv.find('.yzbutton-black');
             var uploader = WebUploader.create({
                 auto: true,
                 swf: swfPath,
                 server: adminServerPath,
                 pick: {
                     id: '#' + file_up_button_id,
-                    label: '选择文件',
+                    label: '文件上传',
                     multiple: false
                 },
                 resize: false,
@@ -43,39 +31,32 @@
             });
             $clear.click(function(){
                 $clear.fadeOut();
-                $uploadStatusBar.fadeOut();
-                $fileName.removeAttr('href');
-                $fileName.text('');
+                $progressBar.fadeOut();
+                $file.fadeOut();
+                $file.attr('href','javascript:');
                 $value.removeAttr('value');
             });
             uploader.on('fileQueued', function(file){
-                $uploadStatusBar.fadeOut();
                 $progressBar.fadeIn();
             });
             uploader.on('uploadProgress', function(file, percentage){
-                var p = percentage.toFixed(2) * 100;
-                $progress.attr('aria-valuenow', p);
-                $progress.css('width', p + "%");
+                var p = (percentage.toFixed(2) * 100).toFixed(2);
+                $progressBar.progressbar('setValue', p);
             });
             uploader.on('uploadSuccess', function(file, response){
                 if(isSuccess(response)){
                     $clear.fadeIn();
-                    $uploadStatusBar.fadeIn();
-                    $progress.text("上传成功");
-                    $fileName.attr('href', adminDownloadServerPath + response.data);
-                    $fileName.text(response.data);
+                    $file.fadeIn();
+                    $file.attr('href', adminDownloadServerPath + response.data);
                     $value.val(response.data);
                 }else if(isError(response) || isFailure(response)){
-                    $progress.text(response.data);
-                    $progress.removeClass("progress-bar-success").addClass("progress-bar-danger");
+                    $.messager.show({title: '错误', msg:  '上传失败：' + response.data});
                 }else if(isLogin(response)){
-                    $progress.text('未登录，无法上传！');
-                    $progress.removeClass("progress-bar-success").addClass("progress-bar-danger");
+                    $.messager.show({title: '错误', msg:  '上传失败：请先登录！'});
                 }
             });
             uploader.on('uploadError', function(file, reason){
-                $progress.text("上传失败");
-                $progress.removeClass("progress-bar-success").addClass("progress-bar-danger");
+                $.messager.show({title: '错误', msg:  '上传失败'});
             });
             uploader.on('uploadComplete', function(file){
                 setTimeout(function(){$progressBar.fadeOut();uploader.reset();}, 1000);
@@ -85,69 +66,59 @@
             var $value = $(this);
             var $uploadDiv = $(this).parent();
             var file_up_button_id = Math.uuid();
-            $uploadDiv.removeClass().addClass('well');
             if($(this).val() != ''){
-                $uploadDiv.append('<div id="' + file_up_button_id + '"></div>' +
-                    '<h3>' +
-                    '<span class="label label-success">已上传</span>&nbsp;' +
-                    '<a  href="' + frontDownloadServerPath + $(this).val() + '" class="btn  btn-warning" target="_blank">' + $(this).val() + '</a>' +
-                    '</h3>' +
-                    '<div style="display: none;" class="progress"><div  class="progress-bar progress-bar-success active"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div></div><button type="button" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i> 清空</button>');
+                $uploadDiv.append('<div id="' + file_up_button_id + '" style="margin: 10px 10px 5px 10px;"></div><div progress style="width:100%;margin: 10px;display: none;"></div><a href="'+ frontDownloadServerPath + $(this).val() + '" style="display: none;margin-left: 10px;"><div class="yzbutton-orange" style="margin-bottom: 5px;">点击下载</div></a><div class="yzbutton-black" style="display: none;margin-left: 10px;margin-bottom: 5px;">撤销上传</div>');
             }else{
-                $uploadDiv.append('<div id="' + file_up_button_id + '"></div>' +
-                    '<h3 style="display: none;">' +
-                    '<span class="label label-success">已上传</span>&nbsp;' +
-                    '<a  href="javascript:" class="btn  btn-warning" target="_blank"></a>' +
-                    '</h3>' +
-                    '<div style="display: none;" class="progress"><div  class="progress-bar progress-bar-success active"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div></div><button type="button" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i> 清空</button>');
+                $uploadDiv.append('<div id="' + file_up_button_id + '" style="margin: 10px 10px 5px 10px;"></div><div progress style="width:100%;margin: 10px;display: none;"></div><a href="javascript:" style="display: none;margin-left: 10px;"><div class="yzbutton-orange" style="margin-bottom: 5px;">点击下载</div></a><div class="yzbutton-black" style="display: none;margin-left: 10px;margin-bottom: 5px;">撤销上传</div>');
             }
-            var $uploadStatusBar = $uploadDiv.find('h3');
-            var $fileName = $uploadDiv.find('a');
-            var $progressBar = $uploadDiv.find('.progress');
-            var $progress = $uploadDiv.find('.progress-bar');
+            var $file = $uploadDiv.find('a');
+            var $progressBar = $uploadDiv.find('[progress]');
+            var $clear = $uploadDiv.find('.yzbutton-black');
             var uploader = WebUploader.create({
+                auto: true,
                 swf: swfPath,
                 server: frontServerPath,
                 pick: {
                     id: '#' + file_up_button_id,
-                    label: '选择文件',
+                    label: '文件上传',
                     multiple: false
                 },
                 resize: false,
                 fileNumLimit: 1
             });
+            $clear.click(function(){
+                $clear.fadeOut();
+                $progressBar.fadeOut();
+                $file.fadeOut();
+                $file.attr('href','javascript:');
+                $value.removeAttr('value');
+            });
             uploader.on('fileQueued', function(file){
-                $uploadStatusBar.fadeOut();
                 $progressBar.fadeIn();
-                uploader.upload();
             });
             uploader.on('uploadProgress', function(file, percentage){
-                var p = percentage.toFixed(2) * 100;
-                $progress.attr('aria-valuenow', p);
-                $progress.css('width', p + "%");
+                var p = (percentage.toFixed(2) * 100).toFixed(2);
+                $progressBar.progressbar('setValue', p);
             });
             uploader.on('uploadSuccess', function(file, response){
                 if(isSuccess(response)){
-                    $uploadStatusBar.fadeIn();
-                    $progress.text("上传成功");
-                    $fileName.attr('href', frontDownloadServerPath + response.data);
-                    $fileName.text(response.data);
+                    $clear.fadeIn();
+                    $file.fadeIn();
+                    $file.attr('href', adminDownloadServerPath + response.data);
                     $value.val(response.data);
                 }else if(isError(response) || isFailure(response)){
-                    $progress.text(response.data);
-                    $progress.removeClass("progress-bar-success").addClass("progress-bar-danger");
+                    $.messager.show({title: '错误', msg:  '上传失败：' + response.data});
                 }else if(isLogin(response)){
-                    $progress.text('未登录，无法上传！');
-                    $progress.removeClass("progress-bar-success").addClass("progress-bar-danger");
+                    $.messager.show({title: '错误', msg:  '上传失败：请先登录！'});
                 }
             });
             uploader.on('uploadError', function(file, reason){
-                $progress.text("上传失败");
-                $progress.removeClass("progress-bar-success").addClass("progress-bar-danger");
+                $.messager.show({title: '错误', msg:  '上传失败'});
             });
             uploader.on('uploadComplete', function(file){
                 setTimeout(function(){$progressBar.fadeOut();uploader.reset();}, 1000);
             });
         });
+        $('[progress]').progressbar({text : '正在上传 {value}%'});
     });
 })(jQuery);

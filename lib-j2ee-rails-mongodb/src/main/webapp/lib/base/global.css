@@ -63,6 +63,63 @@ a:hover{ text-decoration:underline;}
 
 /* button
 ---------------------------------------------- */
+.yzlabel-success {
+    position: relative;
+    display: inline-block;
+    background: #00CC33;
+    padding: 10px 15px;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.yzbutton-black {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    background: #333333;
+    padding: 10px 15px;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.yzbutton-black:hover {
+    background: #000000;
+}
+
+.yzbutton-orange {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    background: #FF9933;
+    padding: 10px 15px;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.yzbutton-orange:hover {
+    background: #FF6600;
+}
+
+.yzbutton {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    background: #00b7ee;
+    padding: 10px 15px;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.yzbutton:hover {
+    background: #00a2d4;
+}
 .button {
     display: inline-block;
     zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */

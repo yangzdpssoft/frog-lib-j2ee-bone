@@ -8,6 +8,10 @@
     <script src="${ctx}/lib/webUploader/0.1.4/webuploader.js"></script>
     <script src="${ctx}/lib/base/upload.js" type="text/javascript"></script>
     <script src="${ctx}/lib/base/imageUpload.js" type="text/javascript"></script>
+    <!-- ueditor -->
+    <script src="${ctx}/lib/ueditor/1.4.3/ueditor.config.js" type="text/javascript"></script>
+    <script src="${ctx}/lib/ueditor/1.4.3/ueditor.all.min.js" type="text/javascript"></script>
+    <script src="${defaultjs}" type="text/javascript"></script>
 </head>
 <body>
 <div style="margin: 20px;">
@@ -99,6 +103,13 @@
         <td>
             <div>
                 <input type="hidden" class="admin_image" />
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 60px;">文本</td>
+        <td>
+            <div id="editor">
             </div>
         </td>
     </tr>

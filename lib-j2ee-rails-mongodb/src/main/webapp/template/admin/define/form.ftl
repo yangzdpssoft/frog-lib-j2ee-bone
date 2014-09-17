@@ -102,30 +102,6 @@
             </div>
         </td>
     </tr>
-    <tr>
-        <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 60px;">文本</td>
-        <td>
-            <div>
-                <input type="hidden" class="admin_image" />
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 60px;">文本</td>
-        <td>
-            <div>
-                <input type="hidden" class="admin_image" />
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 60px;">文本</td>
-        <td>
-            <div>
-                <input type="hidden" class="admin_image" />
-            </div>
-        </td>
-    </tr>
 </table>
 </body>
 </html>

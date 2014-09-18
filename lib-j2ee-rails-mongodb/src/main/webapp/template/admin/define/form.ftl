@@ -110,6 +110,15 @@
         <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 60px;">文本</td>
         <td>
             <div id="editor" style="width: 100%;">
+
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 60px;">文本</td>
+        <td>
+            <div id="editor" style="width: 100%;">
+
             </div>
         </td>
     </tr>

@@ -109,17 +109,19 @@
     <tr>
         <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 60px;">文本</td>
         <td>
-            <div id="editor" style="width: 100%;">
-
-            </div>
+            <script ueditor name="content" type="text/plain" style="width : 100%;"></script>
         </td>
     </tr>
     <tr>
         <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 60px;">文本</td>
         <td>
-            <div style="width: 100%;">
-                <script id="editor" name="content" type="text/plain"></script>
-            </div>
+            <script ueditor name="content" type="text/plain" style="width : 100%;"></script>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: right;vertical-align: middle; width: 21%; padding-right: 10px;height: 60px;">文本</td>
+        <td>
+            <script ueditor name="content" type="text/plain" style="width : 100%;"></script>
         </td>
     </tr>
 </table>

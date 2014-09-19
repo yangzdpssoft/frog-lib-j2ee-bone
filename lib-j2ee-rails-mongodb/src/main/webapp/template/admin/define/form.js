@@ -1,7 +1,11 @@
 (function($){
     $(function(){
-        var ue = UE.getEditor('editor', {
-            elementPathEnabled : false
+        $('[ueditor]').each(function(){
+            var id = Math.uuid();
+            $(this).attr('id', id);
+            UE.getEditor(id, {
+                elementPathEnabled : false
+            });
         });
     });
 })(jQuery);

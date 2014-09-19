@@ -10,7 +10,7 @@
     <script src="${ctx}/lib/base/imageUpload.js" type="text/javascript"></script>
     <!-- ueditor -->
     <script src="${ctx}/lib/ueditor/1.4.3/ueditor.config.js" type="text/javascript"></script>
-    <script src="${ctx}/lib/ueditor/1.4.3/ueditor.all.min.js" type="text/javascript"></script>
+    <script src="${ctx}/lib/ueditor/1.4.3/ueditor.all.js" type="text/javascript"></script>
     <script src="${defaultjs}" type="text/javascript"></script>
 </head>
 <body>

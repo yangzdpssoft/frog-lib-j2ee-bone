@@ -47,7 +47,7 @@
         <mongodb-java-driver_version>2.12.2</mongodb-java-driver_version>
         <commons-codec_version>1.9</commons-codec_version>
         <ueditor-json_version>1.0</ueditor-json_version>
-        <ueditor_version>1.1.1</ueditor_version>
+        <ueditor_version>1.4.3</ueditor_version>
     </properties>
     <dependencies>
         <dependency>

@@ -6,7 +6,9 @@
 hr{
     border-color: #ddd;
 }
-
+.wfill{
+    width: 100%;
+}
 .datagrid-view .datagrid-editable-input{
     min-height: 23px;
 }
@@ -401,4 +403,7 @@ a:hover{ text-decoration:underline;}
 }
 .icon-subadd {
     background-position: -360px -20px;
+}
+.icon-clean {
+    background-position: -340px -40px;
 }

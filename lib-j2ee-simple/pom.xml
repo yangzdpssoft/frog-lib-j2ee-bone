@@ -290,14 +290,9 @@
             <version>${mongodb-java-driver_version}</version>
         </dependency>
         <dependency>
-            <groupId>3rd</groupId>
-            <artifactId>ueditor-json</artifactId>
+            <groupId>ueditor</groupId>
+            <artifactId>json</artifactId>
             <version>${ueditor-json_version}</version>
-        </dependency>
-        <dependency>
-            <groupId>3rd</groupId>
-            <artifactId>ueditor</artifactId>
-            <version>${ueditor_version}</version>
         </dependency>
     </dependencies>
     <distributionManagement>

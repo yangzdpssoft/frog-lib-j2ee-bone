@@ -186,7 +186,8 @@
                     $(grid).datagrid('beginEdit', selectIndex);
                 }
             }else if(act === 'clean'){
-
+                $(grid).datagrid('rejectChanges');
+                //删除
             }
         });
     });

@@ -140,9 +140,6 @@
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <td>
-                    <a href="javascript:void(0)" class="datagrid-btn-separator" />
-                </td>
-                <td>
                     <a href="javascript:void(0)" id="moduleGrid_add" datagridButton class="easyui-linkbutton" iconCls="icon icon-add" plain="true">添加</a>
                 </td>
                 <td>

@@ -1,0 +1,49 @@
+package com.frog.rails.vo.easyui;
+
+import java.util.List;
+
+/**
+ * easyUI datagrid数据包.
+ * @author yangz
+ * @date 2014/10/3
+ *
+ */
+
+public class Datagrid {
+    /**
+     * 总行数.
+     */
+    private Integer total = -1;
+    /**
+     * 当前页数据.
+     */
+    private List<Object> rows;
+    /**
+     * 统计信息.
+     */
+    private List<Object> footer;
+
+    public List<Object> getRows() {
+        return rows;
+    }
+
+    public void setRows(List<Object> rows) {
+        this.rows = rows;
+    }
+
+    public List<Object> getFooter() {
+        return footer;
+    }
+
+    public void setFooter(List<Object> footer) {
+        this.footer = footer;
+    }
+
+    public Integer getTotal() {
+        return total;
+    }
+
+    public void setTotal(Integer total) {
+        this.total = total;
+    }
+}

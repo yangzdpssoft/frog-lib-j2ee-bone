@@ -17,26 +17,14 @@ public class Datagrid {
     /**
      * 当前页数据.
      */
-    private List<Object> rows;
+    private List rows;
     /**
      * 统计信息.
      */
-    private List<Object> footer;
+    private List footer;
 
     public List<Object> getRows() {
         return rows;
-    }
-
-    public void setRows(List<Object> rows) {
-        this.rows = rows;
-    }
-
-    public List<Object> getFooter() {
-        return footer;
-    }
-
-    public void setFooter(List<Object> footer) {
-        this.footer = footer;
     }
 
     public Integer getTotal() {
@@ -45,5 +33,17 @@ public class Datagrid {
 
     public void setTotal(Integer total) {
         this.total = total;
+    }
+
+    public void setRows(List rows) {
+        this.rows = rows;
+    }
+
+    public List getFooter() {
+        return footer;
+    }
+
+    public void setFooter(List footer) {
+        this.footer = footer;
     }
 }

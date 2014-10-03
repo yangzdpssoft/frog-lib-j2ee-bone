@@ -1,5 +1,6 @@
 package com.frog.rails.meta.bean;
 
+import com.cyou.fz.common.base.db.mongo.annotation.DBCollection;
 import com.cyou.fz.common.crud.property.DataBean;
 
 /**
@@ -8,7 +9,7 @@ import com.cyou.fz.common.crud.property.DataBean;
  * @date 2014/10/3
  *
  */
-
+@DBCollection("MetaModule")
 public class MetaModule extends DataBean {
     /**
      * 模块名.

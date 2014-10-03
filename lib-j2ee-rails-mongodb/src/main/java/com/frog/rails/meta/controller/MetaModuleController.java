@@ -2,14 +2,21 @@ package com.frog.rails.meta.controller;
 
 import com.cyou.fz.common.base.springmvc.ajax.Response;
 import com.cyou.fz.common.base.springmvc.ajax.ResponseFactory;
+import com.cyou.fz.common.base.util.JsonUtil;
 import com.cyou.fz.common.crud.Form;
 import com.frog.rails.meta.bean.MetaModule;
+import com.frog.rails.meta.dao.MetaModuleDAO;
 import com.frog.rails.vo.easyui.Datagrid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.util.HtmlUtils;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 元数据 -- 模块.
@@ -20,14 +27,20 @@ import java.util.List;
 
 @Controller
 public class MetaModuleController {
+
+    @Autowired
+    private MetaModuleDAO dao;
     /**
      * 保存.
-     * @param metaModuleList
      * @return
      */
     @RequestMapping("/factory/metaModule/save")
     @ResponseBody
-    public Response<Boolean> save(List<MetaModule> metaModuleList){
+    public Response<Boolean> save(String jsonValue){
+        List<MetaModule> list = JsonUtil.toObject(HtmlUtils.htmlUnescape(jsonValue), JsonUtil.getCollectionType(ArrayList.class, MetaModule.class));
+        for (int i = 0; i < list.size(); i++){
+            dao.saveOrUpdate(list.get(i));
+        }
         return ResponseFactory.getDefaultSuccessResponse();
     }
 
@@ -50,7 +63,10 @@ public class MetaModuleController {
     @ResponseBody
     public Datagrid list(){
         Datagrid result = new Datagrid();
-
+        Map<String, Object> cond = Collections.emptyMap();
+        Map<String, Object> sort = Collections.emptyMap();
+        List<MetaModule> list = dao.queryAll(cond, sort);
+        result.setRows(list);
         return result;
     }
 

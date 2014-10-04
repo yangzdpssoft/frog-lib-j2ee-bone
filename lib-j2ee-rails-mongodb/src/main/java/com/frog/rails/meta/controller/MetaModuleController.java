@@ -6,7 +6,7 @@ import com.cyou.fz.common.base.util.JsonUtil;
 import com.cyou.fz.common.crud.Form;
 import com.frog.rails.meta.bean.MetaModule;
 import com.frog.rails.meta.dao.MetaModuleDAO;
-import com.frog.rails.vo.easyui.Datagrid;
+import com.frog.rails.vo.easyui.DatagridVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,12 +34,12 @@ public class MetaModuleController {
      * 保存.
      * @return
      */
-    @RequestMapping("/factory/metaModule/save")
+    @RequestMapping("/factory/metaModule/saveOrUpdate")
     @ResponseBody
-    public Response<Boolean> save(String jsonValue){
+    public Response<Boolean> saveOrUpdate(String jsonValue){
         List<MetaModule> list = JsonUtil.toObject(HtmlUtils.htmlUnescape(jsonValue), JsonUtil.getCollectionType(ArrayList.class, MetaModule.class));
-        for (int i = 0; i < list.size(); i++){
-            dao.saveOrUpdate(list.get(i));
+        for (MetaModule item : list){
+            dao.saveOrUpdate(item);
         }
         return ResponseFactory.getDefaultSuccessResponse();
     }
@@ -61,8 +61,8 @@ public class MetaModuleController {
      */
     @RequestMapping("/factory/metaModule/list")
     @ResponseBody
-    public Datagrid list(){
-        Datagrid result = new Datagrid();
+    public DatagridVO list(){
+        DatagridVO result = new DatagridVO();
         Map<String, Object> cond = Collections.emptyMap();
         Map<String, Object> sort = Collections.emptyMap();
         List<MetaModule> list = dao.queryAll(cond, sort);

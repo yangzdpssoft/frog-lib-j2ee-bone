@@ -9,7 +9,7 @@ import java.util.List;
  *
  */
 
-public class Datagrid {
+public class DatagridVO {
     /**
      * 总行数.
      */

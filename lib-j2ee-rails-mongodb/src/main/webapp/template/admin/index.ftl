@@ -59,7 +59,18 @@
                 </li>
             </ul>
         </div>
-
+        <div title="元数据定义" data-options="iconCls:'icon icon-module'" style="overflow:auto;padding:10px;">
+            <ul>
+                <li>
+                    <div>
+                        <a href="javascript:" url="${ctx}/factory/metaModule">
+                            <span class="icon icon-fun">&nbsp;</span>
+                            <span class="menuname">模块定义</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 <div data-options="region:'center', border : false">

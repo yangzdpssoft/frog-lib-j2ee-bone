@@ -72,7 +72,13 @@
         });
         $("[grid]").each(function(){
             var dg = $(this);
+            var dataUrl = dg.attr("dataUrl");
+            var saveUrl = dg.attr("saveUrl");
+            var deleteUrl = dg.attr("deleteUrl");
+            var destroyUrl = dg.attr("destroyUrl");
+            var defaultValueUrl = dg.attr("defaultValueUrl");
             dg.datagrid({
+                url : dataUrl,
                 pagination : false,
                 rownumbers : true,
                 singleSelect :false,

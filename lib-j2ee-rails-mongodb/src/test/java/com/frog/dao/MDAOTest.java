@@ -21,9 +21,9 @@ public class MDAOTest extends AbstractTestNGSpringContextTests {
         MongoBean bean = new MongoBean();
         bean.setName("ooo");
         SubBean sub1 = new SubBean();
-        sub1.setId("53d213bf441eee6cdaa0bac1");
+        sub1.setId("542fc0a46de36b927c5d18c9");
         SubBean sub2 = new SubBean();
-        sub2.setId("53d213c0441eee6cdaa0bac2");
+        sub2.setId("542fc0a46de36b927c5d18ca");
         bean.getSubBeans().add(sub1);
         bean.getSubBeans().add(sub2);
         mdao.saveOrUpdate(bean);
@@ -48,7 +48,7 @@ public class MDAOTest extends AbstractTestNGSpringContextTests {
 
     @Test
     public void testDelete(){
-        subDAO.delete(new String[]{"53d213c0441eee6cdaa0bac2"});
+        mdao.delete(new String[]{"542fc43c6de3db7d518e83ca"});
     }
     @Test
     public void testString(){

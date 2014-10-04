@@ -127,8 +127,8 @@ public class MongoDAO implements InitializingBean{
             QueryBuilder queryBuilder = QueryBuilder.start(DBFieldConstant._ID);
             DBObject dbObj = queryBuilder.is(MongoUtil.toObjectId(id)).get();
             DBCollection table = this.getDB().getCollection(tableName);
-            WriteResult result = table.remove(dbObj);
             MongoUtil.removeMarkFK(this, get(tableName, id));
+            WriteResult result = table.remove(dbObj);
             return result;
         }else{
             throw new InputException("该数据已经在系统中引用，无法删除！");

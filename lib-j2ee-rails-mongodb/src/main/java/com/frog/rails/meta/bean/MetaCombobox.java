@@ -14,7 +14,6 @@ import java.util.List;
  * @date 2014/10/4
  *
  */
-
 @DBCollection("MetaCombobox")
 public class MetaCombobox extends DataBean {
 

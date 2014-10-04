@@ -10,6 +10,7 @@
    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd" default-lazy-init="false">
 
     <bean id="wildcardMVCController" class="com.cyou.fz.common.base.springmvc.expand.WildcardMVCController" />
+    <bean id="globalExceptionHandler" class="com.cyou.fz.common.base.springmvc.expand.GlobalExceptionHandler" />
     <bean id="mappingJacksonHttpMessageConverter" class="com.cyou.fz.common.base.springmvc.expand.MappingJackson2HttpMessageConverter">
         <property name="supportedMediaTypes">
             <list>

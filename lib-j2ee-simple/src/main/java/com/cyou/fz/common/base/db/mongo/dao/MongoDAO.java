@@ -119,19 +119,20 @@ public class MongoDAO implements InitializingBean{
      */
     public WriteResult delete(String tableName, String id) {
         QueryBuilder queryBuilder2 = QueryBuilder.start(DBFieldConstant._ID);
-        queryBuilder2.is(id);
+        queryBuilder2.is(MongoUtil.toObjectId(id));
         queryBuilder2.put(DBFieldConstant.FK_NUM).greaterThan(0);
         DBObject fkCond = queryBuilder2.get();
         DBCollection fk = this.getDB().getCollection(DBTableConstant.FK);
         if(fk.findOne(fkCond) == null){
-            throw new InputException("800");
+            QueryBuilder queryBuilder = QueryBuilder.start(DBFieldConstant._ID);
+            DBObject dbObj = queryBuilder.is(MongoUtil.toObjectId(id)).get();
+            DBCollection table = this.getDB().getCollection(tableName);
+            WriteResult result = table.remove(dbObj);
+            MongoUtil.removeMarkFK(this, get(tableName, id));
+            return result;
+        }else{
+            throw new InputException("该数据已经在系统中引用，无法删除！");
         }
-        QueryBuilder queryBuilder = QueryBuilder.start(DBFieldConstant._ID);
-        DBObject dbObj = queryBuilder.is(id).get();
-        DBCollection table = this.getDB().getCollection(tableName);
-        WriteResult result = table.remove(dbObj);
-        MongoUtil.removeMarkFK(this, get(tableName, id));
-        return result;
     }
 
     /**

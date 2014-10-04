@@ -83,7 +83,7 @@ public class MongoDomainDAO<T> {
     }
 
     public T get(String id) {
-        return get(id);
+        return get(id, 1);
     }
 
     public T get(String id, int fetchDeep) {

@@ -1,14 +1,26 @@
 function isSuccess(response){
-    return response.result == 'success';
+    return response.result === 'success';
 }
 function isError(response){
-    return response.result == 'error';
+    return response.result === 'error';
 }
 function isLogin(response){
-    return response.result == 'login';
+    return response.result === 'login';
 }
 function isFailure(response){
-    return response.result == 'failure';
+    return response.result === 'failure';
+}
+function isInput(response){
+    return response.result === 'input';
+}
+function dealExceptionResult(response){
+    if(isError(response) || isFailure(response)){
+        $.messager.show({title: '错误', msg:  '失败原因：' + response.data});
+    }else if(isInput(response)){
+        $.messager.show({title: '提示', msg:  response.data});
+    }else if(isLogin(response)){
+        $.messager.show({title: '错误', msg:  '失败原因：请先登录！'});
+    }
 }
 function sleep(numberMillis) {
     var now = new Date();

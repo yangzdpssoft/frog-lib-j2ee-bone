@@ -9,8 +9,8 @@
 <body>
 <div id="layout" class="easyui-layout" fit="true">
     <div id="west" data-options="region:'west',split:true" style="width:300px;">
-        <ul id="list" edittree class="easyui-tree" data-options="url:'${ctx}/template/admin/define/tree_data1.json'"></ul>
-        <div treeContentMenu="west_list" class="easyui-menu" style="width: 150px;">
+        <ul id="list" list class="easyui-tree" data-options="url:'${ctx}/factory/metaCombobox/list'" saveUrl="${ctx}/factory/metaCombobox/saveOrUpdate" deleteUrl="${ctx}/factory/metaCombobox/delete"></ul>
+        <div listContentMenu="west_list" class="easyui-menu" style="width: 150px;">
             <div id="list_add" listContextMenuButton iconCls="icon-add">
                 添加
             </div>
@@ -19,10 +19,6 @@
             </div>
             <div id="list_rename" listContextMenuButton iconCls="icon-edit">
                 重命名
-            </div>
-            <div class="menu-sep"></div>
-            <div id="list_reload" listContextMenuButton iconCls="icon-reload">
-                刷新
             </div>
         </div>
     </div>

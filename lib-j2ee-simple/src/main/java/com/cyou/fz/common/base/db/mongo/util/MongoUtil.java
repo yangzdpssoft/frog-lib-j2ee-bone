@@ -251,7 +251,7 @@ public class MongoUtil {
                 Object value = m.getValue();
                 if(value != null){
                     if(value instanceof com.mongodb.DBRef){
-                        saveFK(dao, (com.mongodb.DBRef) value);
+                        deleteFK(dao, (com.mongodb.DBRef) value);
                     }else if (value instanceof List){
                         List valueList = (List) value;
                         for (Object o : valueList) {

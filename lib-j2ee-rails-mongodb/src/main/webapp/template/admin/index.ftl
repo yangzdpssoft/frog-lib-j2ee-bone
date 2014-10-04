@@ -59,13 +59,21 @@
                 </li>
             </ul>
         </div>
-        <div title="元数据定义" data-options="iconCls:'icon icon-module'" style="overflow:auto;padding:10px;">
+        <div title="元数据描述" data-options="iconCls:'icon icon-module'" style="overflow:auto;padding:10px;">
             <ul>
                 <li>
                     <div>
                         <a href="javascript:" url="${ctx}/factory/metaModule">
                             <span class="icon icon-fun">&nbsp;</span>
-                            <span class="menuname">模块定义</span>
+                            <span class="menuname">模块</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a href="javascript:" url="${ctx}/factory/combobox">
+                            <span class="icon icon-fun">&nbsp;</span>
+                            <span class="menuname">下拉框</span>
                         </a>
                     </div>
                 </li>

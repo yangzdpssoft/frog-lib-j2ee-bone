@@ -1,16 +1,29 @@
 (function($){
     $(function(){
         $("[list]").each(function(){
-            $(this).tree({
+            var saveUrl = $(this).attr("saveUrl");
+            var tree = $(this);
+            tree.tree({
                 method : 'get',
                 animate : true,
-                fit : true
+                fit : true,
+                dnd : false,
+                onAfterEdit:function(node){
+                    $.post(saveUrl, {id : node.id, text : node.text}, function(result){
+                        if(isSuccess(result)){
+                            tree.tree('update', {target: node.target, id : result.data.id, text: result.data.text});
+                            tree.tree('select', node.target);
+                        }else{
+                            dealExceptionResult(result);
+                        }
+                    }, 'json');
+                }
             });
         });
         $("[listContentMenu]").each(function(){
             var menu = $(this);
-            var treeContentMenu = $(this).attr('treeContentMenu');
-            var d = treeContentMenu.split('_');
+            var listContentMenu = $(this).attr('listContentMenu');
+            var d = listContentMenu.split('_');
             menu.bind('contextmenu', function(e){
                 return false;
             });
@@ -30,22 +43,11 @@
             var tree = $('#' + d[0]);
             var act = d[1];
             if(act === 'add'){
-                var node = tree.tree('getSelected');
-                var n = {
-                    id: -1,
-                    text: ''
-                };
-                if (node){
-                    tree.tree('insert', {
-                        after: node.target,
-                        data: n
-                    });
-                    var newNode =  tree.tree('find', -1);
-                    tree.tree('update', {target: newNode.target, id : ''});
-                    tree.tree('beginEdit', newNode.target);
-                }else{
-                    $.messager.show({title: '警告', msg:  '请选中一个节点！'});
-                }
+                tree.tree('append', {parent:null, data:[{id : null, text : ''}]});
+                var roots = tree.tree('getRoots');
+                var lastNode = roots[roots.length - 1];
+                tree.tree('select', lastNode.target);
+                tree.tree('beginEdit', lastNode.target);
             }else if(act === 'rename'){
                 var node = tree.tree('getSelected');
                 if (node){
@@ -55,13 +57,18 @@
                 }
             }else if(act === 'del'){
                 var node = tree.tree('getSelected');
+                var deleteUrl = tree.attr("deleteUrl");
                 if (node){
-                    tree.tree('remove', node.target);
+                    $.post(deleteUrl, {id : node.id}, function(result){
+                        if(isSuccess(result)){
+                            tree.tree('remove', node.target);
+                        }else{
+                            dealExceptionResult(result);
+                        }
+                    }, 'json');
                 }else{
                     $.messager.show({title: '警告', msg:  '请选中一个节点！'});
                 }
-            }else if(act === 'reload'){
-                tree.tree('reload');
             }
         });
     });

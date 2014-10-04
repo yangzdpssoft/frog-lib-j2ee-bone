@@ -11,8 +11,7 @@
 <table id="grid" grid  toolbar="#grid_toolbar" dataUrl="${ctx}/factory/metaModule/list" saveUrl="" deleteUrl="" destroyUrl="" defaultValueUrl="">
     <thead>
     <tr>
-        <th field="name" width="300" editor="{type:'validatebox',options:{required:true}}">模块名称</th>
-        <#--<th field="jsPath" width="200" editor="{type:'combobox',options:{required:true}}">脚本路径</th>-->
+        <th field="name" width="200" editor="{type:'validatebox',options:{required:true}}">模块名称</th>
     </tr>
     </thead>
 </table>

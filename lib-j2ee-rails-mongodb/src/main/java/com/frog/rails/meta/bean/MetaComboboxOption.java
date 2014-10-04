@@ -1,6 +1,7 @@
 package com.frog.rails.meta.bean;
 
 import com.cyou.fz.common.base.db.mongo.annotation.DBCollection;
+import com.cyou.fz.common.base.db.mongo.annotation.DBRef;
 import com.cyou.fz.common.crud.property.DataBean;
 
 /**
@@ -20,6 +21,9 @@ public class MetaComboboxOption extends DataBean{
      */
     private String group;
 
+    @DBRef
+    private MetaCombobox metaCombobox;
+
     public String getName() {
         return name;
     }
@@ -34,5 +38,13 @@ public class MetaComboboxOption extends DataBean{
 
     public void setGroup(String group) {
         this.group = group;
+    }
+
+    public MetaCombobox getMetaCombobox() {
+        return metaCombobox;
+    }
+
+    public void setMetaCombobox(MetaCombobox metaCombobox) {
+        this.metaCombobox = metaCombobox;
     }
 }

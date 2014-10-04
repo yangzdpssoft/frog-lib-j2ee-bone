@@ -57,7 +57,6 @@ public class MetaComboboxController {
     public Response<Boolean> delete(String[] id){
         Response<Boolean> result = ResponseFactory.getDefaultSuccessResponse();
         dao.delete(id);
-
         return result;
     }
 

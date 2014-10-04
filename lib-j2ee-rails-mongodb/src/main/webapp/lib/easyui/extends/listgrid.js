@@ -118,6 +118,7 @@
             var deleteUrl = $(grid).attr("deleteUrl");
             var destroyUrl = $(grid).attr("destroyUrl");
             var defaultValueUrl = $(grid).attr("defaultValueUrl");
+            var dependencyTreeId = $(grid).attr("dependencyTreeId");
             var act = d[1];
             if(act === 'add'){
                 var edit = $(grid).data('edit');
@@ -152,6 +153,11 @@
                     });
                     $(grid).datagrid('rejectChanges');
                 }else{
+                    var selectNode = $(dependencyTreeId).tree('getSelected');
+                    if(selectNode == null){
+                        $.messager.alert('警告', '请先选中左侧列表项', 'warning');
+                        return;
+                    }
                     var preSelectIndex = $(grid).data('preSelectIndex');
                     $(grid).datagrid('unselectAll');
                     if(preSelectIndex && preSelectIndex != -1){

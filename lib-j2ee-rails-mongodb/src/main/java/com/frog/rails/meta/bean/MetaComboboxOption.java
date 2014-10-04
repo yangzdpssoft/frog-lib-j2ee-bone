@@ -4,29 +4,21 @@ import com.cyou.fz.common.base.db.mongo.annotation.DBCollection;
 import com.cyou.fz.common.crud.property.DataBean;
 
 /**
- * 元数据模块.
+ * 下拉框选项.
  * @author yangz
- * @date 2014/10/3
+ * @date 2014/10/4
  *
  */
-@DBCollection("MetaModule")
-public class MetaModule extends DataBean {
+@DBCollection("MetaComboboxOption")
+public class MetaComboboxOption extends DataBean{
     /**
-     * 模块名.
+     * 名称.
      */
     private String name;
     /**
-     * 管理类型.
+     * 分组.
      */
-    private Integer manageType;
-
-    public Integer getManageType() {
-        return manageType;
-    }
-
-    public void setManageType(Integer manageType) {
-        this.manageType = manageType;
-    }
+    private String group;
 
     public String getName() {
         return name;
@@ -34,5 +26,13 @@ public class MetaModule extends DataBean {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
     }
 }

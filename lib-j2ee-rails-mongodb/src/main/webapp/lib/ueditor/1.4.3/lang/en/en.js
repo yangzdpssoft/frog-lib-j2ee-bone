@@ -214,7 +214,7 @@ UE.I18N['en'] = {
     'unset':'Language hasn\'t been set!',
     't_row':'row',
     't_col':'col',
-    'pasteOpt':'Paste Option',
+    'pasteOpt':'Paste MetaComboboxOption',
     'pasteSourceFormat':"Keep Source Formatting",
     'tagFormat':'Keep tag',
     'pasteTextFormat':'Keep Text only',

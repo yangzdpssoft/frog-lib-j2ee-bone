@@ -8,7 +8,7 @@
     <script src="${defaultjs}" type="text/javascript"></script>
 </head>
 <body class="easyui-layout" fit="true">
-<table id="moduleGrid" grid  toolbar="#moduleGrid_toolbar" url="${ctx}/template/admin/define/datagrid_data1.json" dataUrl="" saveUrl="" deleteUrl="" destroyUrl="" defaultValueUrl="">
+<table id="moduleGrid" grid  toolbar="#moduleGrid_toolbar" dataUrl="${ctx}/template/admin/define/datagrid_data1.json" saveUrl="" deleteUrl="" destroyUrl="" defaultValueUrl="">
     <thead>
     <tr>
         <th field="name" width="200" editor="{type:'validatebox',options:{required:true}}"><span tip="模块对应数据库哪张表！" tipP="bottom">表名</span></th>

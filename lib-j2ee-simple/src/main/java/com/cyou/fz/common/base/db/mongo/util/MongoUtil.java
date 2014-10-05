@@ -59,15 +59,15 @@ public class MongoUtil {
             String condKey = castCondKeyPrefix(item.getKey());
             Object condValue = item.getValue();
             if (!ObjectUtil.isEmpty(condValue)) {
-                if (condKey.contains("_")) {
+                if (condKey.contains(".")) {
                     Map<String, Object> subCond = new HashMap();
-                    String chainKey = condKey.substring(0, condKey.lastIndexOf("_"));
-                    String[] chain = chainKey.split("_");
+                    String chainKey = condKey.substring(0, condKey.lastIndexOf("."));
+                    String[] chain = chainKey.split(".");
                     Class subClass = domainClass;
                     for (String c : chain) {
                         subClass = ClassUtil.getPropertyType(subClass, c);
                     }
-                    String subCondKey = condKey.substring(condKey.lastIndexOf("_") + 1, condKey.length());
+                    String subCondKey = condKey.substring(condKey.lastIndexOf(".") + 1, condKey.length());
                     subCond.put(subCondKey, condValue);
                     Map<String, Object> subCondValue = conventCondQueryBuilder(subCond, subClass).get().toMap();
                     for (Map.Entry<String, Object> valueItem : subCondValue.entrySet()) {

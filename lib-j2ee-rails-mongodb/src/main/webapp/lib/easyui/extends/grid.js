@@ -79,7 +79,6 @@
                 rownumbers : true,
                 singleSelect :false,
                 ctrlSelect : true,
-                idField : 'id',
                 fit:true,
                 onSelect : function (rowIndex, rowData) {
                     var preSelectIndex = dg.data('preSelectIndex');
@@ -154,7 +153,7 @@
                 }else{
                     var preSelectIndex = $(grid).data('preSelectIndex');
                     $(grid).datagrid('unselectAll');
-                    if(preSelectIndex && preSelectIndex != -1){
+                    if(preSelectIndex != -1){
                         $(grid).datagrid('selectRow', preSelectIndex);
                     }
                     $(grid).datagrid('options').singleSelect = true;

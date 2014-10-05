@@ -77,7 +77,6 @@
                 rownumbers : true,
                 singleSelect :true,
                 ctrlSelect : true,
-                idField : 'id',
                 fit:true,
                 onSelect : function (rowIndex, rowData) {
                     var preSelectIndex = dg.data('preSelectIndex');

@@ -12,6 +12,8 @@ import com.cyou.fz.common.crud.property.DataBean;
  */
 @DBCollection("MetaComboboxOption")
 public class MetaComboboxOption extends DataBean{
+
+    public final static String META_COMBOBOX = "metaCombobox";
     /**
      * 名称.
      */

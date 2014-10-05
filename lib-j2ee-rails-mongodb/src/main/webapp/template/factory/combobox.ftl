@@ -4,13 +4,14 @@
     <meta charset="UTF-8"/>
 <#include "/lib/include/common.ftl">
 <#include "/lib/include/easyui.ftl">
-<script src="${ctx}/lib/easyui/extends/list.js" type="text/javascript"></script>
-<script type="text/javascript" src="${ctx}/lib/easyui/extends/listgrid.js"></script>
+    <script src="${ctx}/lib/easyui/extends/list.js" type="text/javascript"></script>
+    <script type="text/javascript" src="${ctx}/lib/easyui/extends/listgrid.js"></script>
+    <script src="${defaultjs}" type="text/javascript"></script>
 </head>
 <body>
 <div id="layout" class="easyui-layout" fit="true">
     <div id="west" data-options="region:'west',split:true" style="width:300px;">
-        <ul id="list" list class="easyui-tree" data-options="url:'${ctx}/factory/metaCombobox/list'" saveUrl="${ctx}/factory/metaCombobox/saveOrUpdate" deleteUrl="${ctx}/factory/metaCombobox/delete"></ul>
+        <ul id="list" list class="easyui-tree" data-options="url:'${ctx}/factory/metaCombobox/list'" saveUrl="${ctx}/factory/metaCombobox/saveOrUpdate" deleteUrl="${ctx}/factory/metaCombobox/delete" dependencyGridId="#grid"></ul>
         <div listContentMenu="west_list" class="easyui-menu" style="width: 150px;">
             <div id="list_add" listContextMenuButton iconCls="icon-add">
                 添加
@@ -24,7 +25,7 @@
         </div>
     </div>
     <div data-options="region:'center',title:'选择配置'">
-        <table id="grid" grid  toolbar="#grid_toolbar" dataUrl="${ctx}/factory/metaComboboxOption/list" saveUrl="${ctx}/factory/metaComboboxOption/saveOrUpdate" deleteUrl="" destroyUrl="" defaultValueUrl="" dependencyTreeId="#list">
+        <table id="grid" grid  toolbar="#grid_toolbar" dataUrl="${ctx}/factory/metaComboboxOption/list" saveUrl="${ctx}/factory/metaComboboxOption/saveOrUpdate" deleteUrl="${ctx}/factory/metaComboboxOption/delete" destroyUrl="" defaultValueUrl="" dependencyTreeId="#list">
             <thead>
             <tr>
                 <th field="name" width="250" editor="{type:'validatebox',options:{required:true}}">选项</th>

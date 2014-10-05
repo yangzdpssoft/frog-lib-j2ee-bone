@@ -36,4 +36,8 @@ public class CondPrefixConstant {
      * not in.
      */
     public final static String NIN_ = "nin_";
+    /**
+     * 查询条件前缀.
+     */
+    public final static String COND_PREFIX = "cond!";
 }

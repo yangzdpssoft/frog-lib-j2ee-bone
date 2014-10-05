@@ -43,7 +43,7 @@
             var tree = $('#' + d[0]);
             var act = d[1];
             if(act === 'add'){
-                tree.tree('append', {parent:null, data:[{id : null, text : ''}]});
+                tree.tree('append', {parent:null, data:[{id : '', text : ''}]});
                 var roots = tree.tree('getRoots');
                 var lastNode = roots[roots.length - 1];
                 tree.tree('select', lastNode.target);

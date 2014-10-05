@@ -79,7 +79,6 @@
                 rownumbers : true,
                 singleSelect :false,
                 ctrlSelect : true,
-                idField : 'id',
                 fit:true,
                 onSelect : function (rowIndex, rowData) {
                     var preSelectIndex = dg.data('preSelectIndex');
@@ -160,7 +159,7 @@
                     }
                     var preSelectIndex = $(grid).data('preSelectIndex');
                     $(grid).datagrid('unselectAll');
-                    if(preSelectIndex && preSelectIndex != -1){
+                    if(preSelectIndex != -1){
                         $(grid).datagrid('selectRow', preSelectIndex);
                     }
                     $(grid).datagrid('options').singleSelect = true;
@@ -181,18 +180,46 @@
                     });
                 }
             }else if(act === 'delete'){
-                var selectRow = $(grid).datagrid('getSelected');
-                if(selectRow == null){
+                var selectRows = $(grid).datagrid('getSelections');
+                if(selectRows.length == 0){
                     $.messager.alert('警告', '请选择要删除的行.', 'warning');
                     return;
                 }
                 $.messager.confirm('请确认','确认删除选中的行?', function(r){
                     if(r){
-                        if(selectRow.id != ''){
-
-                        }else{
-                            $(grid).datagrid('deleteRow', $(grid).datagrid('getRowIndex', selectRow));
+                        var newRows = new Array();
+                        var oldRows = new Array();
+                        var m = 0, n = 0;
+                        for(var i = 0; i < selectRows.length; i++){
+                            if(selectRows[i].id == ''){
+                                newRows[m] = selectRows[i];
+                                m++;
+                            }else{
+                                oldRows[n] = selectRows[i];
+                                n++;
+                            }
                         }
+                        for(var i = 0; i < newRows.length; i++){
+                            $(grid).datagrid('deleteRow', $(grid).datagrid('getRowIndex', newRows[i]));
+                        }
+                        var oldRowIds = "";
+                        for(var i = 0; i < oldRows.length; i++){
+                            if(i === 0){
+                                oldRowIds += oldRows[i].id;
+                            }else{
+                                oldRowIds += "," + oldRows[i].id;
+                            }
+                        }
+                        //post
+                        $.post(deleteUrl, {id : oldRowIds}, function(result){
+                            if(isSuccess(result)){
+                                for(var i = 0; i < oldRows.length; i++){
+                                    $(grid).datagrid('deleteRow', $(grid).datagrid('getRowIndex', oldRows[i]));
+                                }
+                            }else{
+                                dealExceptionResult(result);
+                            }
+                        }, 'json');
                     }
                 });
             }else if(act === 'up'){
@@ -268,11 +295,13 @@
                     return;
                 }
                 if(validateAllRow($(grid),'save')){
-                    $(grid).datagrid('endEdit', $('#grid').data('preSelectIndex'));
+                    $(grid).datagrid('endEdit', $(grid).data('preSelectIndex'));
+                    var dependencyId = $(dependencyTreeId).tree('getSelected').id;
                     var changeRows = $(grid).datagrid('getChanges','inserted').concat($(grid).datagrid('getChanges','updated'));
-                    $.post(saveUrl, {jsonValue : JSON.stringify(changeRows)}, function(result){
+                    $.post(saveUrl, {dependencyId : dependencyId, jsonValue : JSON.stringify(changeRows)}, function(result){
                         if(isSuccess(result)){
-                            alert(result.data);
+                            $(grid).datagrid('acceptChanges');
+                            $(grid + "_edit").click();
                         }else{
                             dealExceptionResult(result);
                         }

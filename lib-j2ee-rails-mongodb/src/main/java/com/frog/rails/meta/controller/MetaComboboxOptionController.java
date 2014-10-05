@@ -2,6 +2,7 @@ package com.frog.rails.meta.controller;
 
 import com.cyou.fz.common.base.constant.CondPrefixConstant;
 import com.cyou.fz.common.base.constant.FieldConstant;
+import com.cyou.fz.common.base.exception.UnCaughtException;
 import com.cyou.fz.common.base.springmvc.ajax.Response;
 import com.cyou.fz.common.base.springmvc.ajax.ResponseFactory;
 import com.cyou.fz.common.base.util.CollectionUtil;
@@ -61,15 +62,13 @@ public class MetaComboboxOptionController {
     @RequestMapping("/factory/metaComboboxOption/delete")
     @ResponseBody
     public Response<String> delete(String id){
-        if(ObjectUtil.isEmpty(id)){
-            Response<String> result = ResponseFactory.getDefaultInputResponse();
-            result.setData("未指定将删除的数据id");
-            return result;
-        }else{
+        if(!ObjectUtil.isEmpty(id)){
             Response<String> result = ResponseFactory.getDefaultSuccessResponse();
             String[] ids = id.split(",");
             dao.delete(ids);
             return result;
+        }else{
+            throw new UnCaughtException("非法请求");
         }
     }
     /**

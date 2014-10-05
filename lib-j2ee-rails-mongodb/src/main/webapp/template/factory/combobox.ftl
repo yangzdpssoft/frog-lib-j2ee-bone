@@ -40,10 +40,10 @@
                         <a href="javascript:void(0)" id="grid_save" datagridButton class="easyui-linkbutton" iconCls="icon icon-save" plain="true" data-options="disabled:true">保存</a>
                     </td>
                     <td>
-                        <a href="javascript:void(0)" id="grid_edit" datagridButton class="easyui-linkbutton" iconCls="icon icon-edit" plain="true" >编辑</a>
+                        <a href="javascript:void(0)" class="datagrid-btn-separator" />
                     </td>
                     <td>
-                        <a href="javascript:void(0)" class="datagrid-btn-separator" />
+                        <a href="javascript:void(0)" id="grid_edit" datagridButton class="easyui-linkbutton" iconCls="icon icon-edit" plain="true" >编辑</a>
                     </td>
                     <td>
                         <a href="javascript:void(0)" id="grid_add" datagridButton class="easyui-linkbutton" iconCls="icon icon-add" plain="true" data-options="disabled:true">添加</a>
@@ -53,15 +53,6 @@
                     </td>
                     <td>
                         <a href="javascript:void(0)" id="grid_selectAll" datagridButton class="easyui-linkbutton" iconCls="icon icon-selectAll" plain="true" tip="按住ctrl多选！" tipP = "bottom">全选</a>
-                    </td>
-                    <td>
-                        <a href="javascript:void(0)" id="grid_insert" datagridButton class="easyui-linkbutton" iconCls="icon icon-insert" plain="true" data-options="disabled:true" tip="当前选中行上面插入一行！" tipP = "bottom">插入</a>
-                    </td>
-                    <td>
-                        <a href="javascript:void(0)" id="grid_up" datagridButton class="easyui-linkbutton" iconCls="icon icon-up" plain="true" data-options="disabled:true">上移</a>
-                    </td>
-                    <td>
-                        <a href="javascript:void(0)" id="grid_down" datagridButton class="easyui-linkbutton" iconCls="icon icon-down" plain="true"  data-options="disabled:true">下移</a>
                     </td>
                 </tr>
             </table>

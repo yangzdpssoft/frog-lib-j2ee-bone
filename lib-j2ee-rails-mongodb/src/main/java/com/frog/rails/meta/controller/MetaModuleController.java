@@ -1,9 +1,10 @@
 package com.frog.rails.meta.controller;
 
+import com.cyou.fz.common.base.exception.UnCaughtException;
 import com.cyou.fz.common.base.springmvc.ajax.Response;
 import com.cyou.fz.common.base.springmvc.ajax.ResponseFactory;
 import com.cyou.fz.common.base.util.JsonUtil;
-import com.cyou.fz.common.crud.Form;
+import com.cyou.fz.common.base.util.ObjectUtil;
 import com.frog.rails.meta.bean.MetaModule;
 import com.frog.rails.meta.dao.MetaModuleDAO;
 import com.frog.rails.vo.easyui.DatagridVO;
@@ -36,7 +37,7 @@ public class MetaModuleController {
      */
     @RequestMapping("/factory/metaModule/saveOrUpdate")
     @ResponseBody
-    public Response<Boolean> saveOrUpdate(String jsonValue){
+    public Response<String> saveOrUpdate(String jsonValue){
         List<MetaModule> list = JsonUtil.toObject(HtmlUtils.htmlUnescape(jsonValue), JsonUtil.getCollectionType(ArrayList.class, MetaModule.class));
         for (MetaModule item : list){
             dao.saveOrUpdate(item);
@@ -46,13 +47,20 @@ public class MetaModuleController {
 
     /**
      * 删除.
-     * @param form
+     * @param id
      * @return
      */
     @RequestMapping("/factory/metaModule/delete")
     @ResponseBody
-    public Response<Boolean> delete(Form form){
-        return ResponseFactory.getDefaultSuccessResponse();
+    public Response<String> delete(String id){
+        if(!ObjectUtil.isEmpty(id)){
+            Response<String> result = ResponseFactory.getDefaultSuccessResponse();
+            String[] ids = id.split(",");
+            dao.delete(ids);
+            return result;
+        }else{
+            throw new UnCaughtException("非法请求");
+        }
     }
 
     /**

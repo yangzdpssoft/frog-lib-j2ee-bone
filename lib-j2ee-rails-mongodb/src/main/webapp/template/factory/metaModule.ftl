@@ -8,7 +8,7 @@
     <script src="${defaultjs}" type="text/javascript"></script>
 </head>
 <body class="easyui-layout" fit="true">
-<table id="grid" grid  toolbar="#grid_toolbar" dataUrl="${ctx}/factory/metaModule/list" saveUrl="" deleteUrl="" destroyUrl="" defaultValueUrl="">
+<table id="grid" grid  toolbar="#grid_toolbar" dataUrl="${ctx}/factory/metaModule/list" saveUrl="${ctx}/factory/metaModule/saveOrUpdate" deleteUrl="${ctx}/factory/metaModule/delete" destroyUrl="" defaultValueUrl="">
     <thead>
     <tr>
         <th field="name" width="200" editor="{type:'validatebox',options:{required:true}}">模块名称</th>

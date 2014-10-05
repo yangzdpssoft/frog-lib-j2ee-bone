@@ -174,18 +174,46 @@
                     });
                 }
             }else if(act === 'delete'){
-                var selectRow = $(grid).datagrid('getSelected');
-                if(selectRow == null){
+                var selectRows = $(grid).datagrid('getSelections');
+                if(selectRows.length == 0){
                     $.messager.alert('警告', '请选择要删除的行.', 'warning');
                     return;
                 }
                 $.messager.confirm('请确认','确认删除选中的行?', function(r){
                     if(r){
-                        if(selectRow.id != ''){
-
-                        }else{
-                            $(grid).datagrid('deleteRow', $(grid).datagrid('getRowIndex', selectRow));
+                        var newRows = new Array();
+                        var oldRows = new Array();
+                        var m = 0, n = 0;
+                        for(var i = 0; i < selectRows.length; i++){
+                            if(selectRows[i].id == ''){
+                                newRows[m] = selectRows[i];
+                                m++;
+                            }else{
+                                oldRows[n] = selectRows[i];
+                                n++;
+                            }
                         }
+                        for(var i = 0; i < newRows.length; i++){
+                            $(grid).datagrid('deleteRow', $(grid).datagrid('getRowIndex', newRows[i]));
+                        }
+                        var oldRowIds = "";
+                        for(var i = 0; i < oldRows.length; i++){
+                            if(i === 0){
+                                oldRowIds += oldRows[i].id;
+                            }else{
+                                oldRowIds += "," + oldRows[i].id;
+                            }
+                        }
+                        //post
+                        $.post(deleteUrl, {id : oldRowIds}, function(result){
+                            if(isSuccess(result)){
+                                for(var i = 0; i < oldRows.length; i++){
+                                    $(grid).datagrid('deleteRow', $(grid).datagrid('getRowIndex', oldRows[i]));
+                                }
+                            }else{
+                                dealExceptionResult(result);
+                            }
+                        }, 'json');
                     }
                 });
             }else if(act === 'up'){
@@ -265,7 +293,8 @@
                     var changeRows = $(grid).datagrid('getChanges','inserted').concat($(grid).datagrid('getChanges','updated'));
                     $.post(saveUrl, {jsonValue : JSON.stringify(changeRows)}, function(result){
                         if(isSuccess(result)){
-                            alert(result.data);
+                            $(grid).datagrid('acceptChanges');
+                            $(grid + "_edit").click();
                         }else{
                             dealExceptionResult(result);
                         }

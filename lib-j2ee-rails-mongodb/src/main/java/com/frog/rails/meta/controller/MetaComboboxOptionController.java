@@ -45,7 +45,7 @@ public class MetaComboboxOptionController {
      */
     @RequestMapping("/factory/metaComboboxOption/saveOrUpdate")
     @ResponseBody
-    public Response<MetaComboboxOption> saveOrUpdate(String dependencyId, String jsonValue){
+    public Response<String> saveOrUpdate(String dependencyId, String jsonValue){
         List<MetaComboboxOption> list = JsonUtil.toObject(HtmlUtils.htmlUnescape(jsonValue), JsonUtil.getCollectionType(ArrayList.class, MetaComboboxOption.class));
         MetaCombobox combobox = metaComboboxDAO.get(dependencyId);
         for (MetaComboboxOption item : list){

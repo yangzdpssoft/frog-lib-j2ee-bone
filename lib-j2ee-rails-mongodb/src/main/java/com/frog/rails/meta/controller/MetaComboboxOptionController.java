@@ -12,6 +12,7 @@ import com.frog.rails.meta.bean.MetaCombobox;
 import com.frog.rails.meta.bean.MetaComboboxOption;
 import com.frog.rails.meta.dao.MetaComboboxDAO;
 import com.frog.rails.meta.dao.MetaComboboxOptionDAO;
+import com.frog.rails.vo.easyui.ComboVO;
 import com.frog.rails.vo.easyui.DatagridVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -48,6 +49,7 @@ public class MetaComboboxOptionController {
     public Response<String> saveOrUpdate(String dependencyId, String jsonValue){
         List<MetaComboboxOption> list = JsonUtil.toObject(HtmlUtils.htmlUnescape(jsonValue), JsonUtil.getCollectionType(ArrayList.class, MetaComboboxOption.class));
         MetaCombobox combobox = metaComboboxDAO.get(dependencyId);
+        metaComboboxDAO.saveOrUpdate(combobox);
         for (MetaComboboxOption item : list){
             item.setMetaCombobox(combobox);
             dao.saveOrUpdate(item);
@@ -89,5 +91,30 @@ public class MetaComboboxOptionController {
             result.setRows(CollectionUtil.emptyList());
         }
         return result;
+    }
+    /**
+     * 选项.
+     * @return
+     */
+    @RequestMapping("/factory/metaComboboxOption/options")
+    @ResponseBody
+    public List<ComboVO> options(String name){
+        if(!ObjectUtil.isEmpty(name)){
+            List<ComboVO> result = new ArrayList<>();
+            MetaCombobox box = metaComboboxDAO.unique(MetaCombobox.NAME, name);
+            Map<String, Object> cond = CollectionUtil.emptyMap();
+            Map<String, Object> sort = CollectionUtil.emptyMap();
+            cond.put(COND_COMBOBOX, box.getId());
+            List<MetaComboboxOption> list = dao.queryAll(cond, sort);
+            for(MetaComboboxOption option : list){
+                ComboVO vo = new ComboVO();
+                vo.setId(option.getId());
+                vo.setText(option.getName());
+                result.add(vo);
+            }
+            return result;
+        }else{
+            throw new UnCaughtException("非法请求");
+        }
     }
 }

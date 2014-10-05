@@ -17,6 +17,7 @@ import java.util.List;
 @DBCollection("MetaCombobox")
 public class MetaCombobox extends DataBean {
 
+    public final static String NAME = "name";
     /**
      * 名称.
      */

@@ -12,6 +12,12 @@ hr{
 .datagrid-view .datagrid-editable-input{
     min-height: 23px;
 }
+.datagrid-row-editing .textbox, .datagrid-row-editing .textbox-text{
+    min-height: 25px;
+}
+.combo-arrow{
+    min-height: 25px;
+}
 .numberbox{
     min-height: 35px;
 }

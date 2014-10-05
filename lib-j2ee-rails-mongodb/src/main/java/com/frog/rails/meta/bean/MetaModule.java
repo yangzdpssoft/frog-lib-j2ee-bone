@@ -12,20 +12,20 @@ import com.cyou.fz.common.crud.property.DataBean;
 @DBCollection("MetaModule")
 public class MetaModule extends DataBean {
     /**
-     * 模块名.
+     * 名称.
      */
     private String name;
     /**
-     * 管理类型.
+     * 类型.
      */
-    private Integer manageType;
+    private Integer type;
 
-    public Integer getManageType() {
-        return manageType;
+    public Integer getType() {
+        return type;
     }
 
-    public void setManageType(Integer manageType) {
-        this.manageType = manageType;
+    public void setType(Integer type) {
+        this.type = type;
     }
 
     public String getName() {

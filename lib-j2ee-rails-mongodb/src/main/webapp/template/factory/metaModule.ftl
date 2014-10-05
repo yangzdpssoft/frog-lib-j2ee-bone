@@ -4,14 +4,15 @@
     <meta charset="UTF-8"/>
     <#include "/lib/include/common.ftl">
     <#include "/lib/include/easyui.ftl">
-    <script type="text/javascript" src="${ctx}/lib/easyui/extends/grid.js"></script>
+    <script type="text/javascript" src="/lib/easyui/extends/grid.js"></script>
     <script src="${defaultjs}" type="text/javascript"></script>
 </head>
 <body class="easyui-layout" fit="true">
-<table id="grid" grid  toolbar="#grid_toolbar" dataUrl="${ctx}/factory/metaModule/list" saveUrl="${ctx}/factory/metaModule/saveOrUpdate" deleteUrl="${ctx}/factory/metaModule/delete" destroyUrl="" defaultValueUrl="">
+<table id="grid" grid  toolbar="#grid_toolbar" dataUrl="/factory/metaModule/list" saveUrl="/factory/metaModule/saveOrUpdate" deleteUrl="/factory/metaModule/delete" destroyUrl="" defaultValueUrl="">
     <thead>
     <tr>
-        <th field="name" width="200" editor="{type:'validatebox',options:{required:true}}">模块名称</th>
+        <th field="name" width="200" editor="{type:'validatebox',options:{required:true}}">名称</th>
+        <th field="type" width="200" editor="{type:'combobox',options:{valueField:'value',textField:'text',url:'/factory/metaComboboxOption/options?name=下拉测试'}}">类型</th>
     </tr>
     </thead>
 </table>

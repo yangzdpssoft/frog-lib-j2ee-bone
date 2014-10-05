@@ -2,6 +2,7 @@ package com.frog.rails.meta.controller;
 
 import com.cyou.fz.common.base.springmvc.ajax.Response;
 import com.cyou.fz.common.base.springmvc.ajax.ResponseFactory;
+import com.cyou.fz.common.base.util.CollectionUtil;
 import com.cyou.fz.common.base.util.ValueUtil;
 import com.frog.rails.meta.bean.MetaCombobox;
 import com.frog.rails.meta.dao.MetaComboboxDAO;
@@ -12,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -68,8 +68,8 @@ public class MetaComboboxController {
     @ResponseBody
     public List<ComboVO> list(){
         List<ComboVO> result = new ArrayList<>();
-        Map<String, Object> cond = Collections.emptyMap();
-        Map<String, Object> sort = Collections.emptyMap();
+        Map<String, Object> cond = CollectionUtil.emptyMap();
+        Map<String, Object> sort = CollectionUtil.emptyMap();
         List<MetaCombobox> list = dao.queryAll(cond, sort);
         for(MetaCombobox item : list){
             ComboVO vo = new ComboVO();
@@ -79,5 +79,6 @@ public class MetaComboboxController {
         }
         return result;
     }
+
 
 }

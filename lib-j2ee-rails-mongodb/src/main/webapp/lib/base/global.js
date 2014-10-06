@@ -19,3 +19,6 @@ function gridRefFormatter(value, row, index){
         }
     }
 }
+function gridComboFormatter(value, row, index){
+    return "111";
+}

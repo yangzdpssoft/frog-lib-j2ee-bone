@@ -1,6 +1,7 @@
 package com.frog.rails.meta.bean;
 
 import com.cyou.fz.common.base.db.mongo.annotation.DBCollection;
+import com.cyou.fz.common.base.db.mongo.annotation.DBRef;
 import com.cyou.fz.common.crud.property.DataBean;
 
 /**
@@ -18,13 +19,15 @@ public class MetaModule extends DataBean {
     /**
      * 类型.
      */
-    private String type;
+    @DBRef
+    private MetaComboboxOption type;
 
-    public String getType() {
+
+    public MetaComboboxOption getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(MetaComboboxOption type) {
         this.type = type;
     }
 

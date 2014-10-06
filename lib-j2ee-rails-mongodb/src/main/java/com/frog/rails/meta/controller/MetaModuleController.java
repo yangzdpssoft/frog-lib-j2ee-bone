@@ -38,10 +38,11 @@ public class MetaModuleController {
     @RequestMapping("/factory/metaModule/saveOrUpdate")
     @ResponseBody
     public Response<String> saveOrUpdate(String jsonValue){
-        List<MetaModule> list = JsonUtil.toObject(HtmlUtils.htmlUnescape(jsonValue), JsonUtil.getCollectionType(ArrayList.class, MetaModule.class));
-        for (MetaModule item : list){
-            dao.saveOrUpdate(item);
-        }
+        List<Map<String, Object>> mapList = JsonUtil.toObject(HtmlUtils.htmlUnescape(jsonValue), JsonUtil.getCollectionType(ArrayList.class, Map.class));
+//        List<MetaModule> list = JsonUtil.toObject(HtmlUtils.htmlUnescape(jsonValue), JsonUtil.getCollectionType(ArrayList.class, MetaModule.class));
+//        for (MetaModule item : list){
+//            dao.saveOrUpdate(item);
+//        }
         return ResponseFactory.getDefaultSuccessResponse();
     }
 

@@ -12,7 +12,7 @@
     <thead>
     <tr>
         <th field="name" width="200" editor="{type:'validatebox',options:{required:true}}">名称</th>
-        <th field="type" width="200" editor="{type:'combobox',options:{valueField:'id',textField:'text',url:'/factory/metaComboboxOption/options?name=下拉测试'}}">类型</th>
+        <th field="type" width="200" formatter="gridComboFormatter" editor="{type:'combobox', options:{editable:false,valueField:'id',textField:'text',url:'/factory/metaComboboxOption/options?name=下拉测试'}}">类型</th>
     </tr>
     </thead>
 </table>

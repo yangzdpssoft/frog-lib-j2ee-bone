@@ -20,4 +20,5 @@ public class DataBean implements IId, Serializable{
     public void setId(String id) {
         this.id = id;
     }
+
 }
